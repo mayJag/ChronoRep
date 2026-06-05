@@ -1,0 +1,237 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--sp-4);
+  margin-bottom: var(--sp-4);
+}
+
+.dateLabel {
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  font-weight: var(--fw-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.greeting {
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background: var(--accent-primary-glow);
+  border: 1px solid var(--border-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-glow-accent);
+  cursor: pointer;
+  transition: transform var(--duration-fast) var(--ease-spring);
+}
+
+.avatar:hover {
+  transform: scale(1.05);
+}
+
+.flameIcon {
+  color: var(--accent-primary);
+  filter: drop-shadow(0 0 6px var(--accent-primary));
+}
+
+.quoteCard {
+  background: linear-gradient(135deg, var(--bg-card), var(--bg-secondary));
+  border-left: 3px solid var(--accent-primary);
+  margin-bottom: var(--sp-6);
+}
+
+.quoteText {
+  font-size: var(--fs-base);
+  font-style: italic;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.statIconWrapper {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--sp-2) auto;
+  background: var(--bg-elevated);
+}
+
+.dumbbellIcon {
+  color: var(--accent-primary);
+}
+
+.streakIcon {
+  color: var(--warning);
+}
+
+.volumeIcon {
+  color: var(--accent-secondary);
+}
+
+.workoutCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  background: linear-gradient(135deg, var(--bg-card), var(--bg-secondary));
+}
+
+.workoutInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.workoutHeaderRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.workoutName {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
+}
+
+.workoutDuration {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-1);
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+}
+
+.exercisePreview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin-top: var(--sp-1);
+}
+
+.previewTag {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  padding: var(--sp-1) var(--sp-2);
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-xs);
+  color: var(--text-primary);
+}
+
+.previewTagMuted {
+  padding: var(--sp-1) var(--sp-2);
+  font-size: var(--fs-xs);
+  color: var(--text-tertiary);
+  display: flex;
+  align-items: center;
+}
+
+.noWorkoutCard {
+  text-align: center;
+  padding: var(--sp-6) var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-3);
+  background: var(--bg-card);
+}
+
+.calendarIcon {
+  color: var(--text-tertiary);
+  opacity: 0.6;
+}
+
+.noWorkoutText {
+  font-size: var(--fs-base);
+  color: var(--text-secondary);
+  max-width: 280px;
+}
+
+.progressCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.progressHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.planName {
+  font-size: var(--fs-base);
+  font-weight: var(--fw-semibold);
+  color: var(--text-primary);
+}
+
+.progressPct {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  color: var(--accent-primary);
+}
+
+.activityList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.activityItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: transform var(--duration-fast);
+}
+
+.activityItem:hover {
+  transform: translateX(4px);
+}
+
+.activityMeta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.activityName {
+  font-size: var(--fs-base);
+  font-weight: var(--fw-semibold);
+  color: var(--text-primary);
+}
+
+.activityDate {
+  font-size: var(--fs-xs);
+  color: var(--text-tertiary);
+}
+
+.activityDetails {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+}
+
+.chevron {
+  color: var(--text-tertiary);
+  margin-left: var(--sp-1);
+}

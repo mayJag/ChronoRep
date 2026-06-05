@@ -1,0 +1,5711 @@
+export const nippardProgram = {
+  "id": "nippard-powerbuilding",
+  "name": "Jeff Nippard Powerbuilding System",
+  "author": "Jeff Nippard",
+  "description": "Intermediate-Advanced | 5-6x/Week",
+  "duration": "10 weeks (11 with Deload)",
+  "daysPerWeek": 5,
+  "type": "powerbuilding",
+  "weeks": [
+    {
+      "weekNumber": 1,
+      "label": "Week 1",
+      "option": "",
+      "note": "",
+      "days": [
+        {
+          "dayNumber": 1,
+          "name": "Full Body 1: Squat, OHP",
+          "type": "full_body",
+          "targetMuscles": [
+            "legs",
+            "shoulders",
+            "back",
+            "arms",
+            "chest"
+          ],
+          "estimatedDuration": 75,
+          "exercises": [
+            {
+              "name": "SQUAT",
+              "warmupSets": 4,
+              "workingSets": 1,
+              "reps": "5",
+              "percentRM": "75-80%",
+              "rpe": "7.5",
+              "rest": "3-4 MIN",
+              "notes": "FOCUS ON TECHNIQUE AND EXPLOSIVE POWER!",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "SQUAT",
+              "warmupSets": 0,
+              "workingSets": 2,
+              "reps": "8",
+              "percentRM": "70%",
+              "rpe": "N/A",
+              "rest": "3-4 MIN",
+              "notes": "KEEP BACK ANGLE AND FORM CONSISTENT ACROSS ALL REPS",
+              "category": "isolation",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "PRESS",
+              "warmupSets": 2,
+              "workingSets": 3,
+              "reps": "8",
+              "percentRM": "70%",
+              "rpe": "N/A",
+              "rest": "2-3 MIN",
+              "notes": "RESET EACH REP (DON'T TOUCH-AND-PRESS)",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "HAM RAISE",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "8-10",
+              "percentRM": "N/A",
+              "rpe": "7",
+              "rest": "1-2 MIN",
+              "notes": "KEEP YOUR HIPS STRAIGHT, DO NORDIC HAM CURLS IF NO GHR MACHINE",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "ROW",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "12-15",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "STRICT FORM. DRIVE ELBOWS OUT AND BACK AT 45 DEGREE ANGLE",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "CURL",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "20-25",
+              "percentRM": "N/A",
+              "rpe": "10",
+              "rest": "1-2 MIN",
+              "notes": "KEEP ELBOWS LOCKED IN PLACE, SQUEEZE THE DUMBBELL HANDLE HARD!",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 2,
+          "name": "Full Body 2: Deadlift, Bench Press",
+          "type": "full_body",
+          "targetMuscles": [
+            "legs",
+            "shoulders",
+            "back",
+            "arms",
+            "chest"
+          ],
+          "estimatedDuration": 75,
+          "exercises": [
+            {
+              "name": "DEADLIFT",
+              "warmupSets": 4,
+              "workingSets": 3,
+              "reps": "4",
+              "percentRM": "80%",
+              "rpe": "N/A",
+              "rest": "3-5 MIN",
+              "notes": "CONVENTIONAL OR SUMO: USE WHATEVER STANCE YOU ARE STRONGER WITH",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "BENCH PRESS",
+              "warmupSets": 4,
+              "workingSets": 1,
+              "reps": "3",
+              "percentRM": "82.5-87.5%",
+              "rpe": "8.5",
+              "rest": "4-5 MIN",
+              "notes": "TOP SET. LEAVE 1 (MAYBE 2) REPS IN THE TANK. HARD SET.",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "barbell"
+            },
+            {
+              "name": "BENCH PRESS",
+              "warmupSets": 0,
+              "workingSets": 2,
+              "reps": "10",
+              "percentRM": "67.5%",
+              "rpe": "N/A",
+              "rest": "2-3 MIN",
+              "notes": "QUICK 1 SECOND PAUSE ON THE CHEST ON EACH REP",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "barbell"
+            },
+            {
+              "name": "ABDUCTION",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "15-20",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "MACHINE, BAND OR WEIGHTED, 1 SECOND ISOMETRIC HOLD AT THE TOP OF EACH REP",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "PULL-UP",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "5-8",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "3-4 MIN",
+              "notes": "1.5X SHOULDER WIDTH GRIP , PULL YOUR CHEST TO THE BAR",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "CALF RAISE",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "8-10",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "2-3 MIN",
+              "notes": "1-2 SECOND PAUSE AT THE BOTTOM OF EACH REP , FULL ROM",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 3,
+          "name": "Full Body 3: Squat, Dip",
+          "type": "full_body",
+          "targetMuscles": [
+            "legs",
+            "shoulders",
+            "back",
+            "arms",
+            "chest"
+          ],
+          "estimatedDuration": 75,
+          "exercises": [
+            {
+              "name": "SQUAT",
+              "warmupSets": 4,
+              "workingSets": 3,
+              "reps": "4",
+              "percentRM": "80%",
+              "rpe": "N/A",
+              "rest": "3-4 MIN",
+              "notes": "MAINTAIN TIGHT PRESSURE IN YOUR UPPER BACK AGAINST THE BAR",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "DIP",
+              "warmupSets": 2,
+              "workingSets": 3,
+              "reps": "8",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "2-3 MIN",
+              "notes": "DO DUMBBELL FLOOR PRESS IF NO ACCESS TO DIP HANDLES",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "LEG RAISE",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "10-12",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "KNEES TO CHEST, CONTROLLED REPS, STRAIGHTEN LEGS MORE TO INCREASE DIFFICULTY",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "PULL-OVER",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "12-15",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "1-2 MIN",
+              "notes": "CAN USE A DB, CABLE/ROPE OR BAND, STRETCH AND SQUEEZE LATS!",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "DUMBBELL CURL",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "12-15",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "DO EACH ARM ONE AT A TIME RATHER THAN ALTERNATING, START WITH YOUR WEAK ARM",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 4,
+          "name": "Rest Day",
+          "type": "rest",
+          "targetMuscles": [],
+          "estimatedDuration": 0,
+          "exercises": []
+        },
+        {
+          "dayNumber": 5,
+          "name": "Full Body 4: Deadlift, Bench Press",
+          "type": "full_body",
+          "targetMuscles": [
+            "legs",
+            "shoulders",
+            "back",
+            "arms",
+            "chest"
+          ],
+          "estimatedDuration": 75,
+          "exercises": [
+            {
+              "name": "DEADLIFT",
+              "warmupSets": 4,
+              "workingSets": 4,
+              "reps": "2",
+              "percentRM": "75%",
+              "rpe": "N/A",
+              "rest": "3-4 MIN",
+              "notes": "3 SECOND PAUSE RIGHT AFTER THE PLATES COME OFF THE GROUND",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "BARBELL BENCH PRESS",
+              "warmupSets": 3,
+              "workingSets": 3,
+              "reps": "5",
+              "percentRM": "75%",
+              "rpe": "N/A",
+              "rest": "2-3 MIN",
+              "notes": "2-3 SECOND PAUSE ON THE CHEST",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "barbell"
+            },
+            {
+              "name": "PENDLAY ROW",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "10",
+              "percentRM": "N/A",
+              "rpe": "7",
+              "rest": "2-3 MIN",
+              "notes": "BE MINDFUL OF LOWER BACK FATIGUE. STAY LIGHT, MINIMIZE CHEATING",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "HAM CURL",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "6-8",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "1-2 MIN",
+              "notes": "SEE VIDEO DEMOS PAGE, CAN SUB FOR LYING LEG CURL",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "SHRUG",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "20-25",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "FEEL A STRETCH ON THE TRAPS AT THE BOTTOM, SQUEEZE HARD AT THE TOP",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 6,
+          "name": "Full Body 5: Arm & Pump Day",
+          "type": "full_body",
+          "targetMuscles": [
+            "legs",
+            "shoulders",
+            "back",
+            "arms",
+            "chest"
+          ],
+          "estimatedDuration": 75,
+          "exercises": [
+            {
+              "name": "BARBELL OR EZ BAR CURL",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "12",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "30SEC",
+              "notes": "CURL THE BAR OUT AND UP IN AN ARC. MINIMIZE MOMENTUM.",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "barbell"
+            },
+            {
+              "name": "FLOOR SKULL CRUSHER",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "12",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "30SEC",
+              "notes": "ARC THE BAR BACK BEHIND YOUR HEAD, SOFT TOUCH ON THE FLOOR BEHIND YOU",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "DUMBBELL LATERAL RAISE",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "20",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "30SEC",
+              "notes": "ARC THE DUMBBELL OUT, MIND-MUSCLE CONNECTION WITH MIDDLE FIBERS",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "BAND PULL-APART",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "20",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "30SEC",
+              "notes": "MIND-MUSCLE CONNECTION WITH REAR DELTS",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "STANDING CALF RAISE",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "12",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "30SEC",
+              "notes": "1-2 SECOND PAUSE AT THE BOTTOM OF EACH REP , FULL SQUEEZE AT THE TOP",
+              "category": "isolation",
+              "muscleGroup": "legs",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "BICYCLE CRUNCH",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "15",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "30SEC",
+              "notes": "FOCUS ON ROUNDING YOUR BACK AS YOU CRUNCH HARD!",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 7,
+          "name": "Rest Day",
+          "type": "rest",
+          "targetMuscles": [],
+          "estimatedDuration": 0,
+          "exercises": []
+        }
+      ]
+    },
+    {
+      "weekNumber": 2,
+      "label": "Week 2",
+      "option": "",
+      "note": "",
+      "days": [
+        {
+          "dayNumber": 1,
+          "name": "Lower 1",
+          "type": "lower",
+          "targetMuscles": [
+            "legs",
+            "glutes",
+            "hamstrings",
+            "calves"
+          ],
+          "estimatedDuration": 60,
+          "exercises": [
+            {
+              "name": "DEADLIFT",
+              "warmupSets": 4,
+              "workingSets": 3,
+              "reps": "3",
+              "percentRM": "80%",
+              "rpe": "N/A",
+              "rest": "3-4 MIN",
+              "notes": "BRACE YOUR LATS, CHEST TALL, PULL THE SLACK OUT OF THE BAR BEFORE LIFTING",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "HIGH-BAR SQUAT",
+              "warmupSets": 2,
+              "workingSets": 2,
+              "reps": "8",
+              "percentRM": "N/A",
+              "rpe": "7",
+              "rest": "2-3 MIN",
+              "notes": "IF YOU SQUAT HIGH-BAR, DO SUMO BOX SQUAT. IF YOU SQUAT LOW-BAR, DO PAUSE HIGH-",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "PULL-THROUGH",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "12-15",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "CAN USE CABLE/ROPE OR BAND, USE YOUR GLUTES TO MOVE THE WEIGHT",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "CURL",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "6-8",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "1-2 MIN",
+              "notes": "DO LYING LEG CURL MACHINE OR NORDIC HAM CURL IF NO MACHINE ACCESS",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "CALF RAISE",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "8-10",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "1-2 SECOND PAUSE AT THE BOTTOM OF EACH REP , FULL SQUEEZE AT THE TOP",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 2,
+          "name": "Upper 1",
+          "type": "upper",
+          "targetMuscles": [
+            "chest",
+            "back",
+            "shoulders",
+            "arms"
+          ],
+          "estimatedDuration": 60,
+          "exercises": [
+            {
+              "name": "BENCH PRESS",
+              "warmupSets": 4,
+              "workingSets": 1,
+              "reps": "2",
+              "percentRM": "85-90%",
+              "rpe": "8",
+              "rest": "4-5 MIN",
+              "notes": "TOP SET. LEAVE ~2 REPS IN THE TANK. HARD SET.",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "barbell"
+            },
+            {
+              "name": "BENCH PRESS",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "6",
+              "percentRM": "77.5%",
+              "rpe": "N/A",
+              "rest": "2-3 MIN",
+              "notes": "SET UP A COMFORTABLE ARCH, SLIGHT PAUSE ON THE CHEST, EXPLODE UP",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "barbell"
+            },
+            {
+              "name": "CHIN-UP",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "8-10",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "2-3 MIN",
+              "notes": "UNDERHAND GRIP , PULL YOUR CHEST TO THE BAR, ADD WEIGHT IF NEEDED TO HIT RPE",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "PRESS",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "10-12",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "ROTATE THE DBS IN AT THE BOTTOM AND OUT AT THE TOP",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "ROW",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "12-15",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "LIE ON AN INCLINE BENCH AND DO ROWS - PULL WITH LATS!",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "PULL",
+              "warmupSets": 0,
+              "workingSets": 2,
+              "reps": "15-20",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "CAN USE CABLE/ROPE OR BAND, RETRACT YOUR SHOULDER BLADES AS YOU PULL",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "LATERAL RAISE",
+              "warmupSets": 0,
+              "workingSets": 2,
+              "reps": "15-20",
+              "percentRM": "N/A",
+              "rpe": "10",
+              "rest": "1-2 MIN",
+              "notes": "ARC THE DUMBBELL OUT, MIND-MUSCLE CONNECTION WITH MIDDLE FIBERS",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "BICEP CURL",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "12-15",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "PIN YOUR ELBOW AGAINST YOUR UPPER LEG OR THE BACK OF A BENCH",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 3,
+          "name": "Lower 2",
+          "type": "lower",
+          "targetMuscles": [
+            "legs",
+            "glutes",
+            "hamstrings",
+            "calves"
+          ],
+          "estimatedDuration": 60,
+          "exercises": [
+            {
+              "name": "SQUAT",
+              "warmupSets": 4,
+              "workingSets": 3,
+              "reps": "6",
+              "percentRM": "75%",
+              "rpe": "N/A",
+              "rest": "3-4 MIN",
+              "notes": "SIT BACK AND DOWN, KEEP YOUR UPPER BACK TIGHT TO THE BAR",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "MORNING",
+              "warmupSets": 2,
+              "workingSets": 2,
+              "reps": "10-12",
+              "percentRM": "N/A",
+              "rpe": "7",
+              "rest": "2-3 MIN",
+              "notes": "SAME AS SQUAT STANCE, KEEP SHINS STRAIGHT, GO LIGHTER AND \"FEEL\" HAMSTRINGS",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "EXTENSION",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "12-15",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "USE BANDS IF NO MACHINE ACCESS, MIND-MUSCLE CONNECTION WITH QUADS",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "CALF RAISE",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "15-20",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "EMPHASIZE THE MIND-MUSCLE CONNECTION",
+              "category": "isolation",
+              "muscleGroup": "legs",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "ABDUCTION",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "15-20",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "POINT TOES SLIGHTLY OUTWARD, MIND-MUSCLE CONNECTION WITH GLUTES",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "SIT-UP",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "12-15",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "THINK ABOUT SQUEEZING YOUR UPPER AND LOWER ABS TOGETHERWEEK 2 JEFF NIPPARD'S - POWERBUILDING SYSTEM",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 4,
+          "name": "Upper 2",
+          "type": "upper",
+          "targetMuscles": [
+            "chest",
+            "back",
+            "shoulders",
+            "arms"
+          ],
+          "estimatedDuration": 60,
+          "exercises": [
+            {
+              "name": "PRESS",
+              "warmupSets": 3,
+              "workingSets": 3,
+              "reps": "4",
+              "percentRM": "80%",
+              "rpe": "N/A",
+              "rest": "3-4 MIN",
+              "notes": "SQUEEZE YOUR GLUTES TO KEEP YOUR TORSO UPRIGHT, PRESS UP AND SLIGHTLY BACK",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "SINGLE-ARM LAT PULLDOWN",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "10-12",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "2-3 MIN",
+              "notes": "PERFORM WITH BANDS IF NO LAT PULLDOWN, DRIVE ELBOWS DOWN AND IN",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "CLOSE-GRIP BENCH PRESS",
+              "warmupSets": 2,
+              "workingSets": 2,
+              "reps": "12",
+              "percentRM": "N/A",
+              "rpe": "7",
+              "rest": "2-3 MIN",
+              "notes": "SHOULDER WIDTH GRIP , TUCK YOUR ELBOWS IN CLOSER TO YOUR TORSO",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "barbell"
+            },
+            {
+              "name": "ROW",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "10",
+              "percentRM": "N/A",
+              "rpe": "7",
+              "rest": "1-2 MIN",
+              "notes": "BE MINDFUL OF LOWER BACK FATIGUE. STAY LIGHT, MINIMIZE CHEATING",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "FLYE",
+              "warmupSets": 0,
+              "workingSets": 2,
+              "reps": "15-20",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "PERFORM WITH CABLE, BANDS OR DUMBBELLS, USE A FULL ROM",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "INCLINE SHRUG",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "15-20",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "30SEC",
+              "notes": "LIE FACE DOWN AGAINST AN INCLINE BENCH AND DO SHRUGS - FULL ROM AND SQUEEZE!",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "UPRIGHT ROW",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "15-20",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "30SEC",
+              "notes": "CAN USE CABLES/ROPE, BANDS OR DUMBBELLS. STOP ROM ONCE ELBOWS REACH SHOULDER",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "SKULL CRUSHER",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "8-10",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "1-2 MIN",
+              "notes": "DO THESE ON A BENCH, CONSTANT TENSION ON TRICEPS",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "barbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 5,
+          "name": "Lower 3",
+          "type": "lower",
+          "targetMuscles": [
+            "legs",
+            "glutes",
+            "hamstrings",
+            "calves"
+          ],
+          "estimatedDuration": 60,
+          "exercises": [
+            {
+              "name": "5\" BLOCK PULL",
+              "warmupSets": 4,
+              "workingSets": 2,
+              "reps": "4",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "4-5 MIN",
+              "notes": "DO BLOCK PULLS FROM A 5\" BLOCK (CAN STACK 45LB + 10LB BUMPER PLATES AS BLOCKS)",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "SPLIT SQUAT",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "12",
+              "percentRM": "N/A",
+              "rpe": "7",
+              "rest": "2-3 MIN",
+              "notes": "12 REPS EACH LEG, KEEP YOUR TORSO UPRIGHT, CONSTANT-TENSION ON QUADS",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "HIP THRUST",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "8-10",
+              "percentRM": "N/A",
+              "rpe": "7",
+              "rest": "1-2 MIN",
+              "notes": "DO BARBELL HIP THRUSTS IF NO MACHINE, USE GLUTES TO MOVE THE WEIGHT",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "CALF RAISE",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "15-20",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "DO STANDING IF NO MACHINE, EMPHASIZE THE MIND-MUSCLE CONNECTION",
+              "category": "isolation",
+              "muscleGroup": "legs",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "LEG RAISE",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "10-12",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "1-2 MIN",
+              "notes": "KNEES TO CHEST, CONTROLLED REPS, STRAIGHTEN LEGS MORE TO INCREASE DIFFICULTY",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 6,
+          "name": "Upper 3",
+          "type": "upper",
+          "targetMuscles": [
+            "chest",
+            "back",
+            "shoulders",
+            "arms"
+          ],
+          "estimatedDuration": 60,
+          "exercises": [
+            {
+              "name": "PRESS",
+              "warmupSets": 3,
+              "workingSets": 3,
+              "reps": "10",
+              "percentRM": "N/A",
+              "rpe": "7",
+              "rest": "2-3 MIN",
+              "notes": "SHOULDER BLADES STILL RETRACTED AND DEPRESSED. SLIGHT ARCH IN UPPER BACK.",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "PULL-UP",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "AMRAP",
+              "percentRM": "N/A",
+              "rpe": "10",
+              "rest": "2-3 MIN",
+              "notes": "3 SECOND NEGATIVE ON EVERY REP , MAINTAIN CONTROLLED FORM FOR ALL REPS",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "DIP",
+              "warmupSets": 2,
+              "workingSets": 2,
+              "reps": "10",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "2-3 MIN",
+              "notes": "DO DUMBBELL FLOOR PRESS IF NO ACCESS TO DIP HANDLES",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "SINGLE-ARM ROW",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "10-12",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "2-3 MIN",
+              "notes": "CAN USE CABLES, BANDS OR DUMBBELLS - FEEL YOUR LATS WORKING!",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "OR EZ BAR CURL",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "12-15",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "FOCUS ON THE MIND-MUSCLE CONNECTION",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "barbell"
+            },
+            {
+              "name": "LEAN-AWAY LATERAL RAISE",
+              "warmupSets": 0,
+              "workingSets": 2,
+              "reps": "30",
+              "percentRM": "N/A",
+              "rpe": "10",
+              "rest": "1-2 MIN",
+              "notes": "USE A LIGHT DUMBBELL, CONSTANT-TENSION, NO PAUSE AT THE BOTTOM",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "CRUNCH",
+              "warmupSets": 0,
+              "workingSets": 2,
+              "reps": "10-12",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "KEEP YOUR HANDS BEHIND YOUR EARSWEEK 2 JEFF NIPPARD'S - POWERBUILDING SYSTEM",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 7,
+          "name": "Rest Day",
+          "type": "rest",
+          "targetMuscles": [],
+          "estimatedDuration": 0,
+          "exercises": []
+        }
+      ]
+    },
+    {
+      "weekNumber": 3,
+      "label": "Week 3",
+      "option": "",
+      "note": "",
+      "days": [
+        {
+          "dayNumber": 1,
+          "name": "Full Body 1: Squat, OHP",
+          "type": "full_body",
+          "targetMuscles": [
+            "legs",
+            "shoulders",
+            "back",
+            "arms",
+            "chest"
+          ],
+          "estimatedDuration": 75,
+          "exercises": [
+            {
+              "name": "SQUAT",
+              "warmupSets": 4,
+              "workingSets": 1,
+              "reps": "8",
+              "percentRM": "72.5-77.5%",
+              "rpe": "8.5",
+              "rest": "4-5 MIN",
+              "notes": "TOP SET. LEAVE 1 (MAYBE 2) REPS IN THE TANK. PUSH IT!",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "SQUAT",
+              "warmupSets": 0,
+              "workingSets": 2,
+              "reps": "6",
+              "percentRM": "75%",
+              "rpe": "N/A",
+              "rest": "3-4 MIN",
+              "notes": "KEEP BACK ANGLE AND FORM CONSISTENT ACROSS ALL REPS",
+              "category": "isolation",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "PRESS",
+              "warmupSets": 2,
+              "workingSets": 3,
+              "reps": "8",
+              "percentRM": "72.5%",
+              "rpe": "N/A",
+              "rest": "2-3 MIN",
+              "notes": "RESET EACH REP (DON'T TOUCH-AND-PRESS)",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "HAM RAISE",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "8-10",
+              "percentRM": "N/A",
+              "rpe": "7",
+              "rest": "1-2 MIN",
+              "notes": "KEEP YOUR HIPS STRAIGHT, DO NORDIC HAM CURLS IF NO GHR MACHINE",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "ROW",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "12-15",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "STRICT FORM. DRIVE ELBOWS OUT AND BACK AT 45 DEGREE ANGLE",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "CURL",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "20-25",
+              "percentRM": "N/A",
+              "rpe": "10",
+              "rest": "1-2 MIN",
+              "notes": "KEEP ELBOWS LOCKED IN PLACE, SQUEEZE THE DUMBBELL HANDLE HARD!",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 2,
+          "name": "Full Body 2: Deadlift, Bench Press",
+          "type": "full_body",
+          "targetMuscles": [
+            "legs",
+            "shoulders",
+            "back",
+            "arms",
+            "chest"
+          ],
+          "estimatedDuration": 75,
+          "exercises": [
+            {
+              "name": "DEADLIFT",
+              "warmupSets": 4,
+              "workingSets": 4,
+              "reps": "2",
+              "percentRM": "85%",
+              "rpe": "N/A",
+              "rest": "3-5 MIN",
+              "notes": "CONVENTIONAL OR SUMO: USE WHATEVER STANCE YOU ARE STRONGER WITH",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "BENCH PRESS",
+              "warmupSets": 3,
+              "workingSets": 1,
+              "reps": "6",
+              "percentRM": "75-80%",
+              "rpe": "8.5",
+              "rest": "4-5 MIN",
+              "notes": "TOP SET. LEAVE 1 (MAYBE 2) REPS IN THE TANK. PUSH IT!",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "barbell"
+            },
+            {
+              "name": "BENCH PRESS",
+              "warmupSets": 0,
+              "workingSets": 2,
+              "reps": "8",
+              "percentRM": "72.5%",
+              "rpe": "N/A",
+              "rest": "2-3 MIN",
+              "notes": "QUICK 1 SECOND PAUSE ON THE CHEST ON EACH REP",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "barbell"
+            },
+            {
+              "name": "ABDUCTION",
+              "warmupSets": 0,
+              "workingSets": 2,
+              "reps": "15-20",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "MACHINE, BAND OR WEIGHTED, 1 SECOND ISOMETRIC HOLD AT THE TOP OF EACH REP",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "PULL-UP",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "5-8",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "3-4 MIN",
+              "notes": "1.5X SHOULDER WIDTH GRIP , PULL YOUR CHEST TO THE BAR",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "CALF RAISE",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "8",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "2-3 MIN",
+              "notes": "1-2 SECOND PAUSE AT THE BOTTOM OF EACH REP , FULL ROM",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 3,
+          "name": "Full Body 3: Squat, Dip",
+          "type": "full_body",
+          "targetMuscles": [
+            "legs",
+            "shoulders",
+            "back",
+            "arms",
+            "chest"
+          ],
+          "estimatedDuration": 75,
+          "exercises": [
+            {
+              "name": "SQUAT",
+              "warmupSets": 4,
+              "workingSets": 4,
+              "reps": "4",
+              "percentRM": "80%",
+              "rpe": "N/A",
+              "rest": "3-4 MIN",
+              "notes": "MAINTAIN TIGHT PRESSURE IN YOUR UPPER BACK AGAINST THE BAR",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "DIP",
+              "warmupSets": 2,
+              "workingSets": 3,
+              "reps": "8",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "2-3 MIN",
+              "notes": "DO DUMBBELL FLOOR PRESS IF NO ACCESS TO DIP HANDLES",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "LEG RAISE",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "10-12",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "KNEES TO CHEST, CONTROLLED REPS, STRAIGHTEN LEGS MORE TO INCREASE DIFFICULTY",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "PULL-OVER",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "12-15",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "1-2 MIN",
+              "notes": "CAN USE A DB, CABLE/ROPE OR BAND, STRETCH AND SQUEEZE LATS!",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "DUMBBELL CURL",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "12-15",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "DO EACH ARM ONE AT A TIME RATHER THAN ALTERNATING, START WITH YOUR WEAK ARM",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 4,
+          "name": "Rest Day",
+          "type": "rest",
+          "targetMuscles": [],
+          "estimatedDuration": 0,
+          "exercises": []
+        },
+        {
+          "dayNumber": 5,
+          "name": "Full Body 4: Deadlift, Bench Press",
+          "type": "full_body",
+          "targetMuscles": [
+            "legs",
+            "shoulders",
+            "back",
+            "arms",
+            "chest"
+          ],
+          "estimatedDuration": 75,
+          "exercises": [
+            {
+              "name": "DEADLIFT",
+              "warmupSets": 4,
+              "workingSets": 4,
+              "reps": "2",
+              "percentRM": "77.5%",
+              "rpe": "N/A",
+              "rest": "3-4 MIN",
+              "notes": "3 SECOND PAUSE RIGHT AFTER THE PLATES COME OFF THE GROUND",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "BARBELL BENCH PRESS",
+              "warmupSets": 3,
+              "workingSets": 4,
+              "reps": "5",
+              "percentRM": "75%",
+              "rpe": "N/A",
+              "rest": "2-3 MIN",
+              "notes": "2-3 SECOND PAUSE ON THE CHEST",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "barbell"
+            },
+            {
+              "name": "PENDLAY ROW",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "10",
+              "percentRM": "N/A",
+              "rpe": "7",
+              "rest": "2-3 MIN",
+              "notes": "BE MINDFUL OF LOWER BACK FATIGUE. STAY LIGHT, MINIMIZE CHEATING",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "HAM CURL",
+              "warmupSets": 0,
+              "workingSets": 2,
+              "reps": "6-8",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "1-2 MIN",
+              "notes": "SEE VIDEO DEMOS PAGE, CAN SUB FOR LYING LEG CURL",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "SHRUG",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "20-25",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "FEEL A STRETCH ON THE TRAPS AT THE BOTTOM, SQUEEZE HARD AT THE TOP",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 6,
+          "name": "Full Body 5: Arm & Pump Day",
+          "type": "full_body",
+          "targetMuscles": [
+            "legs",
+            "shoulders",
+            "back",
+            "arms",
+            "chest"
+          ],
+          "estimatedDuration": 75,
+          "exercises": [
+            {
+              "name": "BARBELL OR EZ BAR CURL",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "12",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "30SEC",
+              "notes": "CURL THE BAR OUT AND UP IN AN ARC. MINIMIZE MOMENTUM.",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "barbell"
+            },
+            {
+              "name": "FLOOR SKULL CRUSHER",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "12",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "30SEC",
+              "notes": "ARC THE BAR BACK BEHIND YOUR HEAD, SOFT TOUCH ON THE FLOOR BEHIND YOU",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "DUMBBELL LATERAL RAISE",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "20",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "30SEC",
+              "notes": "ARC THE DUMBBELL OUT, MIND-MUSCLE CONNECTION WITH MIDDLE FIBERS",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "BAND PULL-APART",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "20",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "30SEC",
+              "notes": "MIND-MUSCLE CONNECTION WITH REAR DELTS",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "STANDING CALF RAISE",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "12",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "30SEC",
+              "notes": "1-2 SECOND PAUSE AT THE BOTTOM OF EACH REP , FULL SQUEEZE AT THE TOP",
+              "category": "isolation",
+              "muscleGroup": "legs",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "BICYCLE CRUNCH",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "15",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "30SEC",
+              "notes": "FOCUS ON ROUNDING YOUR BACK AS YOU CRUNCH HARD!",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 7,
+          "name": "Rest Day",
+          "type": "rest",
+          "targetMuscles": [],
+          "estimatedDuration": 0,
+          "exercises": []
+        }
+      ]
+    },
+    {
+      "weekNumber": 4,
+      "label": "Week 4",
+      "option": "",
+      "note": "",
+      "days": [
+        {
+          "dayNumber": 1,
+          "name": "Lower 1",
+          "type": "lower",
+          "targetMuscles": [
+            "legs",
+            "glutes",
+            "hamstrings",
+            "calves"
+          ],
+          "estimatedDuration": 60,
+          "exercises": [
+            {
+              "name": "DEADLIFT",
+              "warmupSets": 4,
+              "workingSets": 1,
+              "reps": "2",
+              "percentRM": "87.5-92.5%",
+              "rpe": "9",
+              "rest": "4-5 MIN",
+              "notes": "TOP SET! AIM FOR NEAR PR. KEEP FORM TIGHT.",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "DEADLIFT",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "3",
+              "percentRM": "80%",
+              "rpe": "N/A",
+              "rest": "3-4 MIN",
+              "notes": "BRACE YOUR LATS, CHEST TALL, PULL THE SLACK OUT OF THE BAR BEFORE LIFTING",
+              "category": "isolation",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "HIGH-BAR SQUAT",
+              "warmupSets": 2,
+              "workingSets": 2,
+              "reps": "8",
+              "percentRM": "N/A",
+              "rpe": "7",
+              "rest": "2-3 MIN",
+              "notes": "IF YOU SQUAT HIGH-BAR, DO SUMO BOX SQUAT. IF YOU SQUAT LOW-BAR, DO PAUSE HIGH-",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "PULL-THROUGH",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "12-15",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "CAN USE CABLE/ROPE OR BAND, USE YOUR GLUTES TO MOVE THE WEIGHT",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "CURL",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "6-8",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "1-2 MIN",
+              "notes": "DO LYING LEG CURL MACHINE OR NORDIC HAM CURL IF NO MACHINE ACCESS",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "CALF RAISE",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "8-10",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "1-2 SECOND PAUSE AT THE BOTTOM OF EACH REP , FULL SQUEEZE AT THE TOP",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 2,
+          "name": "Upper 1",
+          "type": "upper",
+          "targetMuscles": [
+            "chest",
+            "back",
+            "shoulders",
+            "arms"
+          ],
+          "estimatedDuration": 60,
+          "exercises": [
+            {
+              "name": "BENCH PRESS",
+              "warmupSets": 3,
+              "workingSets": 3,
+              "reps": "6",
+              "percentRM": "77.5%",
+              "rpe": "N/A",
+              "rest": "3-4 MIN",
+              "notes": "SET UP A COMFORTABLE ARCH, SLIGHT PAUSE ON THE CHEST, EXPLODE UP",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "barbell"
+            },
+            {
+              "name": "CHIN-UP",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "8-10",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "2-3 MIN",
+              "notes": "UNDERHAND GRIP , PULL YOUR CHEST TO THE BAR, ADD WEIGHT IF NEEDED TO HIT RPE",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "PRESS",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "10-12",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "2-3 MIN",
+              "notes": "ROTATE THE DBS IN AT THE BOTTOM AND OUT AT THE TOP",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "ROW",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "12-15",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "LIE ON AN INCLINE BENCH AND DO ROWS - PULL WITH LATS!",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "PULL",
+              "warmupSets": 0,
+              "workingSets": 2,
+              "reps": "15-20",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "CAN USE CABLE/ROPE OR BAND, RETRACT YOUR SHOULDER BLADES AS YOU PULL",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "LATERAL RAISE",
+              "warmupSets": 0,
+              "workingSets": 2,
+              "reps": "15-20",
+              "percentRM": "N/A",
+              "rpe": "10",
+              "rest": "1-2 MIN",
+              "notes": "ARC THE DUMBBELL OUT, MIND-MUSCLE CONNECTION WITH MIDDLE FIBERS",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "BICEP CURL",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "12-15",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "PIN YOUR ELBOW AGAINST YOUR UPPER LEG OR THE BACK OF A BENCH",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 3,
+          "name": "Lower 2",
+          "type": "lower",
+          "targetMuscles": [
+            "legs",
+            "glutes",
+            "hamstrings",
+            "calves"
+          ],
+          "estimatedDuration": 60,
+          "exercises": [
+            {
+              "name": "SQUAT",
+              "warmupSets": 4,
+              "workingSets": 3,
+              "reps": "6",
+              "percentRM": "75%",
+              "rpe": "N/A",
+              "rest": "3-4 MIN",
+              "notes": "SIT BACK AND DOWN, KEEP YOUR UPPER BACK TIGHT TO THE BAR",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "MORNING",
+              "warmupSets": 2,
+              "workingSets": 2,
+              "reps": "10-12",
+              "percentRM": "N/A",
+              "rpe": "7",
+              "rest": "2-3 MIN",
+              "notes": "SAME AS SQUAT STANCE, KEEP SHINS STRAIGHT, GO LIGHTER AND \"FEEL\" HAMSTRINGS",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "EXTENSION",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "12-15",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "USE BANDS IF NO MACHINE ACCESS, MIND-MUSCLE CONNECTION WITH QUADS",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "CALF RAISE",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "15-20",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "EMPHASIZE THE MIND-MUSCLE CONNECTION",
+              "category": "isolation",
+              "muscleGroup": "legs",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "ABDUCTION",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "15-20",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "POINT TOES SLIGHTLY OUTWARD, MIND-MUSCLE CONNECTION WITH GLUTES",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "SIT-UP",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "12-15",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "THINK ABOUT SQUEEZING YOUR UPPER AND LOWER ABS TOGETHERWEEK 4 JEFF NIPPARD'S - POWERBUILDING SYSTEM",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 4,
+          "name": "Upper 2",
+          "type": "upper",
+          "targetMuscles": [
+            "chest",
+            "back",
+            "shoulders",
+            "arms"
+          ],
+          "estimatedDuration": 60,
+          "exercises": [
+            {
+              "name": "PRESS / PUSH PRESS",
+              "warmupSets": 3,
+              "workingSets": 3,
+              "reps": "3/3",
+              "percentRM": "80%",
+              "rpe": "N/A",
+              "rest": "3-4 MIN",
+              "notes": "FIRST 3 REPS STRICT MILITARY PRESS (NO LEG DRIVE), LAST 3 REPS PUSH PRESS (USE LEG",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "SINGLE-ARM LAT PULLDOWN",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "10-12",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "2-3 MIN",
+              "notes": "PERFORM WITH BANDS IF NO LAT PULLDOWN, DRIVE ELBOWS DOWN AND IN",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "FLOOR PRESS",
+              "warmupSets": 2,
+              "workingSets": 2,
+              "reps": "12",
+              "percentRM": "N/A",
+              "rpe": "7",
+              "rest": "1-2 MIN",
+              "notes": "CONTROL THE ECCENTRIC (DON'T LET YOUR ELBOWS SLAM INTO THE GROUND), BE EXPLOSIVE",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "barbell"
+            },
+            {
+              "name": "ROW",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "10",
+              "percentRM": "N/A",
+              "rpe": "7",
+              "rest": "1-2 MIN",
+              "notes": "BE MINDFUL OF LOWER BACK FATIGUE. STAY LIGHT, MINIMIZE CHEATING",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "FLYE",
+              "warmupSets": 0,
+              "workingSets": 2,
+              "reps": "15-20",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "PERFORM WITH CABLE, BANDS OR DUMBBELLS, USE A FULL ROM",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "INCLINE SHRUG",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "15-20",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "30SEC",
+              "notes": "LIE FACE DOWN AGAINST AN INCLINE BENCH AND DO SHRUGS - FULL ROM AND SQUEEZE!",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "FLYE",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "15-20",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "30SEC",
+              "notes": "MIND-MUSCLE CONNECTION WITH REAR DELTS, SWEEP THE WEIGHT OUT",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "SKULL CRUSHER",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "8-10",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "1-2 MIN",
+              "notes": "DO THESE ON A BENCH, CONSTANT TENSION ON TRICEPS",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "barbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 5,
+          "name": "Lower 3",
+          "type": "lower",
+          "targetMuscles": [
+            "legs",
+            "glutes",
+            "hamstrings",
+            "calves"
+          ],
+          "estimatedDuration": 60,
+          "exercises": [
+            {
+              "name": "4\" BLOCK PULL",
+              "warmupSets": 4,
+              "workingSets": 2,
+              "reps": "4",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "4-5 MIN",
+              "notes": "DO BLOCK PULLS FROM A 4\" BLOCK (CAN USE 45LB BUMPER PLATE AS A BLOCK)",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "SPLIT SQUAT",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "12",
+              "percentRM": "N/A",
+              "rpe": "7",
+              "rest": "2-3 MIN",
+              "notes": "12 REPS EACH LEG, KEEP YOUR TORSO UPRIGHT, CONSTANT-TENSION ON QUADS",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "HIP THRUST",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "8-10",
+              "percentRM": "N/A",
+              "rpe": "7",
+              "rest": "1-2 MIN",
+              "notes": "DO BARBELL HIP THRUSTS IF NO MACHINE, USE GLUTES TO MOVE THE WEIGHT",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "CALF RAISE",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "15-20",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "DO STANDING IF NO MACHINE, EMPHASIZE THE MIND-MUSCLE CONNECTION",
+              "category": "isolation",
+              "muscleGroup": "legs",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "LEG RAISE",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "10-12",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "1-2 MIN",
+              "notes": "KNEES TO CHEST, CONTROLLED REPS, STRAIGHTEN LEGS MORE TO INCREASE DIFFICULTY",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 6,
+          "name": "Upper 3",
+          "type": "upper",
+          "targetMuscles": [
+            "chest",
+            "back",
+            "shoulders",
+            "arms"
+          ],
+          "estimatedDuration": 60,
+          "exercises": [
+            {
+              "name": "PRESS",
+              "warmupSets": 3,
+              "workingSets": 3,
+              "reps": "10",
+              "percentRM": "N/A",
+              "rpe": "7",
+              "rest": "2-3 MIN",
+              "notes": "SHOULDER BLADES STILL RETRACTED AND DEPRESSED. SLIGHT ARCH IN UPPER BACK.",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "PULL-UP",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "AMRAP",
+              "percentRM": "N/A",
+              "rpe": "10",
+              "rest": "2-3 MIN",
+              "notes": "3 SECOND NEGATIVE ON EVERY REP , MAINTAIN CONTROLLED FORM FOR ALL REPS",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "DIP",
+              "warmupSets": 2,
+              "workingSets": 2,
+              "reps": "10",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "2-3 MIN",
+              "notes": "DO DUMBBELL FLOOR PRESS IF NO ACCESS TO DIP HANDLES",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "SINGLE-ARM ROW",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "10-12",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "CAN USE CABLES, BANDS OR DUMBBELLS - FEEL YOUR LATS WORKING!",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "OR EZ BAR CURL",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "12-15",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "FOCUS ON THE MIND-MUSCLE CONNECTION",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "barbell"
+            },
+            {
+              "name": "LEAN-AWAY LATERAL RAISE",
+              "warmupSets": 0,
+              "workingSets": 2,
+              "reps": "30",
+              "percentRM": "N/A",
+              "rpe": "10",
+              "rest": "1-2 MIN",
+              "notes": "USE A LIGHT DUMBBELL, CONSTANT-TENSION, NO PAUSE AT THE BOTTOM",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "CRUNCH",
+              "warmupSets": 0,
+              "workingSets": 2,
+              "reps": "10-12",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "KEEP YOUR HANDS BEHIND YOUR EARSWEEK 4 JEFF NIPPARD'S - POWERBUILDING SYSTEM",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 7,
+          "name": "Rest Day",
+          "type": "rest",
+          "targetMuscles": [],
+          "estimatedDuration": 0,
+          "exercises": []
+        }
+      ]
+    },
+    {
+      "weekNumber": 5,
+      "label": "Week 5",
+      "option": "",
+      "note": "",
+      "days": [
+        {
+          "dayNumber": 1,
+          "name": "Full Body 1: Squat, OHP",
+          "type": "full_body",
+          "targetMuscles": [
+            "legs",
+            "shoulders",
+            "back",
+            "arms",
+            "chest"
+          ],
+          "estimatedDuration": 75,
+          "exercises": [
+            {
+              "name": "SQUAT",
+              "warmupSets": 4,
+              "workingSets": 1,
+              "reps": "3",
+              "percentRM": "82.5-87.5%",
+              "rpe": "8.5",
+              "rest": "4-5 MIN",
+              "notes": "TOP SET. LEAVE 1 (MAYBE 2) REPS IN THE TANK. AIM FOR NEAR 3 REP PR.",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "SQUAT",
+              "warmupSets": 0,
+              "workingSets": 2,
+              "reps": "4",
+              "percentRM": "80%",
+              "rpe": "N/A",
+              "rest": "3-4 MIN",
+              "notes": "KEEP BACK ANGLE AND FORM CONSISTENT ACROSS ALL REPS",
+              "category": "isolation",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "PRESS",
+              "warmupSets": 2,
+              "workingSets": 3,
+              "reps": "8",
+              "percentRM": "75%",
+              "rpe": "N/A",
+              "rest": "2-3 MIN",
+              "notes": "RESET EACH REP (DON'T TOUCH-AND-PRESS)",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "HAM RAISE",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "8-10",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "1-2 MIN",
+              "notes": "KEEP YOUR HIPS STRAIGHT, DO NORDIC HAM CURLS IF NO GHR MACHINE",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "ROW",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "12-15",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "STRICT FORM. DRIVE ELBOWS OUT AND BACK AT 45 DEGREE ANGLE",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "CURL",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "20-25",
+              "percentRM": "N/A",
+              "rpe": "10",
+              "rest": "1-2 MIN",
+              "notes": "KEEP ELBOWS LOCKED IN PLACE, SQUEEZE THE DUMBBELL HANDLE HARD!",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 2,
+          "name": "Full Body 2: Deadlift, Bench Press",
+          "type": "full_body",
+          "targetMuscles": [
+            "legs",
+            "shoulders",
+            "back",
+            "arms",
+            "chest"
+          ],
+          "estimatedDuration": 75,
+          "exercises": [
+            {
+              "name": "DEADLIFT",
+              "warmupSets": 4,
+              "workingSets": 3,
+              "reps": "3",
+              "percentRM": "85%",
+              "rpe": "N/A",
+              "rest": "3-5 MIN",
+              "notes": "BRACE YOUR LATS, CHEST TALL, PULL THE SLACK OUT OF THE BAR BEFORE LIFTING",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "BENCH PRESS",
+              "warmupSets": 4,
+              "workingSets": 1,
+              "reps": "4",
+              "percentRM": "82.5-87.5%",
+              "rpe": "9",
+              "rest": "4-5 MIN",
+              "notes": "TOP SET. LEAVE 1 REP IN THE TANK. AIM FOR NEAR 4 REP PR.",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "barbell"
+            },
+            {
+              "name": "BENCH PRESS",
+              "warmupSets": 0,
+              "workingSets": 2,
+              "reps": "6",
+              "percentRM": "80%",
+              "rpe": "N/A",
+              "rest": "2-3 MIN",
+              "notes": "QUICK 1 SECOND PAUSE ON THE CHEST ON EACH REP",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "barbell"
+            },
+            {
+              "name": "ABDUCTION",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "15-20",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "MACHINE, BAND OR WEIGHTED, 1 SECOND ISOMETRIC HOLD AT THE TOP OF EACH REP",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "PULL-UP",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "5-8",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "3-4 MIN",
+              "notes": "1.5X SHOULDER WIDTH GRIP , PULL YOUR CHEST TO THE BAR",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "CALF RAISE",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "8",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "2-3 MIN",
+              "notes": "1-2 SECOND PAUSE AT THE BOTTOM OF EACH REP , FULL ROM",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 3,
+          "name": "Full Body 3: Squat, Dip",
+          "type": "full_body",
+          "targetMuscles": [
+            "legs",
+            "shoulders",
+            "back",
+            "arms",
+            "chest"
+          ],
+          "estimatedDuration": 75,
+          "exercises": [
+            {
+              "name": "SQUAT",
+              "warmupSets": 4,
+              "workingSets": 3,
+              "reps": "6",
+              "percentRM": "77.5%",
+              "rpe": "N/A",
+              "rest": "3-4 MIN",
+              "notes": "MAINTAIN TIGHT PRESSURE IN YOUR UPPER BACK AGAINST THE BAR",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "DIP",
+              "warmupSets": 2,
+              "workingSets": 3,
+              "reps": "8",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "2-3 MIN",
+              "notes": "DO DUMBBELL FLOOR PRESS IF NO ACCESS TO DIP HANDLES",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "LEG RAISE",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "10-12",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "KNEES TO CHEST, CONTROLLED REPS, STRAIGHTEN LEGS MORE TO INCREASE DIFFICULTY",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "PULL-OVER",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "12-15",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "CAN USE A DB, CABLE/ROPE OR BAND, STRETCH AND SQUEEZE LATS!",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "DUMBBELL CURL",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "12-15",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "DO EACH ARM ONE AT A TIME RATHER THAN ALTERNATING, START WITH YOUR WEAK ARM",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 4,
+          "name": "Rest Day",
+          "type": "rest",
+          "targetMuscles": [],
+          "estimatedDuration": 0,
+          "exercises": []
+        },
+        {
+          "dayNumber": 5,
+          "name": "Full Body 4: Deadlift, Bench Press",
+          "type": "full_body",
+          "targetMuscles": [
+            "legs",
+            "shoulders",
+            "back",
+            "arms",
+            "chest"
+          ],
+          "estimatedDuration": 75,
+          "exercises": [
+            {
+              "name": "DEADLIFT",
+              "warmupSets": 4,
+              "workingSets": 4,
+              "reps": "2",
+              "percentRM": "82.5%",
+              "rpe": "N/A",
+              "rest": "3-4 MIN",
+              "notes": "3 SECOND PAUSE RIGHT AFTER THE PLATES COME OFF THE GROUND",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "BARBELL BENCH PRESS",
+              "warmupSets": 3,
+              "workingSets": 3,
+              "reps": "6",
+              "percentRM": "75%",
+              "rpe": "N/A",
+              "rest": "2-3 MIN",
+              "notes": "2-3 SECOND PAUSE ON THE CHEST",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "barbell"
+            },
+            {
+              "name": "PENDLAY ROW",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "10",
+              "percentRM": "N/A",
+              "rpe": "7",
+              "rest": "2-3 MIN",
+              "notes": "BE MINDFUL OF LOWER BACK FATIGUE. STAY LIGHT, MINIMIZE CHEATING",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "HAM CURL",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "6-8",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "1-2 MIN",
+              "notes": "SEE VIDEO DEMOS PAGE, CAN SUB FOR LYING LEG CURL",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "SHRUG",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "20-25",
+              "percentRM": "N/A",
+              "rpe": "10",
+              "rest": "1-2 MIN",
+              "notes": "FEEL A STRETCH ON THE TRAPS AT THE BOTTOM, SQUEEZE HARD AT THE TOP",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 6,
+          "name": "Full Body 5: Arm & Pump Day",
+          "type": "full_body",
+          "targetMuscles": [
+            "legs",
+            "shoulders",
+            "back",
+            "arms",
+            "chest"
+          ],
+          "estimatedDuration": 75,
+          "exercises": [
+            {
+              "name": "BARBELL OR EZ BAR CURL",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "12",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "30SEC",
+              "notes": "CURL THE BAR OUT AND UP IN AN ARC. MINIMIZE MOMENTUM.",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "barbell"
+            },
+            {
+              "name": "FLOOR SKULL CRUSHER",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "12",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "30SEC",
+              "notes": "ARC THE BAR BACK BEHIND YOUR HEAD, SOFT TOUCH ON THE FLOOR BEHIND YOU",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "DUMBBELL LATERAL RAISE",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "20",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "30SEC",
+              "notes": "ARC THE DUMBBELL OUT, MIND-MUSCLE CONNECTION WITH MIDDLE FIBERS",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "BAND PULL-APART",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "20",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "30SEC",
+              "notes": "MIND-MUSCLE CONNECTION WITH REAR DELTS",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "STANDING CALF RAISE",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "12",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "30SEC",
+              "notes": "1-2 SECOND PAUSE AT THE BOTTOM OF EACH REP , FULL SQUEEZE AT THE TOP",
+              "category": "isolation",
+              "muscleGroup": "legs",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "BICYCLE CRUNCH",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "15",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "30SEC",
+              "notes": "FOCUS ON ROUNDING YOUR BACK AS YOU CRUNCH HARD!",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 7,
+          "name": "Rest Day",
+          "type": "rest",
+          "targetMuscles": [],
+          "estimatedDuration": 0,
+          "exercises": []
+        }
+      ]
+    },
+    {
+      "weekNumber": 6,
+      "label": "Week 6 (Semi-Deload)",
+      "option": "",
+      "note": "Semi-Deload Week",
+      "days": [
+        {
+          "dayNumber": 1,
+          "name": "Lower 1",
+          "type": "lower",
+          "targetMuscles": [
+            "legs",
+            "glutes",
+            "hamstrings",
+            "calves"
+          ],
+          "estimatedDuration": 60,
+          "exercises": [
+            {
+              "name": "DEADLIFT",
+              "warmupSets": 4,
+              "workingSets": 3,
+              "reps": "4",
+              "percentRM": "80%",
+              "rpe": "N/A",
+              "rest": "3-4 MIN",
+              "notes": "BRACE YOUR LATS, CHEST TALL, PULL THE SLACK OUT OF THE BAR BEFORE LIFTING",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "HIGH-BAR SQUAT",
+              "warmupSets": 2,
+              "workingSets": 2,
+              "reps": "8",
+              "percentRM": "N/A",
+              "rpe": "5",
+              "rest": "2-3 MIN",
+              "notes": "IF YOU SQUAT HIGH-BAR, DO SUMO BOX SQUAT. IF YOU SQUAT LOW-BAR, DO PAUSE HIGH-",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "PULL-THROUGH",
+              "warmupSets": 0,
+              "workingSets": 2,
+              "reps": "12-15",
+              "percentRM": "N/A",
+              "rpe": "7",
+              "rest": "1-2 MIN",
+              "notes": "CAN USE CABLE/ROPE OR BAND, USE YOUR GLUTES TO MOVE THE WEIGHT",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "CURL",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "6-8",
+              "percentRM": "N/A",
+              "rpe": "7",
+              "rest": "1-2 MIN",
+              "notes": "DO LYING LEG CURL MACHINE OR NORDIC HAM CURL IF NO MACHINE ACCESS",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "CALF RAISE",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "8-10",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "1-2 MIN",
+              "notes": "1-2 SECOND PAUSE AT THE BOTTOM OF EACH REP , FULL SQUEEZE AT THE TOP",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 2,
+          "name": "Upper 1",
+          "type": "upper",
+          "targetMuscles": [
+            "chest",
+            "back",
+            "shoulders",
+            "arms"
+          ],
+          "estimatedDuration": 60,
+          "exercises": [
+            {
+              "name": "BENCH PRESS",
+              "warmupSets": 3,
+              "workingSets": 2,
+              "reps": "7",
+              "percentRM": "77.5%",
+              "rpe": "N/A",
+              "rest": "3-4 MIN",
+              "notes": "SET UP A COMFORTABLE ARCH, SLIGHT PAUSE ON THE CHEST, EXPLODE UP",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "barbell"
+            },
+            {
+              "name": "CHIN-UP",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "8-10",
+              "percentRM": "N/A",
+              "rpe": "6",
+              "rest": "2-3 MIN",
+              "notes": "UNDERHAND GRIP , PULL YOUR CHEST TO THE BAR, ADD WEIGHT IF NEEDED TO HIT RPE",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "PRESS",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "10-12",
+              "percentRM": "N/A",
+              "rpe": "6",
+              "rest": "2-3 MIN",
+              "notes": "ROTATE THE DBS IN AT THE BOTTOM AND OUT AT THE TOP",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "ROW",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "12-15",
+              "percentRM": "N/A",
+              "rpe": "6",
+              "rest": "1-2 MIN",
+              "notes": "LIE ON AN INCLINE BENCH AND DO ROWS - PULL WITH LATS!",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "PULL",
+              "warmupSets": 0,
+              "workingSets": 2,
+              "reps": "15-20",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "1-2 MIN",
+              "notes": "CAN USE CABLE/ROPE OR BAND, RETRACT YOUR SHOULDER BLADES AS YOU PULL",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "LATERAL RAISE",
+              "warmupSets": 0,
+              "workingSets": 2,
+              "reps": "15-20",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "1-2 MIN",
+              "notes": "ARC THE DUMBBELL OUT, MIND-MUSCLE CONNECTION WITH MIDDLE FIBERS",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "BICEP CURL",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "12-15",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "1-2 MIN",
+              "notes": "PIN YOUR ELBOW AGAINST YOUR UPPER LEG OR THE BACK OF A BENCH",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 3,
+          "name": "Lower 2",
+          "type": "lower",
+          "targetMuscles": [
+            "legs",
+            "glutes",
+            "hamstrings",
+            "calves"
+          ],
+          "estimatedDuration": 60,
+          "exercises": [
+            {
+              "name": "SQUAT",
+              "warmupSets": 4,
+              "workingSets": 1,
+              "reps": "1",
+              "percentRM": "90-95%",
+              "rpe": "9",
+              "rest": "4-5 MIN",
+              "notes": "ONLY HEAVY SET THIS WEEK! PERFECT TECHNIQUE!",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "LOW-BAR BACK SQUAT",
+              "warmupSets": 0,
+              "workingSets": 2,
+              "reps": "7",
+              "percentRM": "75%",
+              "rpe": "N/A",
+              "rest": "3-4 MIN",
+              "notes": "SIT BACK AND DOWN, KEEP YOUR UPPER BACK TIGHT TO THE BAR",
+              "category": "isolation",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "EXTENSION",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "12-15",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "1-2 MIN",
+              "notes": "USE BANDS IF NO MACHINE ACCESS, MIND-MUSCLE CONNECTION WITH QUADS",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "CALF RAISE",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "15-20",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "1-2 MIN",
+              "notes": "EMPHASIZE THE MIND-MUSCLE CONNECTION",
+              "category": "isolation",
+              "muscleGroup": "legs",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "ABDUCTION",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "15-20",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "1-2 MIN",
+              "notes": "POINT TOES SLIGHTLY OUTWARD, MIND-MUSCLE CONNECTION WITH GLUTES",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "SIT-UP",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "12-15",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "1-2 MIN",
+              "notes": "THINK ABOUT SQUEEZING YOUR UPPER AND LOWER ABS TOGETHERWEEK 6 JEFF NIPPARD'S - POWERBUILDING SYSTEM",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 4,
+          "name": "Upper 2",
+          "type": "upper",
+          "targetMuscles": [
+            "chest",
+            "back",
+            "shoulders",
+            "arms"
+          ],
+          "estimatedDuration": 60,
+          "exercises": [
+            {
+              "name": "PRESS",
+              "warmupSets": 3,
+              "workingSets": 3,
+              "reps": "4",
+              "percentRM": "82.5%",
+              "rpe": "N/A",
+              "rest": "3-4 MIN",
+              "notes": "SQUEEZE YOUR GLUTES TO KEEP YOUR TORSO UPRIGHT, PRESS UP AND SLIGHTLY BACK",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "SINGLE-ARM LAT PULLDOWN",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "10-12",
+              "percentRM": "N/A",
+              "rpe": "7",
+              "rest": "2-3 MIN",
+              "notes": "PERFORM WITH BANDS IF NO LAT PULLDOWN, DRIVE ELBOWS DOWN AND IN",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "PUSH-UP",
+              "warmupSets": 2,
+              "workingSets": 2,
+              "reps": "AMRAP",
+              "percentRM": "N/A",
+              "rpe": "10",
+              "rest": "2-3 MIN",
+              "notes": "AS MANY REPS AS POSSIBLE. USE PERFECT PUSH-UP HANDLES OR DUMBBELLS TO CREATE A",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "ROW",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "10",
+              "percentRM": "N/A",
+              "rpe": "7",
+              "rest": "1-2 MIN",
+              "notes": "BE MINDFUL OF LOWER BACK FATIGUE. STAY LIGHT, MINIMIZE CHEATING",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "FLYE",
+              "warmupSets": 0,
+              "workingSets": 2,
+              "reps": "15-20",
+              "percentRM": "N/A",
+              "rpe": "7",
+              "rest": "1-2 MIN",
+              "notes": "PERFORM WITH CABLE, BANDS OR DUMBBELLS, USE A FULL ROM",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "INCLINE SHRUG",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "15-20",
+              "percentRM": "N/A",
+              "rpe": "7",
+              "rest": "30SEC",
+              "notes": "LIE FACE DOWN AGAINST AN INCLINE BENCH AND DO SHRUGS - FULL ROM AND SQUEEZE!",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "UPRIGHT ROW",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "15-20",
+              "percentRM": "N/A",
+              "rpe": "7",
+              "rest": "30SEC",
+              "notes": "CAN USE CABLES/ROPE, BANDS OR DUMBBELLS. STOP ROM ONCE ELBOWS REACH SHOULDER",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "SKULL CRUSHER",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "8-10",
+              "percentRM": "N/A",
+              "rpe": "7",
+              "rest": "1-2 MIN",
+              "notes": "DO THESE ON A BENCH, CONSTANT TENSION ON TRICEPS",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "barbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 5,
+          "name": "Lower 3",
+          "type": "lower",
+          "targetMuscles": [
+            "legs",
+            "glutes",
+            "hamstrings",
+            "calves"
+          ],
+          "estimatedDuration": 60,
+          "exercises": [
+            {
+              "name": "3\" BLOCK PULL",
+              "warmupSets": 4,
+              "workingSets": 2,
+              "reps": "4",
+              "percentRM": "N/A",
+              "rpe": "6",
+              "rest": "4-5 MIN",
+              "notes": "DO BLOCK PULLS FROM A 3\" BLOCK (CAN USE 25LB + 10LB BUMPER AS A BLOCKS)",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "SPLIT SQUAT",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "12",
+              "percentRM": "N/A",
+              "rpe": "6",
+              "rest": "2-3 MIN",
+              "notes": "12 REPS EACH LEG, KEEP YOUR TORSO UPRIGHT, CONSTANT-TENSION ON QUADS",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "HIP THRUST",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "8-10",
+              "percentRM": "N/A",
+              "rpe": "6",
+              "rest": "1-2 MIN",
+              "notes": "DO BARBELL HIP THRUSTS IF NO MACHINE, USE GLUTES TO MOVE THE WEIGHT",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "CALF RAISE",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "15-20",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "1-2 MIN",
+              "notes": "DO STANDING IF NO MACHINE, EMPHASIZE THE MIND-MUSCLE CONNECTION",
+              "category": "isolation",
+              "muscleGroup": "legs",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "LEG RAISE",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "10-12",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "1-2 MIN",
+              "notes": "KNEES TO CHEST, CONTROLLED REPS, STRAIGHTEN LEGS MORE TO INCREASE DIFFICULTY",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 6,
+          "name": "Upper 3",
+          "type": "upper",
+          "targetMuscles": [
+            "chest",
+            "back",
+            "shoulders",
+            "arms"
+          ],
+          "estimatedDuration": 60,
+          "exercises": [
+            {
+              "name": "PRESS",
+              "warmupSets": 3,
+              "workingSets": 3,
+              "reps": "10",
+              "percentRM": "N/A",
+              "rpe": "7",
+              "rest": "2-3 MIN",
+              "notes": "SHOULDER BLADES STILL RETRACTED AND DEPRESSED. SLIGHT ARCH IN UPPER BACK.",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "GRIP PULL-UP",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "10",
+              "percentRM": "N/A",
+              "rpe": "7",
+              "rest": "2-3 MIN",
+              "notes": "AVOID FAILURE, FOCUS ON GOOD TECHNIQUE AND MAINTAINING CONSISTENT TEMPO",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "DIP",
+              "warmupSets": 2,
+              "workingSets": 2,
+              "reps": "10",
+              "percentRM": "N/A",
+              "rpe": "7",
+              "rest": "2-3 MIN",
+              "notes": "DO DUMBBELL FLOOR PRESS IF NO ACCESS TO DIP HANDLES",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "SINGLE-ARM ROW",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "10-12",
+              "percentRM": "N/A",
+              "rpe": "7",
+              "rest": "1-2 MIN",
+              "notes": "CAN USE CABLES, BANDS OR DUMBBELLS - FEEL YOUR LATS WORKING!",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "OR EZ BAR CURL",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "12-15",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "FOCUS ON THE MIND-MUSCLE CONNECTION",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "barbell"
+            },
+            {
+              "name": "LEAN-AWAY LATERAL RAISE",
+              "warmupSets": 0,
+              "workingSets": 2,
+              "reps": "30",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "USE A LIGHT DUMBBELL, CONSTANT-TENSION, NO PAUSE AT THE BOTTOM",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "CRUNCH",
+              "warmupSets": 0,
+              "workingSets": 2,
+              "reps": "10-12",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "1-2 MIN",
+              "notes": "KEEP YOUR HANDS BEHIND YOUR EARSWEEK 6 JEFF NIPPARD'S - POWERBUILDING SYSTEM",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 7,
+          "name": "Rest Day",
+          "type": "rest",
+          "targetMuscles": [],
+          "estimatedDuration": 0,
+          "exercises": []
+        }
+      ]
+    },
+    {
+      "weekNumber": 7,
+      "label": "Week 7",
+      "option": "",
+      "note": "",
+      "days": [
+        {
+          "dayNumber": 1,
+          "name": "Full Body 1: Squat, OHP",
+          "type": "full_body",
+          "targetMuscles": [
+            "legs",
+            "shoulders",
+            "back",
+            "arms",
+            "chest"
+          ],
+          "estimatedDuration": 75,
+          "exercises": [
+            {
+              "name": "SQUAT*",
+              "warmupSets": 4,
+              "workingSets": 1,
+              "reps": "3",
+              "percentRM": "85-90%",
+              "rpe": "8.5",
+              "rest": "4-5 MIN",
+              "notes": "TRY TO ADD SOME WEIGHT FROM WEEK 5 OR IMPROVE BAR SPEED AT SAME WEIGHT",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "SQUAT",
+              "warmupSets": 0,
+              "workingSets": 2,
+              "reps": "2",
+              "percentRM": "85%",
+              "rpe": "N/A",
+              "rest": "3-4 MIN",
+              "notes": "BE MINDFUL OF TECHNIQUE. FOCUS ON DRIVING YOUR BACK INTO THE BAR.",
+              "category": "isolation",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "PRESS",
+              "warmupSets": 2,
+              "workingSets": 4,
+              "reps": "8",
+              "percentRM": "70%",
+              "rpe": "N/A",
+              "rest": "2-3 MIN",
+              "notes": "RESET EACH REP (DON'T TOUCH-AND-PRESS)",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "HAM RAISE",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "8-10",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "1-2 MIN",
+              "notes": "KEEP YOUR HIPS STRAIGHT, DO NORDIC HAM CURLS IF NO GHR MACHINE",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "ROW",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "12-15",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "STRICT FORM. DRIVE ELBOWS OUT AND BACK AT 45 DEGREE ANGLE",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "CURL",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "20-25",
+              "percentRM": "N/A",
+              "rpe": "10",
+              "rest": "1-2 MIN",
+              "notes": "KEEP ELBOWS LOCKED IN PLACE, SQUEEZE THE DUMBBELL HANDLE HARD!",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 2,
+          "name": "Full Body 4: Deadlift, Bench Press",
+          "type": "full_body",
+          "targetMuscles": [
+            "legs",
+            "shoulders",
+            "back",
+            "arms",
+            "chest"
+          ],
+          "estimatedDuration": 75,
+          "exercises": [
+            {
+              "name": "DEADLIFT",
+              "warmupSets": 4,
+              "workingSets": 4,
+              "reps": "2",
+              "percentRM": "75%",
+              "rpe": "N/A",
+              "rest": "3-5 MIN",
+              "notes": "3 SECOND PAUSE RIGHT AFTER THE PLATES COME OFF THE GROUND",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "BENCH PRESS*",
+              "warmupSets": 4,
+              "workingSets": 1,
+              "reps": "3",
+              "percentRM": "85-90%",
+              "rpe": "9",
+              "rest": "4-5 MIN",
+              "notes": "TOP SET. LEAVE 1 REP IN THE TANK. AIM FOR NEAR 3 REP PR.",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "barbell"
+            },
+            {
+              "name": "BENCH PRESS",
+              "warmupSets": 0,
+              "workingSets": 2,
+              "reps": "4",
+              "percentRM": "80%",
+              "rpe": "N/A",
+              "rest": "2-3 MIN",
+              "notes": "FOCUS ON TECHNIQUE. PRESS THE BAR BACK AND UP WITH EXPLOSIVE FORCE",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "barbell"
+            },
+            {
+              "name": "ABDUCTION",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "15-20",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "MACHINE, BAND OR WEIGHTED, 1 SECOND ISOMETRIC HOLD AT THE TOP OF EACH REP",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "PULL-UP",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "3-5",
+              "percentRM": "N/A",
+              "rpe": "7",
+              "rest": "3-4 MIN",
+              "notes": "1.5X SHOULDER WIDTH GRIP , PULL YOUR CHEST TO THE BAR",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "CALF RAISE",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "8",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "2-3 MIN",
+              "notes": "1-2 SECOND PAUSE AT THE BOTTOM OF EACH REP , FULL ROM",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 3,
+          "name": "Full Body 3: Squat, Dip",
+          "type": "full_body",
+          "targetMuscles": [
+            "legs",
+            "shoulders",
+            "back",
+            "arms",
+            "chest"
+          ],
+          "estimatedDuration": 75,
+          "exercises": [
+            {
+              "name": "SQUAT",
+              "warmupSets": 4,
+              "workingSets": 4,
+              "reps": "6",
+              "percentRM": "77.5%",
+              "rpe": "N/A",
+              "rest": "3-4 MIN",
+              "notes": "MAINTAIN TIGHT PRESSURE IN YOUR UPPER BACK AGAINST THE BAR",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "DIP",
+              "warmupSets": 2,
+              "workingSets": 3,
+              "reps": "8",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "2-3 MIN",
+              "notes": "DO DUMBBELL FLOOR PRESS IF NO ACCESS TO DIP HANDLES",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "LEG RAISE",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "10-12",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "KNEES TO CHEST, CONTROLLED REPS, STRAIGHTEN LEGS MORE TO INCREASE DIFFICULTY",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "PULL-OVER",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "12-15",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "CAN USE A DB, CABLE/ROPE OR BAND, STRETCH AND SQUEEZE LATS!",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "DUMBBELL CURL",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "12-15",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "DO EACH ARM ONE AT A TIME RATHER THAN ALTERNATING, START WITH YOUR WEAK ARM",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 4,
+          "name": "Rest Day",
+          "type": "rest",
+          "targetMuscles": [],
+          "estimatedDuration": 0,
+          "exercises": []
+        },
+        {
+          "dayNumber": 5,
+          "name": "Full Body 2: Deadlift, Bench Press",
+          "type": "full_body",
+          "targetMuscles": [
+            "legs",
+            "shoulders",
+            "back",
+            "arms",
+            "chest"
+          ],
+          "estimatedDuration": 75,
+          "exercises": [
+            {
+              "name": "DEADLIFT",
+              "warmupSets": 4,
+              "workingSets": 1,
+              "reps": "3",
+              "percentRM": "85-90%",
+              "rpe": "8.5",
+              "rest": "4-5 MIN",
+              "notes": "WORK UP TO A HEAVY TRIPLE WITH A LOAD THAT HITS RPE 8-9",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "BARBELL BENCH PRESS",
+              "warmupSets": 3,
+              "workingSets": 4,
+              "reps": "6",
+              "percentRM": "75%",
+              "rpe": "N/A",
+              "rest": "2-3 MIN",
+              "notes": "2-3 SECOND PAUSE ON THE CHEST",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "barbell"
+            },
+            {
+              "name": "PENDLAY ROW",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "10",
+              "percentRM": "N/A",
+              "rpe": "7",
+              "rest": "2-3 MIN",
+              "notes": "BE MINDFUL OF LOWER BACK FATIGUE. STAY LIGHT, MINIMIZE CHEATING",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "HAM CURL",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "6-8",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "1-2 MIN",
+              "notes": "SEE VIDEO DEMOS PAGE, CAN SUB FOR LYING LEG CURL",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "SHRUG",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "20-25",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "FEEL A STRETCH ON THE TRAPS AT THE BOTTOM, SQUEEZE HARD AT THE TOP",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 6,
+          "name": "Full Body 5: Arm & Pump Day",
+          "type": "full_body",
+          "targetMuscles": [
+            "legs",
+            "shoulders",
+            "back",
+            "arms",
+            "chest"
+          ],
+          "estimatedDuration": 75,
+          "exercises": [
+            {
+              "name": "BARBELL OR EZ BAR CURL",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "12",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "30SEC",
+              "notes": "CURL THE BAR OUT AND UP IN AN ARC. MINIMIZE MOMENTUM.",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "barbell"
+            },
+            {
+              "name": "FLOOR SKULL CRUSHER",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "12",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "30SEC",
+              "notes": "ARC THE BAR BACK BEHIND YOUR HEAD, SOFT TOUCH ON THE FLOOR BEHIND YOU",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "DUMBBELL LATERAL RAISE",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "20",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "30SEC",
+              "notes": "ARC THE DUMBBELL OUT, MIND-MUSCLE CONNECTION WITH MIDDLE FIBERS",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "BAND PULL-APART",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "20",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "30SEC",
+              "notes": "MIND-MUSCLE CONNECTION WITH REAR DELTS",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "STANDING CALF RAISE",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "12",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "30SEC",
+              "notes": "1-2 SECOND PAUSE AT THE BOTTOM OF EACH REP , FULL SQUEEZE AT THE TOP",
+              "category": "isolation",
+              "muscleGroup": "legs",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "BICYCLE CRUNCH",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "15",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "30SEC",
+              "notes": "FOCUS ON ROUNDING YOUR BACK AS YOU CRUNCH HARD!",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 7,
+          "name": "Rest Day",
+          "type": "rest",
+          "targetMuscles": [],
+          "estimatedDuration": 0,
+          "exercises": []
+        }
+      ]
+    },
+    {
+      "weekNumber": 8,
+      "label": "Week 8",
+      "option": "",
+      "note": "",
+      "days": [
+        {
+          "dayNumber": 1,
+          "name": "Lower 1",
+          "type": "lower",
+          "targetMuscles": [
+            "legs",
+            "glutes",
+            "hamstrings",
+            "calves"
+          ],
+          "estimatedDuration": 60,
+          "exercises": [
+            {
+              "name": "DEADLIFT",
+              "warmupSets": 4,
+              "workingSets": 3,
+              "reps": "5",
+              "percentRM": "80%",
+              "rpe": "N/A",
+              "rest": "3-4 MIN",
+              "notes": "BRACE YOUR LATS, CHEST TALL, PULL THE SLACK OUT OF THE BAR BEFORE LIFTING",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "HIGH-BAR SQUAT",
+              "warmupSets": 2,
+              "workingSets": 2,
+              "reps": "8",
+              "percentRM": "N/A",
+              "rpe": "7",
+              "rest": "2-3 MIN",
+              "notes": "IF YOU SQUAT HIGH-BAR, DO SUMO BOX SQUAT. IF YOU SQUAT LOW-BAR, DO PAUSE HIGH-",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "PULL-THROUGH",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "12-15",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "CAN USE CABLE/ROPE OR BAND, USE YOUR GLUTES TO MOVE THE WEIGHT",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "CURL",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "6-8",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "DO LYING LEG CURL MACHINE OR NORDIC HAM CURL IF NO MACHINE ACCESS",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "CALF RAISE",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "8-10",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "1-2 SECOND PAUSE AT THE BOTTOM OF EACH REP , FULL SQUEEZE AT THE TOP",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 2,
+          "name": "Upper 1",
+          "type": "upper",
+          "targetMuscles": [
+            "chest",
+            "back",
+            "shoulders",
+            "arms"
+          ],
+          "estimatedDuration": 60,
+          "exercises": [
+            {
+              "name": "BENCH PRESS",
+              "warmupSets": 3,
+              "workingSets": 2,
+              "reps": "7",
+              "percentRM": "77.5%",
+              "rpe": "N/A",
+              "rest": "3-4 MIN",
+              "notes": "SET UP A COMFORTABLE ARCH, SLIGHT PAUSE ON THE CHEST, EXPLODE UP",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "barbell"
+            },
+            {
+              "name": "CHIN-UP",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "8-10",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "2-3 MIN",
+              "notes": "UNDERHAND GRIP , PULL YOUR CHEST TO THE BAR, ADD WEIGHT IF NEEDED TO HIT RPE",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "PRESS",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "10-12",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "2-3 MIN",
+              "notes": "ROTATE THE DBS IN AT THE BOTTOM AND OUT AT THE TOP",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "ROW",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "12-15",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "LIE ON AN INCLINE BENCH AND DO ROWS - PULL WITH LATS!",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "PULL",
+              "warmupSets": 0,
+              "workingSets": 2,
+              "reps": "15-20",
+              "percentRM": "N/A",
+              "rpe": "10",
+              "rest": "1-2 MIN",
+              "notes": "CAN USE CABLE/ROPE OR BAND, RETRACT YOUR SHOULDER BLADES AS YOU PULL",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "LATERAL RAISE",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "15-20",
+              "percentRM": "N/A",
+              "rpe": "10",
+              "rest": "1-2 MIN",
+              "notes": "ARC THE DUMBBELL OUT, MIND-MUSCLE CONNECTION WITH MIDDLE FIBERS",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "BICEP CURL",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "12-15",
+              "percentRM": "N/A",
+              "rpe": "10",
+              "rest": "1-2 MIN",
+              "notes": "PIN YOUR ELBOW AGAINST YOUR UPPER LEG OR THE BACK OF A BENCH",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 3,
+          "name": "Lower 2",
+          "type": "lower",
+          "targetMuscles": [
+            "legs",
+            "glutes",
+            "hamstrings",
+            "calves"
+          ],
+          "estimatedDuration": 60,
+          "exercises": [
+            {
+              "name": "LOW-BAR BACK SQUAT",
+              "warmupSets": 4,
+              "workingSets": 3,
+              "reps": "7",
+              "percentRM": "75%",
+              "rpe": "N/A",
+              "rest": "3-4 MIN",
+              "notes": "SIT BACK AND DOWN, KEEP YOUR UPPER BACK TIGHT TO THE BAR",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "MORNING",
+              "warmupSets": 2,
+              "workingSets": 2,
+              "reps": "10-12",
+              "percentRM": "N/A",
+              "rpe": "7",
+              "rest": "2-3 MIN",
+              "notes": "SAME AS SQUAT STANCE, KEEP SHINS STRAIGHT, GO LIGHTER AND \"FEEL\" HAMSTRINGS",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "EXTENSION",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "12-15",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "USE BANDS IF NO MACHINE ACCESS, MIND-MUSCLE CONNECTION WITH QUADS",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "CALF RAISE",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "15-20",
+              "percentRM": "N/A",
+              "rpe": "10",
+              "rest": "1-2 MIN",
+              "notes": "EMPHASIZE THE MIND-MUSCLE CONNECTION",
+              "category": "isolation",
+              "muscleGroup": "legs",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "ABDUCTION",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "15-20",
+              "percentRM": "N/A",
+              "rpe": "10",
+              "rest": "1-2 MIN",
+              "notes": "POINT TOES SLIGHTLY OUTWARD, MIND-MUSCLE CONNECTION WITH GLUTES",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "SIT-UP",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "12-15",
+              "percentRM": "N/A",
+              "rpe": "10",
+              "rest": "1-2 MIN",
+              "notes": "THINK ABOUT SQUEEZING YOUR UPPER AND LOWER ABS TOGETHERWEEK 8 JEFF NIPPARD'S - POWERBUILDING SYSTEM",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 4,
+          "name": "Upper 2",
+          "type": "upper",
+          "targetMuscles": [
+            "chest",
+            "back",
+            "shoulders",
+            "arms"
+          ],
+          "estimatedDuration": 60,
+          "exercises": [
+            {
+              "name": "PRESS / PUSH PRESS",
+              "warmupSets": 3,
+              "workingSets": 3,
+              "reps": "3/3",
+              "percentRM": "82.5%",
+              "rpe": "N/A",
+              "rest": "3-4 MIN",
+              "notes": "FIRST 3 REPS STRICT MILITARY PRESS (NO LEG DRIVE), LAST 3 REPS PUSH PRESS (USE LEG",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "SINGLE-ARM LAT PULLDOWN",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "10-12",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "2-3 MIN",
+              "notes": "PERFORM WITH BANDS IF NO LAT PULLDOWN, DRIVE ELBOWS DOWN AND IN",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "INCLINE PRESS",
+              "warmupSets": 2,
+              "workingSets": 2,
+              "reps": "12",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "2-3 MIN",
+              "notes": "45\u00b0 INCLINE, KEEP SHOULDER BLADES RETRACTED AND DEPRESSED",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "ROW",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "10",
+              "percentRM": "N/A",
+              "rpe": "7",
+              "rest": "1-2 MIN",
+              "notes": "BE MINDFUL OF LOWER BACK FATIGUE. STAY LIGHT, MINIMIZE CHEATING",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "FLYE",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "15-20",
+              "percentRM": "N/A",
+              "rpe": "10",
+              "rest": "1-2 MIN",
+              "notes": "PERFORM WITH CABLE, BANDS OR DUMBBELLS, USE A FULL ROM",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "INCLINE SHRUG",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "15-20",
+              "percentRM": "N/A",
+              "rpe": "10",
+              "rest": "30SEC",
+              "notes": "LIE FACE DOWN AGAINST AN INCLINE BENCH AND DO SHRUGS - FULL ROM AND SQUEEZE!",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "FLYE",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "15-20",
+              "percentRM": "N/A",
+              "rpe": "10",
+              "rest": "30SEC",
+              "notes": "MIND-MUSCLE CONNECTION WITH REAR DELTS, SWEEP THE WEIGHT OUT",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "SKULL CRUSHER",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "8-10",
+              "percentRM": "N/A",
+              "rpe": "10",
+              "rest": "1-2 MIN",
+              "notes": "DO THESE ON A BENCH, CONSTANT TENSION ON TRICEPS",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "barbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 5,
+          "name": "Lower 3",
+          "type": "lower",
+          "targetMuscles": [
+            "legs",
+            "glutes",
+            "hamstrings",
+            "calves"
+          ],
+          "estimatedDuration": 60,
+          "exercises": [
+            {
+              "name": "2\" BLOCK PULL",
+              "warmupSets": 4,
+              "workingSets": 2,
+              "reps": "4",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "4-5 MIN",
+              "notes": "DO BLOCK PULLS FROM A 2\" BLOCK (CAN USE 25LB BUMPER PLATE AS BLOCKS)",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "SPLIT SQUAT",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "12",
+              "percentRM": "N/A",
+              "rpe": "7",
+              "rest": "2-3 MIN",
+              "notes": "12 REPS EACH LEG, KEEP YOUR TORSO UPRIGHT, CONSTANT-TENSION ON QUADS",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "HIP THRUST",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "8-10",
+              "percentRM": "N/A",
+              "rpe": "7",
+              "rest": "1-2 MIN",
+              "notes": "DO BARBELL HIP THRUSTS IF NO MACHINE, USE GLUTES TO MOVE THE WEIGHT",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "CALF RAISE",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "15-20",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "DO STANDING IF NO MACHINE, EMPHASIZE THE MIND-MUSCLE CONNECTION",
+              "category": "isolation",
+              "muscleGroup": "legs",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "LEG RAISE",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "10-12",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "1-2 MIN",
+              "notes": "KNEES TO CHEST, CONTROLLED REPS, STRAIGHTEN LEGS MORE TO INCREASE DIFFICULTY",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 6,
+          "name": "Upper 3",
+          "type": "upper",
+          "targetMuscles": [
+            "chest",
+            "back",
+            "shoulders",
+            "arms"
+          ],
+          "estimatedDuration": 60,
+          "exercises": [
+            {
+              "name": "PRESS",
+              "warmupSets": 3,
+              "workingSets": 3,
+              "reps": "10",
+              "percentRM": "N/A",
+              "rpe": "7",
+              "rest": "2-3 MIN",
+              "notes": "SHOULDER BLADES STILL RETRACTED AND DEPRESSED. SLIGHT ARCH IN UPPER BACK.",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "PULL-UP",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "AMRAP",
+              "percentRM": "N/A",
+              "rpe": "10",
+              "rest": "2-3 MIN",
+              "notes": "3 SECOND NEGATIVE ON EVERY REP , MAINTAIN CONTROLLED FORM FOR ALL REPS",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "DIP",
+              "warmupSets": 2,
+              "workingSets": 2,
+              "reps": "10",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "2-3 MIN",
+              "notes": "DO DUMBBELL FLOOR PRESS IF NO ACCESS TO DIP HANDLES",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "SINGLE-ARM ROW",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "10-12",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "CAN USE CABLES, BANDS OR DUMBBELLS - FEEL YOUR LATS WORKING!",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "OR EZ BAR CURL",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "12-15",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "FOCUS ON THE MIND-MUSCLE CONNECTION",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "barbell"
+            },
+            {
+              "name": "LEAN-AWAY LATERAL RAISE",
+              "warmupSets": 0,
+              "workingSets": 2,
+              "reps": "30",
+              "percentRM": "N/A",
+              "rpe": "10",
+              "rest": "1-2 MIN",
+              "notes": "USE A LIGHT DUMBBELL, CONSTANT-TENSION, NO PAUSE AT THE BOTTOM",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "CRUNCH",
+              "warmupSets": 0,
+              "workingSets": 2,
+              "reps": "10-12",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "KEEP YOUR HANDS BEHIND YOUR EARSWEEK 8 JEFF NIPPARD'S - POWERBUILDING SYSTEM",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 7,
+          "name": "Rest Day",
+          "type": "rest",
+          "targetMuscles": [],
+          "estimatedDuration": 0,
+          "exercises": []
+        }
+      ]
+    },
+    {
+      "weekNumber": 9,
+      "label": "Week 9",
+      "option": "",
+      "note": "",
+      "days": [
+        {
+          "dayNumber": 1,
+          "name": "Full Body 1: Squat, OHP",
+          "type": "full_body",
+          "targetMuscles": [
+            "legs",
+            "shoulders",
+            "back",
+            "arms",
+            "chest"
+          ],
+          "estimatedDuration": 75,
+          "exercises": [
+            {
+              "name": "SQUAT*",
+              "warmupSets": 4,
+              "workingSets": 1,
+              "reps": "2",
+              "percentRM": "87.5-92.5%",
+              "rpe": "8.5",
+              "rest": "4-5 MIN",
+              "notes": "TOP SET. LEAVE 1 (MAYBE 2) REPS IN THE TANK. AIM FOR NEAR 2 REP PR.",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "PRESS",
+              "warmupSets": 2,
+              "workingSets": 3,
+              "reps": "6",
+              "percentRM": "80%",
+              "rpe": "N/A",
+              "rest": "2-3 MIN",
+              "notes": "RESET EACH REP (DON'T TOUCH-AND-PRESS)",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "HAM RAISE",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "8-10",
+              "percentRM": "N/A",
+              "rpe": "7",
+              "rest": "1-2 MIN",
+              "notes": "KEEP YOUR HIPS STRAIGHT, DO NORDIC HAM CURLS IF NO GHR MACHINE",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "ROW",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "12-15",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MN",
+              "notes": "STRICT FORM. DRIVE ELBOWS OUT AND BACK AT 45 DEGREE ANGLE",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "CURL",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "20-25",
+              "percentRM": "N/A",
+              "rpe": "10",
+              "rest": "1-2 MIN",
+              "notes": "KEEP ELBOWS LOCKED IN PLACE, SQUEEZE THE DUMBBELL HANDLE HARD!",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 2,
+          "name": "Full Body 2: Deadlift, Bench Press",
+          "type": "full_body",
+          "targetMuscles": [
+            "legs",
+            "shoulders",
+            "back",
+            "arms",
+            "chest"
+          ],
+          "estimatedDuration": 75,
+          "exercises": [
+            {
+              "name": "DEADLIFT",
+              "warmupSets": 4,
+              "workingSets": 3,
+              "reps": "4",
+              "percentRM": "80%",
+              "rpe": "N/A",
+              "rest": "3-5 MIN",
+              "notes": "SEMI-DELOAD. FOCUS ON TECHNIQUE AND BAR SPEED LEADING INTO MAX WEEK.",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "BENCH PRESS*",
+              "warmupSets": 4,
+              "workingSets": 1,
+              "reps": "2",
+              "percentRM": "87.5-92.5%",
+              "rpe": "9",
+              "rest": "4-5 MIN",
+              "notes": "TOP SET. AIM FOR A NEAR 2 REP PR",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "barbell"
+            },
+            {
+              "name": "BENCH PRESS",
+              "warmupSets": 0,
+              "workingSets": 2,
+              "reps": "2",
+              "percentRM": "87.5%",
+              "rpe": "N/A",
+              "rest": "2-3 MIN",
+              "notes": "FOCUS ON TECHNIQUE. PRESS THE BAR BACK AND UP WITH EXPLOSIVE FORCE",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "barbell"
+            },
+            {
+              "name": "ABDUCTION",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "15-20",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "MACHINE, BAND OR WEIGHTED, 1 SECOND ISOMETRIC HOLD AT THE TOP OF EACH REP",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "PULL-UP",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "3-5",
+              "percentRM": "N/A",
+              "rpe": "7",
+              "rest": "3-4 MIN",
+              "notes": "1.5X SHOULDER WIDTH GRIP , PULL YOUR CHEST TO THE BAR",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "CALF RAISE",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "8",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "2-3 MIN",
+              "notes": "1-2 SECOND PAUSE AT THE BOTTOM OF EACH REP , FULL ROM",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 3,
+          "name": "Full Body 3: Squat, Dip",
+          "type": "full_body",
+          "targetMuscles": [
+            "legs",
+            "shoulders",
+            "back",
+            "arms",
+            "chest"
+          ],
+          "estimatedDuration": 75,
+          "exercises": [
+            {
+              "name": "SQUAT",
+              "warmupSets": 4,
+              "workingSets": 3,
+              "reps": "4",
+              "percentRM": "82.5%",
+              "rpe": "N/A",
+              "rest": "3-4 MIN",
+              "notes": "MAINTAIN TIGHT PRESSURE IN YOUR UPPER BACK AGAINST THE BAR",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "DIP",
+              "warmupSets": 2,
+              "workingSets": 3,
+              "reps": "8",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "2-3 MIN",
+              "notes": "DO DUMBBELL FLOOR PRESS IF NO ACCESS TO DIP HANDLES",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "LEG RAISE",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "10-12",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "KNEES TO CHEST, CONTROLLED REPS, STRAIGHTEN LEGS MORE TO INCREASE DIFFICULTY",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "PULL-OVER",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "12-15",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "CAN USE A DB, CABLE/ROPE OR BAND, STRETCH AND SQUEEZE LATS!",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "DUMBBELL CURL",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "12-15",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "DO EACH ARM ONE AT A TIME RATHER THAN ALTERNATING, START WITH YOUR WEAK ARM",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 4,
+          "name": "Rest Day",
+          "type": "rest",
+          "targetMuscles": [],
+          "estimatedDuration": 0,
+          "exercises": []
+        },
+        {
+          "dayNumber": 5,
+          "name": "Full Body 4: Deadlift, Bench Press",
+          "type": "full_body",
+          "targetMuscles": [
+            "legs",
+            "shoulders",
+            "back",
+            "arms",
+            "chest"
+          ],
+          "estimatedDuration": 75,
+          "exercises": [
+            {
+              "name": "DEADLIFT",
+              "warmupSets": 4,
+              "workingSets": 4,
+              "reps": "2",
+              "percentRM": "75%",
+              "rpe": "N/A",
+              "rest": "3-4 MIN",
+              "notes": "3 SECOND PAUSE RIGHT AFTER THE PLATES COME OFF THE GROUND",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "BARBELL BENCH PRESS",
+              "warmupSets": 3,
+              "workingSets": 3,
+              "reps": "5",
+              "percentRM": "77.5%",
+              "rpe": "N/A",
+              "rest": "2-3 MIN",
+              "notes": "2-3 SECOND PAUSE ON THE CHEST",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "barbell"
+            },
+            {
+              "name": "PENDLAY ROW",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "10",
+              "percentRM": "N/A",
+              "rpe": "7",
+              "rest": "2-3 MIN",
+              "notes": "BE MINDFUL OF LOWER BACK FATIGUE. STAY LIGHT, MINIMIZE CHEATING",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "HAM CURL",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "6-8",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "1-2 MIN",
+              "notes": "SEE VIDEO DEMOS PAGE, CAN SUB FOR LYING LEG CURL",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "SHRUG",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "20-25",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "1-2 MIN",
+              "notes": "FEEL A STRETCH ON THE TRAPS AT THE BOTTOM, SQUEEZE HARD AT THE TOP",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 6,
+          "name": "Full Body 5: Arm & Pump Day",
+          "type": "full_body",
+          "targetMuscles": [
+            "legs",
+            "shoulders",
+            "back",
+            "arms",
+            "chest"
+          ],
+          "estimatedDuration": 75,
+          "exercises": [
+            {
+              "name": "BARBELL OR EZ BAR CURL",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "12",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "30SEC",
+              "notes": "CURL THE BAR OUT AND UP IN AN ARC. MINIMIZE MOMENTUM.",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "barbell"
+            },
+            {
+              "name": "FLOOR SKULL CRUSHER",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "10",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "30SEC",
+              "notes": "ARC THE BAR BACK BEHIND YOUR HEAD, SOFT TOUCH ON THE FLOOR BEHIND YOU",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "DUMBBELL LATERAL RAISE",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "20",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "30SEC",
+              "notes": "ARC THE DUMBBELL OUT, MIND-MUSCLE CONNECTION WITH MIDDLE FIBERS",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "BAND PULL-APART",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "20",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "30SEC",
+              "notes": "MIND-MUSCLE CONNECTION WITH REAR DELTS",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "STANDING CALF RAISE",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "12",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "30SEC",
+              "notes": "1-2 SECOND PAUSE AT THE BOTTOM OF EACH REP , FULL SQUEEZE AT THE TOP",
+              "category": "isolation",
+              "muscleGroup": "legs",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "BICYCLE CRUNCH",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "15",
+              "percentRM": "N/A",
+              "rpe": "9",
+              "rest": "30SEC",
+              "notes": "FOCUS ON ROUNDING YOUR BACK AS YOU CRUNCH HARD!",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 7,
+          "name": "Rest Day",
+          "type": "rest",
+          "targetMuscles": [],
+          "estimatedDuration": 0,
+          "exercises": []
+        }
+      ]
+    },
+    {
+      "weekNumber": 10,
+      "label": "Week 10A (Max Testing - Bodybuilding)",
+      "option": "A",
+      "note": "Max Testing (Option A)",
+      "days": [
+        {
+          "dayNumber": 1,
+          "name": "Squat Test",
+          "type": "lower",
+          "targetMuscles": [
+            "legs",
+            "glutes",
+            "hamstrings",
+            "calves"
+          ],
+          "estimatedDuration": 60,
+          "exercises": [
+            {
+              "name": "SQUAT",
+              "warmupSets": 4,
+              "workingSets": 1,
+              "reps": "AMRAP",
+              "percentRM": "90%",
+              "rpe": "9.5",
+              "rest": "4-5 MIN",
+              "notes": "AS MANY REPS AS POSSIBLE. ALWAYS USE A SPOTTER AND GOOD FORM. AIM TO HIT 3+ REPS",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "SINGLE-ARM LAT PULLDOWN",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "12",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "2-3 MIN",
+              "notes": "PERFORM WITH BANDS IF NO LAT PULLDOWN, DRIVE ELBOWS DOWN AND IN",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "DUMBBELL CURL",
+              "warmupSets": 0,
+              "workingSets": 4,
+              "reps": "12",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "1-2 MIN",
+              "notes": "FOCUS ON THE MIND-MUSCLE CONNECTION",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "CALF RAISE",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "12",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "1-2 MIN",
+              "notes": "1-2 SECOND PAUSE AT THE BOTTOM OF EACH REP , FULL SQUEEZE AT THE TOP",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 2,
+          "name": "Bench Test",
+          "type": "upper",
+          "targetMuscles": [
+            "chest",
+            "back",
+            "shoulders",
+            "arms"
+          ],
+          "estimatedDuration": 60,
+          "exercises": [
+            {
+              "name": "BENCH PRESS",
+              "warmupSets": 4,
+              "workingSets": 1,
+              "reps": "AMRAP",
+              "percentRM": "90%",
+              "rpe": "9.5",
+              "rest": "4-5 MIN",
+              "notes": "AS MANY REPS AS POSSIBLE. ALWAYS USE A SPOTTER AND GOOD FORM. AIM TO HIT 3+ REPS",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "barbell"
+            },
+            {
+              "name": "CURL",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "8-10",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "2-3 MIN",
+              "notes": "DO LYING LEG CURL MACHINE OR NORDIC HAM CURL IF NO MACHINE ACCESS",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "LATERAL RAISE",
+              "warmupSets": 0,
+              "workingSets": 2,
+              "reps": "15-20",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "1-2 MIN",
+              "notes": "ARC THE DUMBBELL OUT, MIND-MUSCLE CONNECTION WITH MIDDLE FIBERS",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "PRESSDOWN",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "12",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "1-2 MIN",
+              "notes": "CAN DO WITH CABLES OR BANDS, SQUEEZE TRICEPS TO MOVE THE WEIGHT",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 3,
+          "name": "Deadlift Test",
+          "type": "lower",
+          "targetMuscles": [
+            "legs",
+            "glutes",
+            "hamstrings",
+            "calves"
+          ],
+          "estimatedDuration": 60,
+          "exercises": [
+            {
+              "name": "DEADLIFT",
+              "warmupSets": 4,
+              "workingSets": 1,
+              "reps": "AMRAP",
+              "percentRM": "90%",
+              "rpe": "9.5",
+              "rest": "4-5 MIN",
+              "notes": "AS MANY REPS AS POSSIBLE. ALWAYS USE A SPOTTER AND GOOD FORM. AIM TO HIT 3+ REPS",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "PRESS",
+              "warmupSets": 2,
+              "workingSets": 3,
+              "reps": "10",
+              "percentRM": "N/A",
+              "rpe": "6",
+              "rest": "2-3 MIN",
+              "notes": "RESET EACH REP (DON'T TOUCH-AND-PRESS)",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "EXTENSION",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "12",
+              "percentRM": "N/A",
+              "rpe": "7",
+              "rest": "1-2 MIN",
+              "notes": "USE BANDS IF NO MACHINE ACCESS, MIND-MUSCLE CONNECTION WITH QUADS",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "CRUNCH",
+              "warmupSets": 0,
+              "workingSets": 4,
+              "reps": "15",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "1-2 MIN",
+              "notes": "FOCUS ON ROUNDING YOUR BACK AS YOU CRUNCH HARD!WEEK 10A JEFF NIPPARD'S - POWERBUILDING SYSTEM",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 4,
+          "name": "Rest Day",
+          "type": "rest",
+          "targetMuscles": [],
+          "estimatedDuration": 0,
+          "exercises": []
+        },
+        {
+          "dayNumber": 5,
+          "name": "Rest Day",
+          "type": "rest",
+          "targetMuscles": [],
+          "estimatedDuration": 0,
+          "exercises": []
+        }
+      ]
+    },
+    {
+      "weekNumber": 10,
+      "label": "Week 10B (Max Testing - Powerlifting)",
+      "option": "B",
+      "note": "Max Testing (Option B)",
+      "days": [
+        {
+          "dayNumber": 1,
+          "name": "Squat Test",
+          "type": "lower",
+          "targetMuscles": [
+            "legs",
+            "glutes",
+            "hamstrings",
+            "calves"
+          ],
+          "estimatedDuration": 60,
+          "exercises": [
+            {
+              "name": "SQUAT",
+              "warmupSets": 5,
+              "workingSets": "1-3",
+              "reps": "1",
+              "percentRM": "100-105%",
+              "rpe": "9.5",
+              "rest": "4-5 MIN",
+              "notes": "AIM FOR A NEW PR. START WITH 100% AND INCREASE BY ~2.5% EVERY ATTEMPT UNTIL YOU",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "SINGLE-ARM LAT PULLDOWN",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "12",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "2-3 MIN",
+              "notes": "PERFORM WITH BANDS IF NO LAT PULLDOWN, DRIVE ELBOWS DOWN AND IN",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "DUMBBELL CURL",
+              "warmupSets": 0,
+              "workingSets": 4,
+              "reps": "12",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "1-2 MIN",
+              "notes": "FOCUS ON THE MIND-MUSCLE CONNECTION",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "CALF RAISE",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "12",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "1-2 MIN",
+              "notes": "1-2 SECOND PAUSE AT THE BOTTOM OF EACH REP , FULL SQUEEZE AT THE TOP",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 2,
+          "name": "Bench Test",
+          "type": "upper",
+          "targetMuscles": [
+            "chest",
+            "back",
+            "shoulders",
+            "arms"
+          ],
+          "estimatedDuration": 60,
+          "exercises": [
+            {
+              "name": "BENCH PRESS",
+              "warmupSets": 5,
+              "workingSets": "1-3",
+              "reps": "1",
+              "percentRM": "100-105%",
+              "rpe": "9.5",
+              "rest": "4-5 MIN",
+              "notes": "AIM FOR A NEW PR. START WITH 100% AND INCREASE BY ~2.5% EVERY ATTEMPT UNTIL YOU",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "barbell"
+            },
+            {
+              "name": "CURL",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "8-10",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "2-3 MIN",
+              "notes": "DO LYING LEG CURL MACHINE OR NORDIC HAM CURL IF NO MACHINE ACCESS",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "LATERAL RAISE",
+              "warmupSets": 0,
+              "workingSets": 2,
+              "reps": "15-20",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "1-2 MIN",
+              "notes": "ARC THE DUMBBELL OUT, MIND-MUSCLE CONNECTION WITH MIDDLE FIBERS",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "PRESSDOWN",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "12",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "1-2 MIN",
+              "notes": "CAN DO WITH CABLES OR BANDS, SQUEEZE TRICEPS TO MOVE THE WEIGHT",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 3,
+          "name": "Deadlift Test",
+          "type": "lower",
+          "targetMuscles": [
+            "legs",
+            "glutes",
+            "hamstrings",
+            "calves"
+          ],
+          "estimatedDuration": 60,
+          "exercises": [
+            {
+              "name": "DEADLIFT",
+              "warmupSets": 5,
+              "workingSets": "1-3",
+              "reps": "1",
+              "percentRM": "100-105%",
+              "rpe": "9.5",
+              "rest": "4-5 MIN",
+              "notes": "AIM FOR A NEW PR. START WITH 100% AND INCREASE BY ~2.5% EVERY ATTEMPT. 5-MIN REST",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "PRESS",
+              "warmupSets": 2,
+              "workingSets": 3,
+              "reps": "10",
+              "percentRM": "N/A",
+              "rpe": "6",
+              "rest": "2-3 MIN",
+              "notes": "RESET EACH REP (DON'T TOUCH-AND-PRESS)",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "EXTENSION",
+              "warmupSets": 1,
+              "workingSets": 3,
+              "reps": "12",
+              "percentRM": "N/A",
+              "rpe": "7",
+              "rest": "1-2 MIN",
+              "notes": "USE BANDS IF NO MACHINE ACCESS, MIND-MUSCLE CONNECTION WITH QUADS",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "CRUNCH",
+              "warmupSets": 0,
+              "workingSets": 4,
+              "reps": "15",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "1-2 MIN",
+              "notes": "FOCUS ON ROUNDING YOUR BACK AS YOU CRUNCH HARD!WEEK 10B JEFF NIPPARD'S - POWERBUILDING SYSTEM",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 4,
+          "name": "Rest Day",
+          "type": "rest",
+          "targetMuscles": [],
+          "estimatedDuration": 0,
+          "exercises": []
+        },
+        {
+          "dayNumber": 5,
+          "name": "Rest Day",
+          "type": "rest",
+          "targetMuscles": [],
+          "estimatedDuration": 0,
+          "exercises": []
+        }
+      ]
+    },
+    {
+      "weekNumber": 11,
+      "label": "Week 11 (Deload)",
+      "option": "",
+      "note": "Deload Week",
+      "days": [
+        {
+          "dayNumber": 1,
+          "name": "Lower 1",
+          "type": "lower",
+          "targetMuscles": [
+            "legs",
+            "glutes",
+            "hamstrings",
+            "calves"
+          ],
+          "estimatedDuration": 60,
+          "exercises": [
+            {
+              "name": "DEADLIFT",
+              "warmupSets": 4,
+              "workingSets": 2,
+              "reps": "3",
+              "percentRM": "75%",
+              "rpe": "N/A",
+              "rest": "3-5 MIN",
+              "notes": "BRACE YOUR LATS, CHEST TALL, PULL THE SLACK OUT OF THE BAR BEFORE LIFTING",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "HIGH-BAR SQUAT",
+              "warmupSets": 2,
+              "workingSets": 2,
+              "reps": "6",
+              "percentRM": "N/A",
+              "rpe": "5",
+              "rest": "2-3 MIN",
+              "notes": "IF YOU SQUAT HIGH-BAR, DO SUMO BOX SQUAT. IF YOU SQUAT LOW-BAR, DO PAUSE HIGH-",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "CURL",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "6-8",
+              "percentRM": "N/A",
+              "rpe": "6",
+              "rest": "1-2 MIN",
+              "notes": "DO LYING LEG CURL MACHINE OR NORDIC HAM CURL IF NO MACHINE ACCESS",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "CALF RAISE",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "8-10",
+              "percentRM": "N/A",
+              "rpe": "6",
+              "rest": "1-2 MIN",
+              "notes": "1-2 SECOND PAUSE AT THE BOTTOM OF EACH REP , FULL SQUEEZE AT THE TOP",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "LEG RAISE",
+              "warmupSets": 0,
+              "workingSets": 2,
+              "reps": "10-12",
+              "percentRM": "N/A",
+              "rpe": "6",
+              "rest": "1-2 MIN",
+              "notes": "KNEES TO CHEST, CONTROLLED REPS, STRAIGHTEN LEGS MORE TO INCREASE DIFFICULTY",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 2,
+          "name": "Upper 1",
+          "type": "upper",
+          "targetMuscles": [
+            "chest",
+            "back",
+            "shoulders",
+            "arms"
+          ],
+          "estimatedDuration": 60,
+          "exercises": [
+            {
+              "name": "BENCH PRESS",
+              "warmupSets": 3,
+              "workingSets": 3,
+              "reps": "6",
+              "percentRM": "72.5%",
+              "rpe": "N/A",
+              "rest": "3-4 MIN",
+              "notes": "SET UP A COMFORTABLE ARCH, SLIGHT PAUSE ON THE CHEST, EXPLODE UP",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "barbell"
+            },
+            {
+              "name": "CHIN-UP",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "8-10",
+              "percentRM": "N/A",
+              "rpe": "7",
+              "rest": "2-3 MIN",
+              "notes": "UNDERHAND GRIP , PULL YOUR CHEST TO THE BAR, ADD WEIGHT IF NEEDED TO HIT RPE",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "PRESS",
+              "warmupSets": 2,
+              "workingSets": 2,
+              "reps": "4",
+              "percentRM": "75%",
+              "rpe": "N/A",
+              "rest": "2-3 MIN",
+              "notes": "SQUEEZE YOUR GLUTES TO KEEP YOUR TORSO UPRIGHT, PRESS UP AND SLIGHTLY BACK",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "ROW",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "12-15",
+              "percentRM": "N/A",
+              "rpe": "7",
+              "rest": "1-2 MIN",
+              "notes": "LIE ON AN INCLINE BENCH AND DO ROWS - PULL WITH LATS!",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "FACE PULL",
+              "warmupSets": 0,
+              "workingSets": 2,
+              "reps": "15-20",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "30SEC",
+              "notes": "CAN USE CABLE/ROPE OR BAND, RETRACT YOUR SHOULDER BLADES AS YOU PULL",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "DUMBBELL LATERAL RAISE",
+              "warmupSets": 0,
+              "workingSets": 2,
+              "reps": "15-20",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "30SEC",
+              "notes": "ARC THE DUMBBELL OUT, MIND-MUSCLE CONNECTION WITH MIDDLE FIBERS",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "CONCENTRATION BICEP CURL",
+              "warmupSets": 0,
+              "workingSets": 2,
+              "reps": "12-15",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "30SEC",
+              "notes": "PIN YOUR ELBOW AGAINST YOUR UPPER LEG OR THE BACK OF A BENCH",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "TRICEPS PRESSDOWN",
+              "warmupSets": 0,
+              "workingSets": 2,
+              "reps": "12-15",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "30SEC",
+              "notes": "CAN DO WITH CABLES OR BANDS, SQUEEZE TRICEPS TO MOVE THE WEIGHTWEEK 11 JEFF NIPPARD'S - POWERBUILDING SYSTEM",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 3,
+          "name": "Rest Day",
+          "type": "rest",
+          "targetMuscles": [],
+          "estimatedDuration": 0,
+          "exercises": []
+        },
+        {
+          "dayNumber": 4,
+          "name": "Upper 2",
+          "type": "upper",
+          "targetMuscles": [
+            "chest",
+            "back",
+            "shoulders",
+            "arms"
+          ],
+          "estimatedDuration": 60,
+          "exercises": [
+            {
+              "name": "CLOSE-GRIP BENCH PRESS",
+              "warmupSets": 3,
+              "workingSets": 3,
+              "reps": "10",
+              "percentRM": "N/A",
+              "rpe": "6",
+              "rest": "2-3 MIN",
+              "notes": "SHOULDER WIDTH GRIP , TUCK YOUR ELBOWS IN CLOSER TO YOUR TORSO",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "barbell"
+            },
+            {
+              "name": "ROW",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "10",
+              "percentRM": "N/A",
+              "rpe": "6",
+              "rest": "3-4 MIN",
+              "notes": "LIE ON AN INCLINE BENCH AND DO ROWS - PULL WITH LATS!",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "DIP",
+              "warmupSets": 2,
+              "workingSets": 3,
+              "reps": "6",
+              "percentRM": "N/A",
+              "rpe": "7",
+              "rest": "2-3 MIN",
+              "notes": "DO FLOOR DUMBBELL PRESS IF NO ACCESS TO DIP HANDLES",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "SINGLE-ARM LAT PULLDOWN",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "10",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "2-3 MIN",
+              "notes": "PERFORM WITH BANDS IF NO LAT PULLDOWN, DRIVE THROUGH ELBOWS",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "INCLINE SHRUG",
+              "warmupSets": 0,
+              "workingSets": 2,
+              "reps": "15-20",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "30SEC",
+              "notes": "LIE AGAINST AN INCLINE BENCH AND DO SHRUGS - FULL ROM AND SQUEEZE!",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "UPRIGHT ROW",
+              "warmupSets": 0,
+              "workingSets": 2,
+              "reps": "15-20",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "30SEC",
+              "notes": "CAN USE CABLES/ROPE, BANDS OR DUMBBELLS. STOP ROM ONCE ELBOWS REACH SHOULDER",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "BARBELL OR EZ BAR CURL",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "12-15",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "30SEC",
+              "notes": "FOCUS ON THE MIND-MUSCLE CONNECTION",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "barbell"
+            },
+            {
+              "name": "SKULL CRUSHER",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "8-10",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "30SEC",
+              "notes": "BARBELL OR EZ BAR, DO THESE ON A BENCH, CONSTANT TENSION ON TRICEPSWEEK 11 JEFF NIPPARD'S - POWERBUILDING SYSTEM",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            }
+          ]
+        },
+        {
+          "dayNumber": 5,
+          "name": "Rest Day",
+          "type": "rest",
+          "targetMuscles": [],
+          "estimatedDuration": 0,
+          "exercises": []
+        },
+        {
+          "dayNumber": 6,
+          "name": "Lower 2",
+          "type": "lower",
+          "targetMuscles": [
+            "legs",
+            "glutes",
+            "hamstrings",
+            "calves"
+          ],
+          "estimatedDuration": 60,
+          "exercises": [
+            {
+              "name": "SQUAT",
+              "warmupSets": 4,
+              "workingSets": 2,
+              "reps": "6",
+              "percentRM": "70%",
+              "rpe": "N/A",
+              "rest": "3-4 MIN",
+              "notes": "SIT BACK AND DOWN, KEEP YOUR UPPER BACK TIGHT TO THE BAR",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "DEADLIFT",
+              "warmupSets": 2,
+              "workingSets": 2,
+              "reps": "8",
+              "percentRM": "N/A",
+              "rpe": "6",
+              "rest": "2-3 MIN",
+              "notes": "WIDE GRIP , MIND-MUSCLE CONNECTION WITH HAMSTRINGS",
+              "category": "compound",
+              "muscleGroup": "legs",
+              "equipment": "barbell"
+            },
+            {
+              "name": "EXTENSION",
+              "warmupSets": 1,
+              "workingSets": 2,
+              "reps": "12-15",
+              "percentRM": "N/A",
+              "rpe": "7",
+              "rest": "1-2 MIN",
+              "notes": "USE BANDS IF NO MACHINE ACCESS, MIND-MUSCLE CONNECTION WITH QUADS",
+              "category": "compound",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "CALF RAISE",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "15-20",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "1-2 MIN",
+              "notes": "EMPHASIZE THE MIND-MUSCLE CONNECTION",
+              "category": "isolation",
+              "muscleGroup": "legs",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "ABDUCTION",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "15-20",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "1-2 MIN",
+              "notes": "POINT TOES SLIGHTLY OUTWARD, MIND-MUSCLE CONNECTION WITH GLUTES",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "SIT-UP",
+              "warmupSets": 0,
+              "workingSets": 3,
+              "reps": "12-15",
+              "percentRM": "N/A",
+              "rpe": "8",
+              "rest": "1-2 MIN",
+              "notes": "THINK ABOUT SQUEEZING YOUR UPPER AND LOWER ABS TOGETHER",
+              "category": "isolation",
+              "muscleGroup": "upper_body",
+              "equipment": "dumbbell"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+export const exerciseSubstitutions = {
+  "Chin-Up": [
+    "Pull-up",
+    "supinated lat pulldown"
+  ],
+  "Squat": [
+    "pause back squat",
+    "reverse lunge"
+  ],
+  "Walk": [
+    "Seated hip abduction"
+  ],
+  "Pull-Apart": [
+    "Bent over reverse dumbbell flye",
+    "reverse cable crossover"
+  ],
+  "Hyperextension": [
+    "Dumbbell 45\u00b0 hyperextension",
+    "glute"
+  ],
+  "Press": [
+    "Dumbbell seated shoulder press",
+    ""
+  ],
+  "Curl": [
+    "Swiss ball leg curl",
+    "sliding leg curl",
+    "seated leg curl",
+    ""
+  ],
+  "Crusher": [
+    "Floor press",
+    "pin press",
+    "JM press"
+  ],
+  "Flye": [
+    "Cable flye"
+  ],
+  "Crunch": [
+    "Cable crunch",
+    "bodyweight crunch",
+    "cable wood chopper"
+  ],
+  "Pull": [
+    "Reverse dumbbell flye",
+    "reverse cable crossover"
+  ],
+  "Row": [
+    "Cable rope upright row",
+    "machine lateral raise",
+    "face pull"
+  ],
+  "Deadlift": [
+    "Good morning",
+    "stiff-leg deadlift"
+  ],
+  "Push-Up": [
+    "Barbell incline press",
+    "paused dumbbell incline press"
+  ],
+  "Raise": [
+    "Seated calf raise",
+    "leg press calf press"
+  ],
+  "Shrug": [
+    "T-bar shrug",
+    "smith machine shrug"
+  ],
+  "Pull-Up": [
+    "Lat pulldown",
+    "neutral-grip pull-up"
+  ],
+  "Morning": [
+    "RDL",
+    "stiff-leg deadlift"
+  ],
+  "Abduction": [
+    "Band lateral walk"
+  ],
+  "Thrust": [
+    "Glute bridge",
+    "dumbbell 45\u00b0 hyperextension"
+  ],
+  "21'S)": [
+    "Rope overhead triceps extension"
+  ],
+  "Lat-Pullover": [
+    "Cable pull-over"
+  ],
+  "Extension": [
+    "Sissy squat",
+    "goblet squat"
+  ],
+  "Flexion/Extension": [
+    "Neck bridge",
+    "isometric yoga ball wall neck"
+  ],
+  "Pull-Through": [
+    "Glute ham raise",
+    "glute bridge",
+    "reverse hyper"
+  ],
+  "Pulldown": [
+    "Lat pulldown"
+  ],
+  "Pressdown": [
+    "Rope overhead triceps extension",
+    "dumbbell"
+  ],
+  "Sit-Up": [
+    "Bicycle crunch",
+    "cable crunch",
+    "bodyweight crunch"
+  ],
+  "Dip": [
+    "Assisted dip",
+    "machine dip",
+    "close-grip bench press"
+  ]
+};
