@@ -1,0 +1,242 @@
+.historyPage {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  margin-top: var(--sp-4);
+  margin-bottom: var(--sp-4);
+}
+
+.calendarHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--sp-4);
+}
+
+.calendarMonth {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
+}
+
+.calendarNav {
+  display: flex;
+  gap: var(--sp-1);
+}
+
+.weekDaysHeader {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  color: var(--text-tertiary);
+  margin-bottom: var(--sp-2);
+}
+
+.calendarGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: var(--sp-1);
+  text-align: center;
+}
+
+.calendarDay {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  transition: all var(--duration-fast);
+  cursor: pointer;
+}
+
+.calendarDay:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-default);
+}
+
+.today {
+  border: 2px solid var(--accent-primary);
+  box-shadow: var(--shadow-glow-accent);
+}
+
+.selected {
+  background: var(--accent-primary) !important;
+  color: var(--text-inverse) !important;
+  border-color: var(--accent-primary) !important;
+}
+
+.selected .workoutDot {
+  background: var(--text-inverse);
+}
+
+.emptyDay {
+  aspect-ratio: 1;
+}
+
+.workoutDot {
+  width: 4px;
+  height: 4px;
+  border-radius: var(--radius-full);
+  background: var(--success);
+  position: absolute;
+  bottom: 4px;
+}
+
+.logList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.logCard {
+  display: flex;
+  flex-direction: column;
+  padding: var(--sp-4);
+  cursor: default;
+}
+
+.logHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
+.logTitleCol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.logName {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.logSubInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.logDateStr {
+  font-size: var(--fs-xs);
+  color: var(--text-tertiary);
+}
+
+.logHeaderActions {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-1);
+}
+
+.deleteBtn {
+  color: var(--text-tertiary);
+  transition: color var(--duration-fast);
+  padding: var(--sp-1);
+}
+
+.deleteBtn:hover {
+  color: var(--danger);
+  background: transparent;
+}
+
+.logSummaryRow {
+  display: flex;
+  gap: var(--sp-4);
+  margin-top: var(--sp-3);
+  font-size: var(--fs-xs);
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.summaryItem {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-1);
+}
+
+.summaryIcon {
+  color: var(--text-tertiary);
+}
+
+.expandedDetails {
+  animation: fadeIn var(--duration-fast) var(--ease-out);
+}
+
+.exerciseList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  margin-top: var(--sp-2);
+}
+
+.exerciseItem {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.exerciseHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.exerciseName {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--text-primary);
+}
+
+.prBadge {
+  font-size: var(--fs-xs);
+  padding: 2px 6px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.setRows {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-2);
+  background: var(--bg-input);
+  border-radius: var(--radius-sm);
+  padding: var(--sp-3);
+}
+
+.setRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--fs-xs);
+}
+
+.setNum {
+  color: var(--text-tertiary);
+}
+
+.setVal {
+  color: var(--text-secondary);
+  font-weight: var(--fw-medium);
+}
+
+.text-truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}

@@ -1,0 +1,359 @@
+.activeWorkoutPage {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--sp-4);
+  margin-bottom: var(--sp-4);
+}
+
+.titleCol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.workoutName {
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.timerRow {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-1);
+  color: var(--accent-primary);
+}
+
+.timerIcon {
+  filter: drop-shadow(0 0 4px var(--accent-primary-glow));
+}
+
+.timeValue {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-semibold);
+  font-variant-numeric: tabular-nums;
+}
+
+.exercisesList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+  padding-bottom: 80px; /* space for the fixed action bar */
+}
+
+.exerciseCard {
+  transition: border-color var(--duration-fast);
+}
+
+.completedCard {
+  border-left: 4px solid var(--success);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.exMeta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.exName {
+  font-size: var(--fs-base);
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
+}
+
+.badges {
+  display: flex;
+  gap: var(--sp-2);
+}
+
+.notesBox {
+  margin-top: var(--sp-2);
+  font-size: var(--fs-xs);
+  color: var(--text-secondary);
+  background: var(--bg-input);
+  padding: var(--sp-2) var(--sp-3);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+}
+
+.setsTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: var(--sp-4);
+  margin-bottom: var(--sp-2);
+}
+
+.setsTable th {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  color: var(--text-tertiary);
+  text-align: center;
+  padding: var(--sp-2) 0;
+  border-bottom: 1px solid var(--border-subtle);
+  text-transform: uppercase;
+}
+
+.setsTable td {
+  padding: var(--sp-2) 0;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.setNum {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  color: var(--text-secondary);
+}
+
+.prevText {
+  font-size: var(--fs-xs);
+  color: var(--text-tertiary);
+}
+
+.setValInput {
+  max-width: 60px;
+  text-align: center;
+  padding: var(--sp-1) var(--sp-2) !important;
+  font-size: var(--fs-sm);
+}
+
+.setValInput:disabled {
+  background: transparent;
+  border-color: transparent;
+  color: var(--text-secondary);
+}
+
+.completedRow td {
+  opacity: 0.65;
+}
+
+.completedRow .setValInput {
+  font-weight: var(--fw-bold);
+  color: var(--success);
+}
+
+.addSetBtn {
+  color: var(--text-secondary);
+}
+
+.addSetBtn:hover {
+  color: var(--text-primary);
+}
+
+.actionBar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-subtle);
+  padding: var(--sp-3) var(--sp-4);
+  display: flex;
+  justify-content: center;
+  z-index: 100;
+}
+
+.actionBar button {
+  max-width: 600px;
+}
+
+.summaryHeader {
+  text-align: center;
+  margin-bottom: var(--sp-6);
+}
+
+.summaryTitle {
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+  color: var(--accent-primary);
+}
+
+.summarySubtitle {
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+}
+
+.summaryStats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-6);
+}
+
+.summaryStatCard {
+  background: var(--bg-input);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--sp-4) var(--sp-2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.summaryVal {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
+}
+
+.summaryLbl {
+  font-size: var(--fs-xs);
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 4px;
+}
+
+.prBox {
+  background: hsla(142, 70%, 45%, 0.1);
+  border: 1px solid var(--success-dim);
+  border-radius: var(--radius-md);
+  padding: var(--sp-4);
+  margin-bottom: var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  animation: scaleIn var(--duration-normal) var(--ease-spring);
+}
+
+.prHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  color: var(--success);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-base);
+}
+
+.prIcon {
+  filter: drop-shadow(0 0 6px var(--success));
+}
+
+.prList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.prItem {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: var(--fs-sm);
+  color: var(--text-primary);
+}
+
+.prItemIcon {
+  color: var(--success);
+}
+
+/* --- Set Timer / TUT Stopwatch --- */
+.setTimerCell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+}
+
+.setTimerBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-full);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  transition: all var(--duration-fast);
+}
+
+.setTimerBtn:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+.runningTimer {
+  color: var(--accent-primary);
+  font-weight: var(--fw-bold);
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+/* --- Add Exercise Modal --- */
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--sp-4);
+}
+
+.modalTitle {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
+}
+
+.modalBody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.searchSelectionList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  max-height: 250px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.selectionItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--sp-3);
+  cursor: pointer;
+  transition: all var(--duration-fast);
+}
+
+.selectionItem:hover {
+  border-color: var(--accent-primary);
+  background: var(--bg-card-hover);
+}
+
+.selMeta {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.selExName {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
+}
+
+.selExSub {
+  font-size: var(--fs-xs);
+  color: var(--text-tertiary);
+  text-transform: capitalize;
+}
+

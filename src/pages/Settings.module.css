@@ -1,0 +1,136 @@
+.settingsPage {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  margin-top: var(--sp-4);
+  margin-bottom: var(--sp-4);
+}
+
+.sectionHeader {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--sp-2);
+  margin-top: var(--sp-4);
+}
+
+.settingsGroup {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: var(--sp-4);
+}
+
+.settingRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--sp-4);
+  border-bottom: 1px solid var(--border-subtle);
+  transition: background var(--duration-fast);
+}
+
+.settingRow:last-child {
+  border-bottom: none;
+}
+
+.settingRow:hover {
+  background: var(--bg-card-hover);
+}
+
+.settingLabelCol {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  flex: 1;
+}
+
+.settingIcon {
+  color: var(--accent-primary);
+  flex-shrink: 0;
+}
+
+.settingText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.settingName {
+  font-size: var(--fs-base);
+  font-weight: var(--fw-semibold);
+  color: var(--text-primary);
+}
+
+.settingDesc {
+  font-size: var(--fs-xs);
+  color: var(--text-secondary);
+  line-height: 1.3;
+}
+
+.restSelect {
+  max-width: 100px;
+  padding: calc(var(--sp-1) * 1.5) var(--sp-3);
+  font-size: var(--fs-sm);
+}
+
+.toggleBtn {
+  min-width: 50px;
+  text-align: center;
+}
+
+.fileInput {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+.dangerRow:hover {
+  background: hsla(0, 72%, 55%, 0.05);
+}
+
+.dangerIcon {
+  color: var(--danger);
+  flex-shrink: 0;
+}
+
+.dangerName {
+  font-size: var(--fs-base);
+  font-weight: var(--fw-semibold);
+  color: var(--danger);
+}
+
+.infoIcon {
+  color: var(--accent-primary);
+  margin-bottom: var(--sp-2) !important;
+}
+
+.appName {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
+}
+
+.appVersion {
+  font-size: var(--fs-xs);
+  color: var(--text-tertiary);
+  margin-bottom: var(--sp-2);
+}
+
+.appCredits {
+  font-size: var(--fs-xs);
+  color: var(--text-secondary);
+  line-height: 1.4;
+  max-width: 320px;
+  margin: 0 auto;
+}

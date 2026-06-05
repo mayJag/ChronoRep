@@ -1,0 +1,330 @@
+.programsPage {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  margin-top: var(--sp-4);
+  margin-bottom: var(--sp-4);
+}
+
+.programList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+}
+
+.programCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  background: linear-gradient(135deg, var(--bg-card), var(--bg-secondary));
+  transition: all var(--duration-normal);
+}
+
+.btrCard {
+  border-color: var(--border-accent);
+  box-shadow: var(--shadow-glow-accent);
+}
+
+.nippardCard {
+  border-color: hsla(210, 100%, 60%, 0.2);
+  box-shadow: var(--shadow-glow-blue);
+}
+
+.hybridCard {
+  border-color: hsla(142, 70%, 45%, 0.3);
+  box-shadow: 0 0 20px hsla(142, 70%, 45%, 0.12);
+}
+
+.cardHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.programTitle {
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.author {
+  font-size: var(--fs-xs);
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: var(--fw-semibold);
+}
+
+.description {
+  font-size: var(--fs-base);
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.metaBadges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+
+.detailPage {
+  display: flex;
+  flex-direction: column;
+}
+
+.backBtn {
+  align-self: flex-start;
+  margin-bottom: var(--sp-4);
+}
+
+.detailHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-6);
+}
+
+.headerInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.detailTitle {
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+
+.detailAuthor {
+  font-size: var(--fs-sm);
+  color: var(--text-tertiary);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.detailDesc {
+  font-size: var(--fs-base);
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.startBtn {
+  align-self: stretch;
+}
+
+.phaseSelector, .weekSelector {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-4);
+}
+
+.selectorLabel {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--text-secondary);
+  width: 50px;
+  flex-shrink: 0;
+}
+
+.phasePills {
+  display: flex;
+  gap: var(--sp-2);
+}
+
+.phasePill {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  padding: var(--sp-1) var(--sp-3);
+  border-radius: var(--radius-full);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  transition: all var(--duration-fast);
+}
+
+.activePhase {
+  background: var(--accent-primary);
+  color: var(--text-inverse);
+  border-color: var(--accent-primary);
+  box-shadow: var(--shadow-glow-accent);
+}
+
+.weekScroll {
+  display: flex;
+  gap: var(--sp-2);
+  overflow-x: auto;
+  padding-bottom: var(--sp-1);
+  width: 100%;
+}
+
+.weekScroll::-webkit-scrollbar {
+  height: 3px;
+}
+
+.weekTab {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  padding: var(--sp-1) var(--sp-3);
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  white-space: nowrap;
+  transition: all var(--duration-fast);
+}
+
+.activeWeek {
+  background: var(--bg-card);
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
+
+.daysSection {
+  margin-top: var(--sp-2);
+}
+
+.daysList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.dayCard {
+  transition: border-color var(--duration-fast);
+}
+
+.expandedCard {
+  border-color: var(--border-default);
+}
+
+.dayHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.dayTitleCol {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.dayNumberBadge {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  padding: var(--sp-1) var(--sp-2);
+  border-radius: var(--radius-sm);
+}
+
+.dayName {
+  font-size: var(--fs-base);
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
+}
+
+.dayActions {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.collapsedPreview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-1);
+  margin-top: var(--sp-3);
+}
+
+.smallExTag {
+  background: var(--bg-input);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-xs);
+  color: var(--text-secondary);
+}
+
+.smallExTagMore {
+  font-size: var(--fs-xs);
+  color: var(--text-tertiary);
+  padding: 2px 6px;
+}
+
+.restDayContent {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  background: var(--bg-input);
+  padding: var(--sp-3);
+  border-radius: var(--radius-sm);
+  margin-top: var(--sp-3);
+}
+
+.infoIcon {
+  color: var(--accent-secondary);
+}
+
+.restDayText {
+  font-size: var(--fs-xs);
+  color: var(--text-secondary);
+}
+
+.expandedExercises {
+  animation: fadeIn var(--duration-fast) var(--ease-out);
+}
+
+.exerciseItems {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  margin-top: var(--sp-2);
+}
+
+.exerciseItem {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.exerciseHeaderInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.exerciseName {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
+}
+
+.exerciseSubtitles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-1);
+  font-size: var(--fs-xs);
+  color: var(--text-secondary);
+  font-weight: var(--fw-medium);
+}
+
+.exerciseNotes {
+  font-size: var(--fs-xs);
+  color: var(--text-tertiary);
+  background: var(--bg-input);
+  padding: var(--sp-2);
+  border-radius: var(--radius-sm);
+  margin-top: var(--sp-1);
+}
+
+.rotate180 {
+  transform: rotate(180deg);
+}

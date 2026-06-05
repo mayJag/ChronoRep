@@ -1,0 +1,275 @@
+.editorPage {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--sp-4);
+  margin-bottom: var(--sp-4);
+}
+
+.title {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.label {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.exerciseList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  margin-bottom: 80px; /* space for fixed save bar */
+}
+
+.exerciseCard {
+  display: flex;
+  align-items: center;
+  padding: var(--sp-3) var(--sp-4) var(--sp-3) var(--sp-2);
+}
+
+.cardGripCol {
+  padding: var(--sp-1);
+  color: var(--text-tertiary);
+  cursor: grab;
+}
+
+.cardMainInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-left: var(--sp-2);
+}
+
+.exName {
+  font-size: var(--fs-base);
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
+}
+
+.exSubText {
+  display: flex;
+  gap: var(--sp-2);
+  font-size: var(--fs-xs);
+  color: var(--text-secondary);
+  font-weight: var(--fw-medium);
+}
+
+.cardActions {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-1);
+}
+
+.orderArrows {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.arrowBtn {
+  font-size: 8px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  width: 18px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.arrowBtn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.saveBtnBox {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-subtle);
+  padding: var(--sp-3) var(--sp-4);
+  display: flex;
+  justify-content: center;
+  z-index: 100;
+}
+
+.saveBtnBox button {
+  max-width: 600px;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--sp-4);
+}
+
+.modalTitle {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
+}
+
+.modalBody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.searchBox {
+  position: relative;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-tertiary);
+}
+
+.filtersWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  background: var(--bg-input);
+  padding: var(--sp-3);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+}
+
+.filterRow {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.filterLabel {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  color: var(--text-secondary);
+  width: 50px;
+  flex-shrink: 0;
+}
+
+.filterScroll {
+  display: flex;
+  gap: calc(var(--sp-1) * 1.5);
+  overflow-x: auto;
+  padding-bottom: 2px;
+}
+
+.filterScroll::-webkit-scrollbar {
+  height: 2px;
+}
+
+.selectionList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  max-height: 250px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.selectionItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--sp-3);
+  cursor: pointer;
+  transition: all var(--duration-fast);
+}
+
+.selectionItem:hover {
+  border-color: var(--accent-primary);
+  background: var(--bg-card-hover);
+}
+
+.selMeta {
+  display: flex;
+  flex-direction: column;
+}
+
+.selExName {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
+}
+
+.selExSub {
+  font-size: var(--fs-xs);
+  color: var(--text-tertiary);
+  text-transform: capitalize;
+}
+
+.selPlusIcon {
+  color: var(--text-tertiary);
+}
+
+.configForm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-4);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.fieldFull {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.lbl {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  color: var(--text-secondary);
+}
+
+.formActions {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--sp-4);
+}
+
+.formActions button {
+  flex: 1;
+}

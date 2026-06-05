@@ -1,0 +1,40 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Temporary training files and parsing scripts
+btr_output.txt
+routine_only_output.txt
+temp_fixed.txt
+extracted_hybrid.json
+extracted_hybrid_summary.md
+*.ps1
+read_xlsx*.py
+inspect_extracted.py
+parse_hybrid_xlsx.py
+android/.gradle
+android/local.properties
+android/app/build
+android/build
+
