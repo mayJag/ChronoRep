@@ -1,7 +1,7 @@
-export const nippard_essentials = {
-  "id": "nippard-essentials",
-  "name": "Jeff Nippard The Essentials",
-  "author": "Jeff Nippard",
+export const expert_essentials = {
+  "id": "expert-essentials",
+  "name": "Ironlog Expert The Essentials",
+  "author": "Ironlog Expert",
   "description": "Minimalist | 3x/Week. Designed for maximum efficiency in 45 mins or less. Low volume, high intensity.",
   "duration": "12 weeks",
   "daysPerWeek": 3,
@@ -19,7 +19,7 @@ export const nippard_essentials = {
           "estimatedDuration": 45,
           "exercises": [
             {
-              "name": "Back Squat",
+              "name": "Deadlift",
               "warmupSets": 2,
               "workingSets": 2,
               "reps": "8-10",
@@ -80,7 +80,7 @@ export const nippard_essentials = {
           "estimatedDuration": 45,
           "exercises": [
             {
-              "name": "Deadlift",
+              "name": "Back Squat",
               "warmupSets": 2,
               "workingSets": 2,
               "reps": "8-10",
@@ -141,7 +141,7 @@ export const nippard_essentials = {
           "estimatedDuration": 45,
           "exercises": [
             {
-              "name": "Deadlift",
+              "name": "Back Squat",
               "warmupSets": 2,
               "workingSets": 2,
               "reps": "8-10",

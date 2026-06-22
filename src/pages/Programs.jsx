@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Dumbbell, Clock, Calendar, ChevronRight, ChevronDown, Zap, Target, ArrowLeft, Plus, Play, Info, Award } from 'lucide-react';
 import { btrProgram } from '../data/btrProgram';
-import { nippardProgram } from '../data/nippardProgram';
+import { expertPowerbuilding } from '../data/expertPowerbuilding';
 import { hybridProgram } from '../data/hybridProgram';
-import { nippard_fundamentals } from '../data/fundamentalsProgram';
-import { nippard_essentials } from '../data/essentialsProgram';
+import { expert_fundamentals } from '../data/fundamentalsProgram';
+import { expert_essentials } from '../data/essentialsProgram';
+import { expert_pure_bodybuilding } from '../data/pureBodybuildingProgram';
 import { savePlan, setSetting } from '../store/db';
 import { getExerciseVideoUrl } from '../data/exerciseVideos';
 import { useToast } from '../components/Toast';
@@ -24,10 +25,11 @@ export default function Programs() {
   // Get active program
   const getActiveProgram = () => {
     if (programId === 'beyond-the-rim') return btrProgram;
-    if (programId === 'nippard-powerbuilding') return nippardProgram;
+    if (programId === 'expert-powerbuilding') return expertPowerbuilding;
     if (programId === 'hybrid-powerbuilding-jump') return hybridProgram;
-    if (programId === 'nippard-fundamentals') return nippard_fundamentals;
-    if (programId === 'nippard-essentials') return nippard_essentials;
+    if (programId === 'expert-fundamentals') return expert_fundamentals;
+    if (programId === 'expert-essentials') return expert_essentials;
+    if (programId === 'expert-pure-bodybuilding') return expert_pure_bodybuilding;
     return null;
   };
 
@@ -79,7 +81,7 @@ export default function Programs() {
         };
 
         // Get the first week's workouts to populate today's session preview
-        // For BTR, we map Days 1-7. For Nippard, Days 1-5 or 1-6.
+        // For BTR, we map Days 1-7. For Expert, Days 1-5 or 1-6.
         let days = [];
         if (activeProgram.id === 'beyond-the-rim') {
           // BTR Phase 0 or 1 Week 1
@@ -87,7 +89,7 @@ export default function Programs() {
           const week = phase.weeks[0];
           days = week.days;
         } else {
-          // Nippard Week 1
+          // Expert Week 1
           const week = activeProgram.weeks[0];
           days = week.days;
         }
@@ -167,11 +169,11 @@ export default function Programs() {
             </button>
           </div>
 
-          {/* Jeff Nippard Powerbuilding */}
-          <div className={`${styles.programCard} card ${styles.nippardCard}`}>
+          {/* Ironlog Expert Powerbuilding */}
+          <div className={`${styles.programCard} card ${styles.expertCard}`}>
             <div className={styles.cardHeader}>
-              <h2 className={styles.programTitle}>{nippardProgram.name}</h2>
-              <span className={styles.author}>by {nippardProgram.author}</span>
+              <h2 className={styles.programTitle}>{expertPowerbuilding.name}</h2>
+              <span className={styles.author}>by {expertPowerbuilding.author}</span>
             </div>
 
             <p className={styles.description}>
@@ -180,7 +182,7 @@ export default function Programs() {
 
             <div className={styles.metaBadges}>
               <span className="badge badge--blue">
-                <Calendar size={12} /> {nippardProgram.duration}
+                <Calendar size={12} /> {expertPowerbuilding.duration}
               </span>
               <span className="badge badge--blue">
                 <Dumbbell size={12} /> 5-6 Days/Week
@@ -193,17 +195,17 @@ export default function Programs() {
             <button 
               className="btn btn--secondary btn--full"
               style={{ borderColor: 'var(--accent-secondary)' }}
-              onClick={() => navigate(`/programs/${nippardProgram.id}`)}
+              onClick={() => navigate(`/programs/${expertPowerbuilding.id}`)}
             >
               View Program Details <ChevronRight size={16} />
             </button>
           </div>
 
-          {/* Jeff Nippard Fundamentals */}
-          <div className={`${styles.programCard} card ${styles.nippardCard}`}>
+          {/* Ironlog Expert Fundamentals */}
+          <div className={`${styles.programCard} card ${styles.expertCard}`}>
             <div className={styles.cardHeader}>
-              <h2 className={styles.programTitle}>{nippard_fundamentals.name}</h2>
-              <span className={styles.author}>by {nippard_fundamentals.author}</span>
+              <h2 className={styles.programTitle}>{expert_fundamentals.name}</h2>
+              <span className={styles.author}>by {expert_fundamentals.author}</span>
             </div>
 
             <p className={styles.description}>
@@ -212,7 +214,7 @@ export default function Programs() {
 
             <div className={styles.metaBadges}>
               <span className="badge badge--blue">
-                <Calendar size={12} /> {nippard_fundamentals.duration}
+                <Calendar size={12} /> {expert_fundamentals.duration}
               </span>
               <span className="badge badge--blue">
                 <Dumbbell size={12} /> 4 Days/Week
@@ -225,17 +227,17 @@ export default function Programs() {
             <button 
               className="btn btn--secondary btn--full"
               style={{ borderColor: 'var(--accent-secondary)' }}
-              onClick={() => navigate(`/programs/${nippard_fundamentals.id}`)}
+              onClick={() => navigate(`/programs/${expert_fundamentals.id}`)}
             >
               View Program Details <ChevronRight size={16} />
             </button>
           </div>
 
-          {/* Jeff Nippard Essentials */}
-          <div className={`${styles.programCard} card ${styles.nippardCard}`}>
+          {/* Ironlog Expert Essentials */}
+          <div className={`${styles.programCard} card ${styles.expertCard}`}>
             <div className={styles.cardHeader}>
-              <h2 className={styles.programTitle}>{nippard_essentials.name}</h2>
-              <span className={styles.author}>by {nippard_essentials.author}</span>
+              <h2 className={styles.programTitle}>{expert_essentials.name}</h2>
+              <span className={styles.author}>by {expert_essentials.author}</span>
             </div>
 
             <p className={styles.description}>
@@ -244,7 +246,7 @@ export default function Programs() {
 
             <div className={styles.metaBadges}>
               <span className="badge badge--blue">
-                <Calendar size={12} /> {nippard_essentials.duration}
+                <Calendar size={12} /> {expert_essentials.duration}
               </span>
               <span className="badge badge--blue">
                 <Dumbbell size={12} /> 3 Days/Week
@@ -257,7 +259,39 @@ export default function Programs() {
             <button 
               className="btn btn--secondary btn--full"
               style={{ borderColor: 'var(--accent-secondary)' }}
-              onClick={() => navigate(`/programs/${nippard_essentials.id}`)}
+              onClick={() => navigate(`/programs/${expert_essentials.id}`)}
+            >
+              View Program Details <ChevronRight size={16} />
+            </button>
+          </div>
+
+          {/* Ironlog Expert Pure Bodybuilding Phase 2 */}
+          <div className={`${styles.programCard} card ${styles.expertCard}`}>
+            <div className={styles.cardHeader}>
+              <h2 className={styles.programTitle}>{expert_pure_bodybuilding.name}</h2>
+              <span className={styles.author}>by {expert_pure_bodybuilding.author}</span>
+            </div>
+
+            <p className={styles.description}>
+              {expert_pure_bodybuilding.description}
+            </p>
+
+            <div className={styles.metaBadges}>
+              <span className="badge badge--blue">
+                <Calendar size={12} /> {expert_pure_bodybuilding.duration}
+              </span>
+              <span className="badge badge--blue">
+                <Dumbbell size={12} /> {expert_pure_bodybuilding.daysPerWeek} Days/Week
+              </span>
+              <span className="badge badge--blue">
+                <Target size={12} /> Hypertrophy
+              </span>
+            </div>
+
+            <button 
+              className="btn btn--secondary btn--full"
+              style={{ borderColor: 'var(--accent-secondary)' }}
+              onClick={() => navigate(`/programs/${expert_pure_bodybuilding.id}`)}
             >
               View Program Details <ChevronRight size={16} />
             </button>
@@ -328,7 +362,7 @@ export default function Programs() {
       }
     }
   } else {
-    // Nippard
+    // Expert
     weeksList = activeProgram.weeks;
     const currentWeekData = weeksList.find(w => w.weekNumber === selectedWeek);
     if (currentWeekData) {

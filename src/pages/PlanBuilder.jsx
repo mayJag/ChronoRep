@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Calendar, Plus, Trash2, Dumbbell, Clock, Play, Save, Check, ShieldAlert, Sparkles, AlertCircle, Pencil, Bookmark } from 'lucide-react';
 import { btrProgram } from '../data/btrProgram';
-import { nippardProgram } from '../data/nippardProgram';
+import { expertPowerbuilding } from '../data/expertPowerbuilding';
 import { savePlan, setSetting, generateId, saveRoutine, getAllRoutines, deleteRoutine } from '../store/db';
 import { useToast } from '../components/Toast';
 import { BASE_EXERCISES, useExerciseLibrary } from '../data/exercises';
@@ -57,17 +57,17 @@ export default function PlanBuilder() {
   };
 
   // --- Follow Program State ---
-  const [progSelected, setProgSelected] = useState('nippard-powerbuilding');
+  const [progSelected, setProgSelected] = useState('expert-powerbuilding');
   const [progStartDate, setProgStartDate] = useState(new Date().toISOString().split('T')[0]);
 
   // --- Hybrid Plan State ---
   const [hybridName, setHybridName] = useState('My Hybrid Split');
   const [hybridSchedule, setHybridSchedule] = useState({
-    mon: { type: 'nippard', weekNum: 1, dayNum: 1 },
+    mon: { type: 'expert', weekNum: 1, dayNum: 1 },
     tue: { type: 'rest' },
     wed: { type: 'btr', phaseNum: 1, weekNum: 1, dayNum: 1 },
     thu: { type: 'rest' },
-    fri: { type: 'nippard', weekNum: 1, dayNum: 2 },
+    fri: { type: 'expert', weekNum: 1, dayNum: 2 },
     sat: { type: 'btr', phaseNum: 1, weekNum: 1, dayNum: 2 },
     sun: { type: 'rest' }
   });
@@ -137,7 +137,7 @@ export default function PlanBuilder() {
 
   // --- Follow Program Save ---
   const handleSaveProgramPlan = async () => {
-    const activeProgram = progSelected === 'beyond-the-rim' ? btrProgram : nippardProgram;
+    const activeProgram = progSelected === 'beyond-the-rim' ? btrProgram : expertPowerbuilding;
     try {
       const newPlan = {
         id: `plan-${activeProgram.id}`,
@@ -207,15 +207,15 @@ export default function PlanBuilder() {
       for (const [dayKey, conf] of Object.entries(hybridSchedule)) {
         if (conf.type === 'rest') {
           newPlan.weeklySchedule[dayKey] = { name: 'Rest Day', type: 'rest', exercises: [] };
-        } else if (conf.type === 'nippard') {
-          const w = nippardProgram.weeks.find(week => week.weekNumber === conf.weekNum) || nippardProgram.weeks[0];
+        } else if (conf.type === 'expert') {
+          const w = expertPowerbuilding.weeks.find(week => week.weekNumber === conf.weekNum) || expertPowerbuilding.weeks[0];
           const d = w.days.find(day => day.dayNumber === conf.dayNum) || w.days[0];
           newPlan.weeklySchedule[dayKey] = {
-            name: `${nippardProgram.name} W${conf.weekNum} D${conf.dayNum} - ${d.name}`,
+            name: `${expertPowerbuilding.name} W${conf.weekNum} D${conf.dayNum} - ${d.name}`,
             type: 'main',
             exercises: d.exercises || [],
             estimatedDuration: d.estimatedDuration || 60,
-            programId: 'nippard-powerbuilding'
+            programId: 'expert-powerbuilding'
           };
         } else if (conf.type === 'btr') {
           const phase = btrProgram.phases.find(p => p.phaseNumber === conf.phaseNum) || btrProgram.phases[0];
@@ -487,7 +487,7 @@ export default function PlanBuilder() {
               value={progSelected}
               onChange={(e) => setProgSelected(e.target.value)}
             >
-              <option value="nippard-powerbuilding">{nippardProgram.name}</option>
+              <option value="expert-powerbuilding">{expertPowerbuilding.name}</option>
               <option value="beyond-the-rim">{btrProgram.name}</option>
             </select>
           </div>
@@ -513,7 +513,7 @@ export default function PlanBuilder() {
         <div className="card stagger">
           <h2 className={styles.sectionTitle}>Build a Hybrid Split</h2>
           <p className={styles.sectionDesc}>
-            Merge vertical jump workouts (BTR) and strength workouts (Nippard) into your own weekly schedule.
+            Merge vertical jump workouts (BTR) and strength workouts (Expert) into your own weekly schedule.
           </p>
 
           <div className={styles.formGroup}>
@@ -547,11 +547,11 @@ export default function PlanBuilder() {
                       }}
                     >
                       <option value="rest">Rest Day</option>
-                      <option value="nippard">Jeff Nippard Lift</option>
+                      <option value="expert">Ironlog Expert Lift</option>
                       <option value="btr">Beyond The Rim Plyo</option>
                     </select>
 
-                    {conf.type === 'nippard' && (
+                    {conf.type === 'expert' && (
                       <div className={styles.subSelects}>
                         <select
                           className="select"
@@ -561,7 +561,7 @@ export default function PlanBuilder() {
                             [day.key]: { ...conf, weekNum: parseInt(e.target.value) }
                           }))}
                         >
-                          {nippardProgram.weeks.map(w => (
+                          {expertPowerbuilding.weeks.map(w => (
                             <option key={w.weekNumber} value={w.weekNumber}>Week {w.weekNumber}</option>
                           ))}
                         </select>

@@ -443,7 +443,7 @@ export default function ActiveWorkout() {
       const workoutLog = {
         id: `log-${Date.now()}`,
         name: sessionMeta.name,
-        programName: sessionMeta.programId === 'beyond-the-rim' ? 'BTR' : (sessionMeta.programId === 'nippard-powerbuilding' ? 'Nippard' : 'Custom'),
+        programName: sessionMeta.programId === 'beyond-the-rim' ? 'BTR' : (sessionMeta.programId === 'expert-powerbuilding' ? 'Expert' : 'Custom'),
         programId: sessionMeta.programId || 'custom',
         date: new Date().toISOString().split('T')[0],
         duration: Math.round(elapsedTime / 60) || 1, // in minutes

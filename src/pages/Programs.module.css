@@ -186,6 +186,10 @@
   border-color: var(--accent-primary);
 }
 
+.expertCard {
+  border-top: 4px solid var(--accent-secondary);
+}
+
 .daysSection {
   margin-top: var(--sp-2);
 }

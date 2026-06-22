@@ -293,7 +293,7 @@ export default function Settings() {
         <h3 className={styles.appName}>IronLog Workout Tracker</h3>
         <p className={styles.appVersion}>Version 1.2.0 (Release Build)</p>
         <p className={styles.appCredits}>
-          Engineered for vertical jump performance & powerbuilding. Preloaded with "Beyond The Rim" & Jeff Nippard's Systems.
+          Engineered for vertical jump performance & powerbuilding. Preloaded with "Beyond The Rim" & Ironlog Expert's Systems.
         </p>
       </section>
     </div>
