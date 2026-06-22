@@ -1,10 +1,10 @@
-export const expert_fundamentals = {
-  "id": "expert-fundamentals",
-  "name": "Ironlog Expert Fundamentals",
+export const expert_pure_bodybuilding = {
+  "id": "expert-pure-bodybuilding",
+  "name": "Ironlog Expert Pure Bodybuilding Phase 2",
   "author": "Ironlog Expert",
-  "description": "Beginner | 4x/Week. An evidence-based hypertrophy program designed to build a solid foundation of muscle and strength.",
-  "duration": "8 weeks",
-  "daysPerWeek": 4,
+  "description": "Advanced | 5x/Week. Pure hypertrophy with high RPEs and lengthened partials for maximum growth.",
+  "duration": "10 weeks",
+  "daysPerWeek": 5,
   "type": "hypertrophy",
   "weeks": [
     {
@@ -21,7 +21,7 @@ export const expert_fundamentals = {
             {
               "name": "Bench Press",
               "warmupSets": 2,
-              "workingSets": 2,
+              "workingSets": 3,
               "reps": "8-12",
               "rest": "90s",
               "notes": "Controlled tempo, chase the pump.",
@@ -32,7 +32,7 @@ export const expert_fundamentals = {
             {
               "name": "Pull-up",
               "warmupSets": 2,
-              "workingSets": 2,
+              "workingSets": 3,
               "reps": "8-12",
               "rest": "90s",
               "notes": "Controlled tempo, chase the pump.",
@@ -43,7 +43,7 @@ export const expert_fundamentals = {
             {
               "name": "Barbell Row",
               "warmupSets": 2,
-              "workingSets": 2,
+              "workingSets": 3,
               "reps": "8-12",
               "rest": "90s",
               "notes": "Controlled tempo, chase the pump.",
@@ -52,12 +52,23 @@ export const expert_fundamentals = {
               "equipment": "barbell"
             },
             {
-              "name": "Dumbbell Lateral Raise",
-              "warmupSets": 0,
-              "workingSets": 1,
+              "name": "Overhead Press",
+              "warmupSets": 2,
+              "workingSets": 3,
               "reps": "8-12",
               "rest": "90s",
               "notes": "Controlled tempo, chase the pump.",
+              "category": "compound",
+              "muscleGroup": "shoulders",
+              "equipment": "barbell"
+            },
+            {
+              "name": "Dumbbell Lateral Raise",
+              "warmupSets": 0,
+              "workingSets": 2,
+              "reps": "8-12",
+              "rest": "90s",
+              "notes": "Controlled tempo, chase the pump. Finish with lengthened partials! RPE 9-10.",
               "category": "isolation",
               "muscleGroup": "shoulders",
               "equipment": "dumbbell"
@@ -65,10 +76,21 @@ export const expert_fundamentals = {
             {
               "name": "Triceps Pushdown",
               "warmupSets": 0,
-              "workingSets": 1,
+              "workingSets": 2,
               "reps": "8-12",
               "rest": "90s",
-              "notes": "Controlled tempo, chase the pump.",
+              "notes": "Controlled tempo, chase the pump. Finish with lengthened partials! RPE 9-10.",
+              "category": "isolation",
+              "muscleGroup": "arms",
+              "equipment": "cable"
+            },
+            {
+              "name": "Cable Bicep Curl",
+              "warmupSets": 0,
+              "workingSets": 2,
+              "reps": "8-12",
+              "rest": "90s",
+              "notes": "Controlled tempo, chase the pump. Finish with lengthened partials! RPE 9-10.",
               "category": "isolation",
               "muscleGroup": "arms",
               "equipment": "cable"
@@ -85,7 +107,7 @@ export const expert_fundamentals = {
             {
               "name": "Deadlift",
               "warmupSets": 2,
-              "workingSets": 2,
+              "workingSets": 3,
               "reps": "8-12",
               "rest": "90s",
               "notes": "Controlled tempo, chase the pump.",
@@ -96,7 +118,7 @@ export const expert_fundamentals = {
             {
               "name": "Back Squat",
               "warmupSets": 2,
-              "workingSets": 2,
+              "workingSets": 3,
               "reps": "8-12",
               "rest": "90s",
               "notes": "Controlled tempo, chase the pump.",
@@ -107,10 +129,10 @@ export const expert_fundamentals = {
             {
               "name": "Plank",
               "warmupSets": 0,
-              "workingSets": 1,
+              "workingSets": 2,
               "reps": "8-12",
               "rest": "90s",
-              "notes": "Controlled tempo, chase the pump.",
+              "notes": "Controlled tempo, chase the pump. Finish with lengthened partials! RPE 9-10.",
               "category": "core",
               "muscleGroup": "core",
               "equipment": "bodyweight"
@@ -119,14 +141,6 @@ export const expert_fundamentals = {
         },
         {
           "dayNumber": 3,
-          "name": "Rest Day",
-          "type": "rest",
-          "targetMuscles": [],
-          "estimatedDuration": 0,
-          "exercises": []
-        },
-        {
-          "dayNumber": 4,
           "name": "Upper Body",
           "type": "main",
           "targetMuscles": [],
@@ -135,7 +149,7 @@ export const expert_fundamentals = {
             {
               "name": "Bench Press",
               "warmupSets": 2,
-              "workingSets": 2,
+              "workingSets": 3,
               "reps": "8-12",
               "rest": "90s",
               "notes": "Controlled tempo, chase the pump.",
@@ -144,20 +158,20 @@ export const expert_fundamentals = {
               "equipment": "barbell"
             },
             {
-              "name": "Pull-up",
+              "name": "Barbell Row",
               "warmupSets": 2,
-              "workingSets": 2,
+              "workingSets": 3,
               "reps": "8-12",
               "rest": "90s",
               "notes": "Controlled tempo, chase the pump.",
               "category": "compound",
               "muscleGroup": "back",
-              "equipment": "bodyweight"
+              "equipment": "barbell"
             },
             {
               "name": "Overhead Press",
               "warmupSets": 2,
-              "workingSets": 2,
+              "workingSets": 3,
               "reps": "8-12",
               "rest": "90s",
               "notes": "Controlled tempo, chase the pump.",
@@ -166,23 +180,45 @@ export const expert_fundamentals = {
               "equipment": "barbell"
             },
             {
-              "name": "Barbell Row",
+              "name": "Pull-up",
               "warmupSets": 2,
-              "workingSets": 2,
+              "workingSets": 3,
               "reps": "8-12",
               "rest": "90s",
               "notes": "Controlled tempo, chase the pump.",
               "category": "compound",
               "muscleGroup": "back",
-              "equipment": "barbell"
+              "equipment": "bodyweight"
+            },
+            {
+              "name": "Triceps Pushdown",
+              "warmupSets": 0,
+              "workingSets": 2,
+              "reps": "8-12",
+              "rest": "90s",
+              "notes": "Controlled tempo, chase the pump. Finish with lengthened partials! RPE 9-10.",
+              "category": "isolation",
+              "muscleGroup": "arms",
+              "equipment": "cable"
+            },
+            {
+              "name": "Dumbbell Lateral Raise",
+              "warmupSets": 0,
+              "workingSets": 2,
+              "reps": "8-12",
+              "rest": "90s",
+              "notes": "Controlled tempo, chase the pump. Finish with lengthened partials! RPE 9-10.",
+              "category": "isolation",
+              "muscleGroup": "shoulders",
+              "equipment": "dumbbell"
             },
             {
               "name": "Cable Bicep Curl",
               "warmupSets": 0,
-              "workingSets": 1,
+              "workingSets": 2,
               "reps": "8-12",
               "rest": "90s",
-              "notes": "Controlled tempo, chase the pump.",
+              "notes": "Controlled tempo, chase the pump. Finish with lengthened partials! RPE 9-10.",
               "category": "isolation",
               "muscleGroup": "arms",
               "equipment": "cable"
@@ -190,16 +226,16 @@ export const expert_fundamentals = {
           ]
         },
         {
-          "dayNumber": 5,
+          "dayNumber": 4,
           "name": "Lower Body",
           "type": "main",
           "targetMuscles": [],
           "estimatedDuration": 45,
           "exercises": [
             {
-              "name": "Deadlift",
+              "name": "Back Squat",
               "warmupSets": 2,
-              "workingSets": 2,
+              "workingSets": 3,
               "reps": "8-12",
               "rest": "90s",
               "notes": "Controlled tempo, chase the pump.",
@@ -208,9 +244,9 @@ export const expert_fundamentals = {
               "equipment": "barbell"
             },
             {
-              "name": "Back Squat",
+              "name": "Deadlift",
               "warmupSets": 2,
-              "workingSets": 2,
+              "workingSets": 3,
               "reps": "8-12",
               "rest": "90s",
               "notes": "Controlled tempo, chase the pump.",
@@ -221,13 +257,99 @@ export const expert_fundamentals = {
             {
               "name": "Plank",
               "warmupSets": 0,
-              "workingSets": 1,
+              "workingSets": 2,
               "reps": "8-12",
               "rest": "90s",
-              "notes": "Controlled tempo, chase the pump.",
+              "notes": "Controlled tempo, chase the pump. Finish with lengthened partials! RPE 9-10.",
               "category": "core",
               "muscleGroup": "core",
               "equipment": "bodyweight"
+            }
+          ]
+        },
+        {
+          "dayNumber": 5,
+          "name": "Upper Body",
+          "type": "main",
+          "targetMuscles": [],
+          "estimatedDuration": 45,
+          "exercises": [
+            {
+              "name": "Bench Press",
+              "warmupSets": 2,
+              "workingSets": 3,
+              "reps": "8-12",
+              "rest": "90s",
+              "notes": "Controlled tempo, chase the pump.",
+              "category": "compound",
+              "muscleGroup": "chest",
+              "equipment": "barbell"
+            },
+            {
+              "name": "Barbell Row",
+              "warmupSets": 2,
+              "workingSets": 3,
+              "reps": "8-12",
+              "rest": "90s",
+              "notes": "Controlled tempo, chase the pump.",
+              "category": "compound",
+              "muscleGroup": "back",
+              "equipment": "barbell"
+            },
+            {
+              "name": "Overhead Press",
+              "warmupSets": 2,
+              "workingSets": 3,
+              "reps": "8-12",
+              "rest": "90s",
+              "notes": "Controlled tempo, chase the pump.",
+              "category": "compound",
+              "muscleGroup": "shoulders",
+              "equipment": "barbell"
+            },
+            {
+              "name": "Pull-up",
+              "warmupSets": 2,
+              "workingSets": 3,
+              "reps": "8-12",
+              "rest": "90s",
+              "notes": "Controlled tempo, chase the pump.",
+              "category": "compound",
+              "muscleGroup": "back",
+              "equipment": "bodyweight"
+            },
+            {
+              "name": "Triceps Pushdown",
+              "warmupSets": 0,
+              "workingSets": 2,
+              "reps": "8-12",
+              "rest": "90s",
+              "notes": "Controlled tempo, chase the pump. Finish with lengthened partials! RPE 9-10.",
+              "category": "isolation",
+              "muscleGroup": "arms",
+              "equipment": "cable"
+            },
+            {
+              "name": "Dumbbell Lateral Raise",
+              "warmupSets": 0,
+              "workingSets": 2,
+              "reps": "8-12",
+              "rest": "90s",
+              "notes": "Controlled tempo, chase the pump. Finish with lengthened partials! RPE 9-10.",
+              "category": "isolation",
+              "muscleGroup": "shoulders",
+              "equipment": "dumbbell"
+            },
+            {
+              "name": "Cable Bicep Curl",
+              "warmupSets": 0,
+              "workingSets": 2,
+              "reps": "8-12",
+              "rest": "90s",
+              "notes": "Controlled tempo, chase the pump. Finish with lengthened partials! RPE 9-10.",
+              "category": "isolation",
+              "muscleGroup": "arms",
+              "equipment": "cable"
             }
           ]
         },

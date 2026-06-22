@@ -221,7 +221,7 @@ function pickExercises(library, block, params, equip, wantPlyo, globalCounts) {
   });
 
   return chosen.map(ex => {
-    // Nippard principle: reduce junk volume by assigning fewer sets to isolations
+    // Expert principle: reduce junk volume by assigning fewer sets to isolations
     let exSets = params.sets;
     if (ex.category === 'isolation' || ex.category === 'core' || ex.category === 'mobility') {
       exSets = Math.max(1, params.sets - 1);
