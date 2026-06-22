@@ -90,6 +90,23 @@ def parse_pdf():
             ]
         })
 
+        # Day 5: Weak Point & Arms
+        days.append({
+            "dayNumber": 5,
+            "name": "Weak Point & Arms",
+            "type": "main",
+            "estimatedDuration": 45,
+            "exercises": [
+                {"name": "Weak Point Exercise 1", "workingSets": 2, "reps": "8-12", "rest": "120s", "notes": f"RPE ~{rpe_base}. Pick from Weak Point Table!"},
+                {"name": "Weak Point Exercise 2", "workingSets": 2, "reps": "8-12", "rest": "120s", "notes": f"RPE ~{rpe_base}. Optional if recovered!"},
+                {"name": "EZ-Bar Cable Curl", "workingSets": 2, "reps": "10-12", "rest": "90s", "notes": f"RPE ~{rpe_last}. Slow controlled reps!"},
+                {"name": "EZ-Bar Skull Crusher", "workingSets": 2, "reps": "10-12", "rest": "90s", "notes": f"RPE ~{rpe_last}. Stretch at bottom!"},
+                {"name": "Bottom-Half Incline DB Curl", "workingSets": 2, "reps": "12-15", "rest": "90s", "notes": f"RPE ~{rpe_last}. Bottom half ROM only!"},
+                {"name": "Roman Chair Leg Raise", "workingSets": 3, "reps": "10-20", "rest": "90s", "notes": f"RPE ~{rpe_last}. Round lower back!"},
+                {"name": "Triceps Pressdown (Bar)", "workingSets": 2, "reps": "12-15", "rest": "90s", "notes": f"RPE ~{rpe_last}. Big squeeze at bottom!"}
+            ]
+        })
+
         weeks.append({
             "weekNumber": w,
             "label": f"Week {w}",
@@ -100,9 +117,9 @@ def parse_pdf():
       "id": "expert-pure-bodybuilding",
       "name": "Ironlog Expert Pure Bodybuilding Phase 2",
       "author": "Ironlog Expert",
-      "description": "Exact Full Body 4x/Week split based on the Phase 2 document. Emphasizes RPE 9-10 and lengthened partials.",
+      "description": "Exact Full Body 5x/Week split based on the Phase 2 document. Emphasizes RPE 9-10 and lengthened partials.",
       "duration": "10 weeks",
-      "daysPerWeek": 4,
+      "daysPerWeek": 5,
       "type": "hypertrophy",
       "weeks": weeks
     }

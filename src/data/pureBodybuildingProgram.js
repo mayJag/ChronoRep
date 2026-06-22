@@ -2,9 +2,9 @@ export const expert_pure_bodybuilding = {
   "id": "expert-pure-bodybuilding",
   "name": "Ironlog Expert Pure Bodybuilding Phase 2",
   "author": "Ironlog Expert",
-  "description": "Exact Full Body 4x/Week split based on the Phase 2 document. Emphasizes RPE 9-10 and lengthened partials.",
+  "description": "Exact Full Body 5x/Week split based on the Phase 2 document. Emphasizes RPE 9-10 and lengthened partials.",
   "duration": "10 weeks",
-  "daysPerWeek": 4,
+  "daysPerWeek": 5,
   "type": "hypertrophy",
   "weeks": [
     {
@@ -208,6 +208,63 @@ export const expert_pure_bodybuilding = {
               "reps": "10-12",
               "rest": "90s",
               "notes": "RPE ~8. Lengthened partials on last set!"
+            }
+          ]
+        },
+        {
+          "dayNumber": 5,
+          "name": "Weak Point & Arms",
+          "type": "main",
+          "estimatedDuration": 45,
+          "exercises": [
+            {
+              "name": "Weak Point Exercise 1",
+              "workingSets": 2,
+              "reps": "8-12",
+              "rest": "120s",
+              "notes": "RPE ~7. Pick from Weak Point Table!"
+            },
+            {
+              "name": "Weak Point Exercise 2",
+              "workingSets": 2,
+              "reps": "8-12",
+              "rest": "120s",
+              "notes": "RPE ~7. Optional if recovered!"
+            },
+            {
+              "name": "EZ-Bar Cable Curl",
+              "workingSets": 2,
+              "reps": "10-12",
+              "rest": "90s",
+              "notes": "RPE ~8. Slow controlled reps!"
+            },
+            {
+              "name": "EZ-Bar Skull Crusher",
+              "workingSets": 2,
+              "reps": "10-12",
+              "rest": "90s",
+              "notes": "RPE ~8. Stretch at bottom!"
+            },
+            {
+              "name": "Bottom-Half Incline DB Curl",
+              "workingSets": 2,
+              "reps": "12-15",
+              "rest": "90s",
+              "notes": "RPE ~8. Bottom half ROM only!"
+            },
+            {
+              "name": "Roman Chair Leg Raise",
+              "workingSets": 3,
+              "reps": "10-20",
+              "rest": "90s",
+              "notes": "RPE ~8. Round lower back!"
+            },
+            {
+              "name": "Triceps Pressdown (Bar)",
+              "workingSets": 2,
+              "reps": "12-15",
+              "rest": "90s",
+              "notes": "RPE ~8. Big squeeze at bottom!"
             }
           ]
         }
@@ -416,6 +473,63 @@ export const expert_pure_bodybuilding = {
               "notes": "RPE ~9. Lengthened partials on last set!"
             }
           ]
+        },
+        {
+          "dayNumber": 5,
+          "name": "Weak Point & Arms",
+          "type": "main",
+          "estimatedDuration": 45,
+          "exercises": [
+            {
+              "name": "Weak Point Exercise 1",
+              "workingSets": 2,
+              "reps": "8-12",
+              "rest": "120s",
+              "notes": "RPE ~8. Pick from Weak Point Table!"
+            },
+            {
+              "name": "Weak Point Exercise 2",
+              "workingSets": 2,
+              "reps": "8-12",
+              "rest": "120s",
+              "notes": "RPE ~8. Optional if recovered!"
+            },
+            {
+              "name": "EZ-Bar Cable Curl",
+              "workingSets": 2,
+              "reps": "10-12",
+              "rest": "90s",
+              "notes": "RPE ~9. Slow controlled reps!"
+            },
+            {
+              "name": "EZ-Bar Skull Crusher",
+              "workingSets": 2,
+              "reps": "10-12",
+              "rest": "90s",
+              "notes": "RPE ~9. Stretch at bottom!"
+            },
+            {
+              "name": "Bottom-Half Incline DB Curl",
+              "workingSets": 2,
+              "reps": "12-15",
+              "rest": "90s",
+              "notes": "RPE ~9. Bottom half ROM only!"
+            },
+            {
+              "name": "Roman Chair Leg Raise",
+              "workingSets": 3,
+              "reps": "10-20",
+              "rest": "90s",
+              "notes": "RPE ~9. Round lower back!"
+            },
+            {
+              "name": "Triceps Pressdown (Bar)",
+              "workingSets": 2,
+              "reps": "12-15",
+              "rest": "90s",
+              "notes": "RPE ~9. Big squeeze at bottom!"
+            }
+          ]
         }
       ]
     },
@@ -620,6 +734,63 @@ export const expert_pure_bodybuilding = {
               "reps": "10-12",
               "rest": "90s",
               "notes": "RPE ~9. Lengthened partials on last set!"
+            }
+          ]
+        },
+        {
+          "dayNumber": 5,
+          "name": "Weak Point & Arms",
+          "type": "main",
+          "estimatedDuration": 45,
+          "exercises": [
+            {
+              "name": "Weak Point Exercise 1",
+              "workingSets": 2,
+              "reps": "8-12",
+              "rest": "120s",
+              "notes": "RPE ~8. Pick from Weak Point Table!"
+            },
+            {
+              "name": "Weak Point Exercise 2",
+              "workingSets": 2,
+              "reps": "8-12",
+              "rest": "120s",
+              "notes": "RPE ~8. Optional if recovered!"
+            },
+            {
+              "name": "EZ-Bar Cable Curl",
+              "workingSets": 2,
+              "reps": "10-12",
+              "rest": "90s",
+              "notes": "RPE ~9. Slow controlled reps!"
+            },
+            {
+              "name": "EZ-Bar Skull Crusher",
+              "workingSets": 2,
+              "reps": "10-12",
+              "rest": "90s",
+              "notes": "RPE ~9. Stretch at bottom!"
+            },
+            {
+              "name": "Bottom-Half Incline DB Curl",
+              "workingSets": 2,
+              "reps": "12-15",
+              "rest": "90s",
+              "notes": "RPE ~9. Bottom half ROM only!"
+            },
+            {
+              "name": "Roman Chair Leg Raise",
+              "workingSets": 3,
+              "reps": "10-20",
+              "rest": "90s",
+              "notes": "RPE ~9. Round lower back!"
+            },
+            {
+              "name": "Triceps Pressdown (Bar)",
+              "workingSets": 2,
+              "reps": "12-15",
+              "rest": "90s",
+              "notes": "RPE ~9. Big squeeze at bottom!"
             }
           ]
         }
@@ -828,6 +999,63 @@ export const expert_pure_bodybuilding = {
               "notes": "RPE ~9. Lengthened partials on last set!"
             }
           ]
+        },
+        {
+          "dayNumber": 5,
+          "name": "Weak Point & Arms",
+          "type": "main",
+          "estimatedDuration": 45,
+          "exercises": [
+            {
+              "name": "Weak Point Exercise 1",
+              "workingSets": 2,
+              "reps": "8-12",
+              "rest": "120s",
+              "notes": "RPE ~8. Pick from Weak Point Table!"
+            },
+            {
+              "name": "Weak Point Exercise 2",
+              "workingSets": 2,
+              "reps": "8-12",
+              "rest": "120s",
+              "notes": "RPE ~8. Optional if recovered!"
+            },
+            {
+              "name": "EZ-Bar Cable Curl",
+              "workingSets": 2,
+              "reps": "10-12",
+              "rest": "90s",
+              "notes": "RPE ~9. Slow controlled reps!"
+            },
+            {
+              "name": "EZ-Bar Skull Crusher",
+              "workingSets": 2,
+              "reps": "10-12",
+              "rest": "90s",
+              "notes": "RPE ~9. Stretch at bottom!"
+            },
+            {
+              "name": "Bottom-Half Incline DB Curl",
+              "workingSets": 2,
+              "reps": "12-15",
+              "rest": "90s",
+              "notes": "RPE ~9. Bottom half ROM only!"
+            },
+            {
+              "name": "Roman Chair Leg Raise",
+              "workingSets": 3,
+              "reps": "10-20",
+              "rest": "90s",
+              "notes": "RPE ~9. Round lower back!"
+            },
+            {
+              "name": "Triceps Pressdown (Bar)",
+              "workingSets": 2,
+              "reps": "12-15",
+              "rest": "90s",
+              "notes": "RPE ~9. Big squeeze at bottom!"
+            }
+          ]
         }
       ]
     },
@@ -1032,6 +1260,63 @@ export const expert_pure_bodybuilding = {
               "reps": "10-12",
               "rest": "90s",
               "notes": "RPE ~9. Lengthened partials on last set!"
+            }
+          ]
+        },
+        {
+          "dayNumber": 5,
+          "name": "Weak Point & Arms",
+          "type": "main",
+          "estimatedDuration": 45,
+          "exercises": [
+            {
+              "name": "Weak Point Exercise 1",
+              "workingSets": 2,
+              "reps": "8-12",
+              "rest": "120s",
+              "notes": "RPE ~8. Pick from Weak Point Table!"
+            },
+            {
+              "name": "Weak Point Exercise 2",
+              "workingSets": 2,
+              "reps": "8-12",
+              "rest": "120s",
+              "notes": "RPE ~8. Optional if recovered!"
+            },
+            {
+              "name": "EZ-Bar Cable Curl",
+              "workingSets": 2,
+              "reps": "10-12",
+              "rest": "90s",
+              "notes": "RPE ~9. Slow controlled reps!"
+            },
+            {
+              "name": "EZ-Bar Skull Crusher",
+              "workingSets": 2,
+              "reps": "10-12",
+              "rest": "90s",
+              "notes": "RPE ~9. Stretch at bottom!"
+            },
+            {
+              "name": "Bottom-Half Incline DB Curl",
+              "workingSets": 2,
+              "reps": "12-15",
+              "rest": "90s",
+              "notes": "RPE ~9. Bottom half ROM only!"
+            },
+            {
+              "name": "Roman Chair Leg Raise",
+              "workingSets": 3,
+              "reps": "10-20",
+              "rest": "90s",
+              "notes": "RPE ~9. Round lower back!"
+            },
+            {
+              "name": "Triceps Pressdown (Bar)",
+              "workingSets": 2,
+              "reps": "12-15",
+              "rest": "90s",
+              "notes": "RPE ~9. Big squeeze at bottom!"
             }
           ]
         }
@@ -1240,6 +1525,63 @@ export const expert_pure_bodybuilding = {
               "notes": "RPE ~10. Lengthened partials on last set!"
             }
           ]
+        },
+        {
+          "dayNumber": 5,
+          "name": "Weak Point & Arms",
+          "type": "main",
+          "estimatedDuration": 45,
+          "exercises": [
+            {
+              "name": "Weak Point Exercise 1",
+              "workingSets": 2,
+              "reps": "8-12",
+              "rest": "120s",
+              "notes": "RPE ~9. Pick from Weak Point Table!"
+            },
+            {
+              "name": "Weak Point Exercise 2",
+              "workingSets": 2,
+              "reps": "8-12",
+              "rest": "120s",
+              "notes": "RPE ~9. Optional if recovered!"
+            },
+            {
+              "name": "EZ-Bar Cable Curl",
+              "workingSets": 2,
+              "reps": "10-12",
+              "rest": "90s",
+              "notes": "RPE ~10. Slow controlled reps!"
+            },
+            {
+              "name": "EZ-Bar Skull Crusher",
+              "workingSets": 2,
+              "reps": "10-12",
+              "rest": "90s",
+              "notes": "RPE ~10. Stretch at bottom!"
+            },
+            {
+              "name": "Bottom-Half Incline DB Curl",
+              "workingSets": 2,
+              "reps": "12-15",
+              "rest": "90s",
+              "notes": "RPE ~10. Bottom half ROM only!"
+            },
+            {
+              "name": "Roman Chair Leg Raise",
+              "workingSets": 3,
+              "reps": "10-20",
+              "rest": "90s",
+              "notes": "RPE ~10. Round lower back!"
+            },
+            {
+              "name": "Triceps Pressdown (Bar)",
+              "workingSets": 2,
+              "reps": "12-15",
+              "rest": "90s",
+              "notes": "RPE ~10. Big squeeze at bottom!"
+            }
+          ]
         }
       ]
     },
@@ -1444,6 +1786,63 @@ export const expert_pure_bodybuilding = {
               "reps": "10-12",
               "rest": "90s",
               "notes": "RPE ~10. Lengthened partials on last set!"
+            }
+          ]
+        },
+        {
+          "dayNumber": 5,
+          "name": "Weak Point & Arms",
+          "type": "main",
+          "estimatedDuration": 45,
+          "exercises": [
+            {
+              "name": "Weak Point Exercise 1",
+              "workingSets": 2,
+              "reps": "8-12",
+              "rest": "120s",
+              "notes": "RPE ~9. Pick from Weak Point Table!"
+            },
+            {
+              "name": "Weak Point Exercise 2",
+              "workingSets": 2,
+              "reps": "8-12",
+              "rest": "120s",
+              "notes": "RPE ~9. Optional if recovered!"
+            },
+            {
+              "name": "EZ-Bar Cable Curl",
+              "workingSets": 2,
+              "reps": "10-12",
+              "rest": "90s",
+              "notes": "RPE ~10. Slow controlled reps!"
+            },
+            {
+              "name": "EZ-Bar Skull Crusher",
+              "workingSets": 2,
+              "reps": "10-12",
+              "rest": "90s",
+              "notes": "RPE ~10. Stretch at bottom!"
+            },
+            {
+              "name": "Bottom-Half Incline DB Curl",
+              "workingSets": 2,
+              "reps": "12-15",
+              "rest": "90s",
+              "notes": "RPE ~10. Bottom half ROM only!"
+            },
+            {
+              "name": "Roman Chair Leg Raise",
+              "workingSets": 3,
+              "reps": "10-20",
+              "rest": "90s",
+              "notes": "RPE ~10. Round lower back!"
+            },
+            {
+              "name": "Triceps Pressdown (Bar)",
+              "workingSets": 2,
+              "reps": "12-15",
+              "rest": "90s",
+              "notes": "RPE ~10. Big squeeze at bottom!"
             }
           ]
         }
@@ -1652,6 +2051,63 @@ export const expert_pure_bodybuilding = {
               "notes": "RPE ~10. Lengthened partials on last set!"
             }
           ]
+        },
+        {
+          "dayNumber": 5,
+          "name": "Weak Point & Arms",
+          "type": "main",
+          "estimatedDuration": 45,
+          "exercises": [
+            {
+              "name": "Weak Point Exercise 1",
+              "workingSets": 2,
+              "reps": "8-12",
+              "rest": "120s",
+              "notes": "RPE ~9. Pick from Weak Point Table!"
+            },
+            {
+              "name": "Weak Point Exercise 2",
+              "workingSets": 2,
+              "reps": "8-12",
+              "rest": "120s",
+              "notes": "RPE ~9. Optional if recovered!"
+            },
+            {
+              "name": "EZ-Bar Cable Curl",
+              "workingSets": 2,
+              "reps": "10-12",
+              "rest": "90s",
+              "notes": "RPE ~10. Slow controlled reps!"
+            },
+            {
+              "name": "EZ-Bar Skull Crusher",
+              "workingSets": 2,
+              "reps": "10-12",
+              "rest": "90s",
+              "notes": "RPE ~10. Stretch at bottom!"
+            },
+            {
+              "name": "Bottom-Half Incline DB Curl",
+              "workingSets": 2,
+              "reps": "12-15",
+              "rest": "90s",
+              "notes": "RPE ~10. Bottom half ROM only!"
+            },
+            {
+              "name": "Roman Chair Leg Raise",
+              "workingSets": 3,
+              "reps": "10-20",
+              "rest": "90s",
+              "notes": "RPE ~10. Round lower back!"
+            },
+            {
+              "name": "Triceps Pressdown (Bar)",
+              "workingSets": 2,
+              "reps": "12-15",
+              "rest": "90s",
+              "notes": "RPE ~10. Big squeeze at bottom!"
+            }
+          ]
         }
       ]
     },
@@ -1858,6 +2314,63 @@ export const expert_pure_bodybuilding = {
               "notes": "RPE ~10. Lengthened partials on last set!"
             }
           ]
+        },
+        {
+          "dayNumber": 5,
+          "name": "Weak Point & Arms",
+          "type": "main",
+          "estimatedDuration": 45,
+          "exercises": [
+            {
+              "name": "Weak Point Exercise 1",
+              "workingSets": 2,
+              "reps": "8-12",
+              "rest": "120s",
+              "notes": "RPE ~9. Pick from Weak Point Table!"
+            },
+            {
+              "name": "Weak Point Exercise 2",
+              "workingSets": 2,
+              "reps": "8-12",
+              "rest": "120s",
+              "notes": "RPE ~9. Optional if recovered!"
+            },
+            {
+              "name": "EZ-Bar Cable Curl",
+              "workingSets": 2,
+              "reps": "10-12",
+              "rest": "90s",
+              "notes": "RPE ~10. Slow controlled reps!"
+            },
+            {
+              "name": "EZ-Bar Skull Crusher",
+              "workingSets": 2,
+              "reps": "10-12",
+              "rest": "90s",
+              "notes": "RPE ~10. Stretch at bottom!"
+            },
+            {
+              "name": "Bottom-Half Incline DB Curl",
+              "workingSets": 2,
+              "reps": "12-15",
+              "rest": "90s",
+              "notes": "RPE ~10. Bottom half ROM only!"
+            },
+            {
+              "name": "Roman Chair Leg Raise",
+              "workingSets": 3,
+              "reps": "10-20",
+              "rest": "90s",
+              "notes": "RPE ~10. Round lower back!"
+            },
+            {
+              "name": "Triceps Pressdown (Bar)",
+              "workingSets": 2,
+              "reps": "12-15",
+              "rest": "90s",
+              "notes": "RPE ~10. Big squeeze at bottom!"
+            }
+          ]
         }
       ]
     },
@@ -2062,6 +2575,63 @@ export const expert_pure_bodybuilding = {
               "reps": "10-12",
               "rest": "90s",
               "notes": "RPE ~8. Lengthened partials on last set!"
+            }
+          ]
+        },
+        {
+          "dayNumber": 5,
+          "name": "Weak Point & Arms",
+          "type": "main",
+          "estimatedDuration": 45,
+          "exercises": [
+            {
+              "name": "Weak Point Exercise 1",
+              "workingSets": 2,
+              "reps": "8-12",
+              "rest": "120s",
+              "notes": "RPE ~7. Pick from Weak Point Table!"
+            },
+            {
+              "name": "Weak Point Exercise 2",
+              "workingSets": 2,
+              "reps": "8-12",
+              "rest": "120s",
+              "notes": "RPE ~7. Optional if recovered!"
+            },
+            {
+              "name": "EZ-Bar Cable Curl",
+              "workingSets": 2,
+              "reps": "10-12",
+              "rest": "90s",
+              "notes": "RPE ~8. Slow controlled reps!"
+            },
+            {
+              "name": "EZ-Bar Skull Crusher",
+              "workingSets": 2,
+              "reps": "10-12",
+              "rest": "90s",
+              "notes": "RPE ~8. Stretch at bottom!"
+            },
+            {
+              "name": "Bottom-Half Incline DB Curl",
+              "workingSets": 2,
+              "reps": "12-15",
+              "rest": "90s",
+              "notes": "RPE ~8. Bottom half ROM only!"
+            },
+            {
+              "name": "Roman Chair Leg Raise",
+              "workingSets": 3,
+              "reps": "10-20",
+              "rest": "90s",
+              "notes": "RPE ~8. Round lower back!"
+            },
+            {
+              "name": "Triceps Pressdown (Bar)",
+              "workingSets": 2,
+              "reps": "12-15",
+              "rest": "90s",
+              "notes": "RPE ~8. Big squeeze at bottom!"
             }
           ]
         }
