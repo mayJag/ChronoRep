@@ -169,7 +169,7 @@ export default function Programs() {
             </button>
           </div>
 
-          {/* Ironlog Expert Powerbuilding */}
+          {/* ChronoRep Expert Powerbuilding */}
           <div className={`${styles.programCard} card ${styles.expertCard}`}>
             <div className={styles.cardHeader}>
               <h2 className={styles.programTitle}>{expertPowerbuilding.name}</h2>
@@ -201,7 +201,7 @@ export default function Programs() {
             </button>
           </div>
 
-          {/* Ironlog Expert Fundamentals */}
+          {/* ChronoRep Expert Fundamentals */}
           <div className={`${styles.programCard} card ${styles.expertCard}`}>
             <div className={styles.cardHeader}>
               <h2 className={styles.programTitle}>{expert_fundamentals.name}</h2>
@@ -233,7 +233,7 @@ export default function Programs() {
             </button>
           </div>
 
-          {/* Ironlog Expert Essentials */}
+          {/* ChronoRep Expert Essentials */}
           <div className={`${styles.programCard} card ${styles.expertCard}`}>
             <div className={styles.cardHeader}>
               <h2 className={styles.programTitle}>{expert_essentials.name}</h2>
@@ -265,7 +265,7 @@ export default function Programs() {
             </button>
           </div>
 
-          {/* Ironlog Expert Pure Bodybuilding Phase 2 */}
+          {/* ChronoRep Expert Pure Bodybuilding Phase 2 */}
           <div className={`${styles.programCard} card ${styles.expertCard}`}>
             <div className={styles.cardHeader}>
               <h2 className={styles.programTitle}>{expert_pure_bodybuilding.name}</h2>

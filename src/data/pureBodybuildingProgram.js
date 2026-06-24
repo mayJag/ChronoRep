@@ -1,7 +1,7 @@
 export const expert_pure_bodybuilding = {
   "id": "expert-pure-bodybuilding",
-  "name": "Ironlog Expert Pure Bodybuilding Phase 2",
-  "author": "Ironlog Expert",
+  "name": "ChronoRep Expert Pure Bodybuilding Phase 2",
+  "author": "ChronoRep Expert",
   "description": "Exact Full Body 5x/Week split based on the Phase 2 document. Emphasizes RPE 9-10 and lengthened partials.",
   "duration": "10 weeks",
   "daysPerWeek": 5,

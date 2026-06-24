@@ -2,7 +2,7 @@
 export const hybridProgram = {
   "id": "hybrid-powerbuilding-jump",
   "name": "Hybrid Powerbuilding + Jump Program",
-  "author": "Ironlog Expert + Beyond The Rim Hybrid",
+  "author": "ChronoRep Expert + Beyond The Rim Hybrid",
   "description": "11-Week Strength & Vertical Jump Hybrid. Odd weeks = Full Body (5 gym days). Even weeks = Upper/Lower (5 gym days). Saturdays = Athletic Jump Day (no equipment).",
   "duration": "11 Weeks (4 Weeks Mesocycle)",
   "daysPerWeek": 6,

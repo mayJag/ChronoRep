@@ -1,7 +1,7 @@
 export const expert_fundamentals = {
   "id": "expert-fundamentals",
-  "name": "Ironlog Expert Fundamentals",
-  "author": "Ironlog Expert",
+  "name": "ChronoRep Expert Fundamentals",
+  "author": "ChronoRep Expert",
   "description": "Beginner | 4x/Week. An evidence-based hypertrophy program designed to build a solid foundation of muscle and strength.",
   "duration": "8 weeks",
   "daysPerWeek": 4,

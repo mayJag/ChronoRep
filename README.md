@@ -1,6 +1,6 @@
-# IronLog — Premium Athletic Workout Tracker
+# ChronoRep — Premium Athletic Workout Tracker
 
-IronLog is a premium, dark-themed, offline-first workout tracking application engineered for athletic power, strength, and explosive performance. Designed for mobile and web screens, IronLog operates completely client-side to keep your training data private, secure, and accessible in environments with poor connectivity.
+ChronoRep is a premium, dark-themed, offline-first workout tracking application engineered for athletic power, strength, and explosive performance. Designed for mobile and web screens, ChronoRep operates completely client-side to keep your training data private, secure, and accessible in environments with poor connectivity.
 
 Built using **React**, **Vite**, **Capacitor**, and **IndexedDB**.
 

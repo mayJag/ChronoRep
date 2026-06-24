@@ -1,7 +1,7 @@
 export const expert_essentials = {
   "id": "expert-essentials",
-  "name": "Ironlog Expert The Essentials",
-  "author": "Ironlog Expert",
+  "name": "ChronoRep Expert The Essentials",
+  "author": "ChronoRep Expert",
   "description": "Minimalist | 3x/Week. Designed for maximum efficiency in 45 mins or less. Low volume, high intensity.",
   "duration": "12 weeks",
   "daysPerWeek": 3,
