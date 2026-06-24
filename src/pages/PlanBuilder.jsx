@@ -562,7 +562,7 @@ export default function PlanBuilder() {
                       }}
                     >
                       <option value="rest">Rest Day</option>
-                      <option value="expert">Ironlog Expert Lift</option>
+                      <option value="expert">ChronoRep Expert Lift</option>
                       <option value="btr">Beyond The Rim Plyo</option>
                     </select>
 
