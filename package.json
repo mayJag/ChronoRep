@@ -1,5 +1,5 @@
 {
-  "name": "gallant-babbage",
+  "name": "forgefit",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -21,6 +21,7 @@
     "react-router-dom": "^7.17.0"
   },
   "devDependencies": {
+    "@capacitor/assets": "^3.0.5",
     "@eslint/js": "^10.0.1",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
