@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
 import 'dashboard_screen.dart';
+import 'plan_screen.dart';
 import 'placeholder_screen.dart';
 
 /// Root scaffold with a custom animated bottom nav bar.
@@ -24,11 +25,7 @@ class _HomeShellState extends State<HomeShell> {
 
   final _pages = const [
     DashboardScreen(),
-    PlaceholderScreen(
-      title: 'Plan',
-      icon: Icons.calendar_month_rounded,
-      blurb: 'Build weekly splits, follow structured programs, and craft custom routines.',
-    ),
+    PlanScreen(),
     PlaceholderScreen(
       title: 'Progress',
       icon: Icons.trending_up_rounded,
