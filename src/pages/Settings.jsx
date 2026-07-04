@@ -1,13 +1,11 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Timer, Scale, Volume2, Vibrate, Trash2, Info, Download, Upload, RotateCcw, ShieldAlert, Check, HelpCircle } from 'lucide-react';
+import { useState } from 'react';
+import { Timer, Scale, Volume2, Vibrate, Trash2, Info, Download, Upload, RotateCcw, Check, User } from 'lucide-react';
 import { getDB, DATA_STORES } from '../store/db';
 import { useSettings } from '../store/SettingsContext';
 import { useToast } from '../components/Toast';
 import styles from './Settings.module.css';
 
 export default function Settings() {
-  const navigate = useNavigate();
   const { toast, confirm } = useToast();
 
   // Live, app-wide settings from context
@@ -16,8 +14,19 @@ export default function Settings() {
     defaultRestTimer: restTimer,
     soundEnabled,
     vibrationEnabled,
+    userName,
     updateSetting,
   } = useSettings();
+
+  // Local draft (null = untouched, mirror the stored name) so we only persist
+  // on blur/Enter, not every keystroke.
+  const [nameDraft, setNameDraft] = useState(null);
+  const displayedName = nameDraft ?? userName;
+  const commitName = () => {
+    const trimmed = displayedName.trim();
+    if (trimmed !== userName) updateSetting('userName', trimmed);
+    setNameDraft(null);
+  };
 
   const handleUpdateRestTimer = (val) => {
     updateSetting('defaultRestTimer', parseInt(val) || 90);
@@ -148,6 +157,32 @@ export default function Settings() {
         <h1 className="page-title">Settings</h1>
         <p className="page-subtitle">Configure your workout behavior and data backup preferences</p>
       </header>
+
+      {/* Profile Section */}
+      <section className="section">
+        <h2 className={styles.sectionHeader}>Profile</h2>
+        <div className={styles.settingsGroup}>
+          <div className={styles.settingRow}>
+            <div className={styles.settingLabelCol}>
+              <User size={18} className={styles.settingIcon} />
+              <div className={styles.settingText}>
+                <span className={styles.settingName}>Your Name</span>
+                <span className={styles.settingDesc}>Used to personalise your dashboard greeting</span>
+              </div>
+            </div>
+            <input
+              type="text"
+              className="input"
+              style={{ maxWidth: '140px' }}
+              placeholder="Name"
+              value={displayedName}
+              onChange={(e) => setNameDraft(e.target.value)}
+              onBlur={commitName}
+              onKeyDown={(e) => { if (e.key === 'Enter') e.currentTarget.blur(); }}
+            />
+          </div>
+        </div>
+      </section>
 
       {/* Preferences Section */}
       <section className="section">
@@ -291,7 +326,7 @@ export default function Settings() {
       <section className="section card" style={{ marginTop: 'var(--sp-6)', textAlign: 'center' }}>
         <Info size={24} className={styles.infoIcon} />
         <h3 className={styles.appName}>ChronoRep Workout Tracker</h3>
-        <p className={styles.appVersion}>Version 1.2.0 (Release Build)</p>
+        <p className={styles.appVersion}>Version 1.3.0 (Release Build)</p>
         <p className={styles.appCredits}>
           Engineered for vertical jump performance & powerbuilding. Preloaded with "Beyond The Rim" & ChronoRep Expert's Systems.
         </p>

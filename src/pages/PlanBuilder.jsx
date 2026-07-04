@@ -88,7 +88,7 @@ export default function PlanBuilder() {
   });
   const [selectedCustomDayKey, setSelectedCustomDayKey] = useState('mon');
   const [customSearch, setCustomSearch] = useState('');
-  const [customFilterCategory, setCustomFilterCategory] = useState('all');
+  const customFilterCategory = 'all'; // reserved for a future category filter UI
 
   // Hydrate the Custom editor from a generated plan handed over by the Goals page.
   useEffect(() => {
@@ -120,7 +120,6 @@ export default function PlanBuilder() {
     setCustomDays(hydrated);
     const firstActive = Object.keys(hydrated).find(k => hydrated[k].active);
     if (firstActive) setSelectedCustomDayKey(firstActive);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.state]);
 
   // --- Quick Workout State ---
@@ -371,7 +370,7 @@ export default function PlanBuilder() {
   // --- Quick Workout Generator ---
   const handleGenerateQuickWorkout = () => {
     // Filter master exercises based on target focus
-    let pool = [];
+    let pool;
     if (quickFocus === 'upper') {
       pool = libraryExercises.filter(ex => ['chest', 'back', 'shoulders', 'arms'].includes(ex.muscleGroup));
     } else if (quickFocus === 'lower') {
@@ -487,9 +486,9 @@ export default function PlanBuilder() {
       {/* 1. FOLLOW PROGRAM VIEW */}
       {activeTab === 'program' && (
         <div className="card stagger">
-          <h2 className={styles.sectionTitle}>Follow a Full PDF Program</h2>
+          <h2 className={styles.sectionTitle}>Follow a Complete Program</h2>
           <p className={styles.sectionDesc}>
-            Deploy the complete program cycle as-written. Your weekly calendar will map directly to the workout days.
+            Activate a preloaded training cycle as-written — your weekly calendar will map directly to its workout days.
           </p>
 
           <div className={styles.formGroup}>

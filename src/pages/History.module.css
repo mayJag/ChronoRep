@@ -300,3 +300,59 @@
 .editSetRow { display: flex; align-items: center; gap: var(--sp-2); }
 .editSetNum { width: 48px; font-size: var(--fs-xs); color: var(--text-tertiary); }
 .editX { color: var(--text-tertiary); }
+
+/* --- Search --- */
+.searchBox {
+  position: relative;
+  margin-bottom: var(--sp-4);
+}
+
+.searchBox input {
+  padding-left: 38px;
+  padding-right: 38px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-tertiary);
+  pointer-events: none;
+}
+
+.searchClear {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  color: var(--text-secondary);
+  background: var(--bg-elevated);
+}
+
+/* --- Session notes --- */
+.logNotes {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-2);
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  background: var(--bg-input);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--sp-2) var(--sp-3);
+  margin-bottom: var(--sp-3);
+  font-style: italic;
+}
+
+.logNotes svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+  color: var(--warning);
+}

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { X, Check, Plus, Clock, Trophy, Dumbbell, ChevronDown, ChevronUp, AlertTriangle, Play, Pause, TrendingUp } from 'lucide-react';
+import { X, Check, Plus, Clock, Trophy, Dumbbell, ChevronDown, ChevronUp, Play, Pause, TrendingUp } from 'lucide-react';
 import { saveWorkoutLog, getPersonalRecord, savePersonalRecord, getAllWorkoutLogs } from '../store/db';
 import RestTimer from '../components/RestTimer';
 import { getExerciseVideoUrl } from '../data/exerciseVideos';
@@ -15,24 +15,20 @@ const RESUME_KEY = 'ironlog_active_workout';
 export default function ActiveWorkout() {
   const location = useLocation();
   const navigate = useNavigate();
-  const { weightUnit, defaultRestTimer } = useSettings();
+  const { weightUnit, defaultRestTimer, vibrationEnabled } = useSettings();
   const { toast, confirm } = useToast();
   const { exercises: libraryExercises } = useExerciseLibrary();
 
-  // Get workout from router state
+  // Get workout from router state. A direct open (no state, no resume snapshot)
+  // starts an empty freestyle session instead of a phantom pre-filled workout.
   const workoutData = location.state?.workout || {
-    name: 'Quick Workout',
-    exercises: [
-      { name: 'Push Up', sets: 3, reps: '12', rest: '60s', muscleGroup: 'chest', equipment: 'bodyweight' },
-      { name: 'Air Squat', sets: 3, reps: '15', rest: '60s', muscleGroup: 'legs', equipment: 'bodyweight' }
-    ]
+    name: 'Freestyle Session',
+    exercises: []
   };
 
   // Workout state
   const [exercises, setExercises] = useState([]);
   const [elapsedTime, setElapsedTime] = useState(0);
-  const [activeExerciseIndex, setActiveExerciseIndex] = useState(0);
-  const [isFinished, setIsFinished] = useState(false);
   
   // Rest timer state
   const [isRestTimerVisible, setIsRestTimerVisible] = useState(false);
@@ -44,6 +40,8 @@ export default function ActiveWorkout() {
   const [newPRs, setNewPRs] = useState([]); // list of exercise names where a PR was hit
   const [totalVolume, setTotalVolume] = useState(0);
   const [totalSetsCount, setTotalSetsCount] = useState(0);
+  const [summaryElapsed, setSummaryElapsed] = useState(0); // duration frozen at finish
+  const [sessionNotes, setSessionNotes] = useState('');
 
   // Previous performance records state: exerciseName -> 'weight kg x reps'
   const [previousData, setPreviousData] = useState({});
@@ -125,7 +123,7 @@ export default function ActiveWorkout() {
 
   // Auto-save the in-progress session so a reload/close can resume it.
   useEffect(() => {
-    if (!initRef.current || isFinished || showSummary || exercises.length === 0) return;
+    if (!initRef.current || showSummary || exercises.length === 0) return;
     try {
       localStorage.setItem(RESUME_KEY, JSON.stringify({
         name: sessionMeta.name,
@@ -135,7 +133,7 @@ export default function ActiveWorkout() {
         savedAt: Date.now(),
       }));
     } catch (e) { /* storage full / unavailable — non-fatal */ }
-  }, [exercises, sessionMeta, isFinished, showSummary]);
+  }, [exercises, sessionMeta, showSummary]);
 
   // Fetch previous performance + compute a smart next-target suggestion per exercise
   const loadPreviousPerformance = async (exercisesList) => {
@@ -154,7 +152,7 @@ export default function ActiveWorkout() {
             const completedSets = logEx.sets.filter(s => s.completed);
             if (completedSets.length > 0) {
               const bestSet = completedSets.reduce((best, curr) => (curr.weight > best.weight) ? curr : best, completedSets[0]);
-              prevMap[ex.name] = `${bestSet.weight}${weightUnit} × ${bestSet.reps}`;
+              prevMap[ex.name] = { weight: bestSet.weight, reps: bestSet.reps };
               const sugg = suggestProgression(completedSets, { repTarget });
               if (sugg) suggMap[ex.name] = sugg;
               found = true;
@@ -166,16 +164,13 @@ export default function ActiveWorkout() {
         // If no past log, check personalRecords store
         if (!found) {
           const pr = await getPersonalRecord(ex.name);
-          if (pr) {
-            prevMap[ex.name] = `${pr.weight}${weightUnit} × ${pr.reps}`;
-          } else {
-            prevMap[ex.name] = '—';
-          }
+          prevMap[ex.name] = pr ? { weight: pr.weight, reps: pr.reps } : null;
         }
       }
 
-      setPreviousData(prevMap);
-      setSuggestions(suggMap);
+      // Merge so exercises added mid-session keep earlier entries intact.
+      setPreviousData(prev => ({ ...prev, ...prevMap }));
+      setSuggestions(prev => ({ ...prev, ...suggMap }));
     } catch (e) {
       console.error("Failed to load previous data:", e);
     }
@@ -269,10 +264,42 @@ export default function ActiveWorkout() {
 
     // Only open the rest timer when completing a set (not when un-checking).
     if (willComplete) {
+      if (vibrationEnabled && navigator.vibrate) navigator.vibrate(30);
       setRestDuration(duration);
       setRestSession(n => n + 1); // remount RestTimer so it restarts cleanly each set
       setIsRestTimerVisible(true);
     }
+  };
+
+  // Tap a set's PREV cell to copy last session's best weight/reps into the inputs.
+  const applyPrevToSet = (exIdx, setIdx) => {
+    const prev = previousData[exercises[exIdx]?.name];
+    if (!prev) return;
+    setExercises(list => list.map((ex, i) => {
+      if (i !== exIdx) return ex;
+      return {
+        ...ex,
+        sets: ex.sets.map((s, j) => (j === setIdx && !s.completed)
+          ? { ...s, weight: prev.weight, reps: prev.reps }
+          : s),
+      };
+    }));
+  };
+
+  const handleRemoveExercise = async (exIdx) => {
+    const ex = exercises[exIdx];
+    if (!ex) return;
+    const hasCompleted = ex.sets.some(s => s.completed);
+    if (hasCompleted) {
+      const ok = await confirm({
+        title: `Remove ${ex.name}?`,
+        message: 'This exercise has completed sets — they will be discarded.',
+        confirmLabel: 'Remove',
+        danger: true,
+      });
+      if (!ok) return;
+    }
+    setExercises(prev => prev.filter((_, i) => i !== exIdx));
   };
 
   const handleStartSetTimer = (exIdx, setIdx) => {
@@ -331,6 +358,8 @@ export default function ActiveWorkout() {
     setExercises(prev => [...prev, newEx]);
     setShowAddExModal(false);
     setExSearchQuery('');
+    // Pull last-session numbers + progression suggestion for the new exercise.
+    loadPreviousPerformance([newEx]);
   };
 
   const handleAddSet = (exIdx) => {
@@ -363,9 +392,11 @@ export default function ActiveWorkout() {
     return exercises.some(ex => ex.sets.some(s => s.completed));
   };
 
-  // Finish Workout: calculate summary metrics and determine if new PRs were made
+  // Finish Workout: calculate summary metrics and determine if new PRs were made.
+  // The session timer keeps running so "Back to Workout" resumes seamlessly;
+  // the displayed/saved duration is frozen in summaryElapsed.
   const handleFinishWorkout = async () => {
-    if (timerRef.current) clearInterval(timerRef.current);
+    setSummaryElapsed(elapsedTime);
 
     let volume = 0;
     let setsCount = 0;
@@ -433,6 +464,7 @@ export default function ActiveWorkout() {
               exerciseName: ex.name,
               weight: maxWeight,
               reps: maxReps,
+              weightUnit,
               date: new Date().toISOString().split('T')[0]
             });
           }
@@ -446,14 +478,16 @@ export default function ActiveWorkout() {
         programName: sessionMeta.programId === 'beyond-the-rim' ? 'BTR' : (sessionMeta.programId === 'expert-powerbuilding' ? 'Expert' : 'Custom'),
         programId: sessionMeta.programId || 'custom',
         date: new Date().toISOString().split('T')[0],
-        duration: Math.round(elapsedTime / 60) || 1, // in minutes
+        duration: Math.round(summaryElapsed / 60) || 1, // in minutes
+        notes: sessionNotes.trim(),
         exercises: exercises.map(ex => ({
           name: ex.name,
           isPR: newPRs.includes(ex.name),
           sets: ex.sets.map(s => ({
             weight: s.weight,
             reps: s.reps,
-            completed: s.completed
+            completed: s.completed,
+            ...(s.duration ? { duration: s.duration } : {})
           }))
         })),
         totalVolume,
@@ -504,6 +538,13 @@ export default function ActiveWorkout() {
 
       {/* Exercises List */}
       <div className={styles.exercisesList}>
+        {exercises.length === 0 && (
+          <div className="empty-state card">
+            <Dumbbell size={32} />
+            <h3>Empty session</h3>
+            <p>Add your first exercise below to start logging sets.</p>
+          </div>
+        )}
         {exercises.map((ex, exIdx) => {
           const allCompleted = ex.sets.length > 0 && ex.sets.every(s => s.completed);
           
@@ -532,9 +573,19 @@ export default function ActiveWorkout() {
                   </div>
                 </div>
 
-                <button className="btn btn--ghost btn--icon" onClick={() => handleToggleNote(exIdx)}>
-                  {ex.isNotesExpanded ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
-                </button>
+                <div className={styles.cardHeaderActions}>
+                  <button className="btn btn--ghost btn--icon" onClick={() => handleToggleNote(exIdx)}>
+                    {ex.isNotesExpanded ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+                  </button>
+                  <button
+                    className="btn btn--ghost btn--icon"
+                    title="Remove exercise"
+                    aria-label={`Remove ${ex.name}`}
+                    onClick={() => handleRemoveExercise(exIdx)}
+                  >
+                    <X size={16} />
+                  </button>
+                </div>
               </div>
 
               {/* Collapsible notes */}
@@ -587,7 +638,19 @@ export default function ActiveWorkout() {
                     return (
                       <tr key={setIdx} className={set.completed ? styles.completedRow : ''}>
                         <td className={styles.setNum}>{setIdx + 1}</td>
-                        <td className={styles.prevText}>{previousData[ex.name] || '—'}</td>
+                        <td className={styles.prevText}>
+                          {previousData[ex.name] ? (
+                            <button
+                              type="button"
+                              className={styles.prevFillBtn}
+                              title="Tap to use last session's numbers"
+                              disabled={set.completed}
+                              onClick={() => applyPrevToSet(exIdx, setIdx)}
+                            >
+                              {previousData[ex.name].weight}{weightUnit} × {previousData[ex.name].reps}
+                            </button>
+                          ) : '—'}
+                        </td>
                         <td>
                           <input
                             type="number"
@@ -690,7 +753,7 @@ export default function ActiveWorkout() {
 
             <div className={styles.summaryStats}>
               <div className={styles.summaryStatCard}>
-                <span className={styles.summaryVal}>{formatTimer(elapsedTime)}</span>
+                <span className={styles.summaryVal}>{formatTimer(summaryElapsed)}</span>
                 <span className={styles.summaryLbl}>Duration</span>
               </div>
               <div className={styles.summaryStatCard}>
@@ -721,8 +784,24 @@ export default function ActiveWorkout() {
               </div>
             )}
 
+            {/* Session notes */}
+            <textarea
+              className={`${styles.notesInput} input`}
+              placeholder="Session notes (optional) — how did it feel?"
+              rows={2}
+              value={sessionNotes}
+              onChange={(e) => setSessionNotes(e.target.value)}
+            />
+
             <button className="btn btn--primary btn--full" onClick={handleSaveAndExit}>
               Save & Exit
+            </button>
+            <button
+              className="btn btn--ghost btn--full"
+              style={{ marginTop: 'var(--sp-2)' }}
+              onClick={() => setShowSummary(false)}
+            >
+              Back to Workout
             </button>
           </div>
         </div>
