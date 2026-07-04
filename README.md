@@ -6,7 +6,23 @@ Built using **React**, **Vite**, **Capacitor**, and **IndexedDB**.
 
 ---
 
-## ✨ Recent Enhancements (v1.2.0)
+## ✨ Recent Enhancements (v1.5.0)
+
+Bug fixes + big usability pass:
+
+* **Installable PWA:** web manifest + offline service worker — install ChronoRep to your home screen straight from the browser; the app shell works fully offline.
+* **Rest timer you can minimize:** collapse the rest overlay into a floating countdown pill so you can keep logging sets, adding exercises or writing notes while resting. Also fixed a double end-beep and a phantom beep that could fire after the timer was dismissed.
+* **Tap-to-fill previous performance:** each set's PREV cell is now a button — one tap copies last session's best weight × reps into the inputs. Exercises added mid-session now also pull their history & progression suggestion (previously they showed nothing).
+* **Finish flow fixed:** a "Back to Workout" button lets you return from the finish summary (previously a one-way door), the saved duration is frozen at the moment you tap Finish, and you can attach **session notes** that show up in History.
+* **TUT set timers actually saved:** per-set stopwatch durations were tracked during the session but silently dropped on save — they're now stored and shown in History.
+* **Correct weekly stats:** the dashboard now counts the *calendar* week (Mon–Sun) instead of a trailing 7-day window, and plan progress counts distinct days trained — no more "5 of 3 sessions". Plus a new Mon–Sun training strip.
+* **Remove exercises mid-session,** empty freestyle sessions instead of a phantom hardcoded workout on direct opens, and a haptic tick when you complete a set.
+* **History search** across workout and exercise names.
+* **Personalised greeting:** set your name in Settings → Profile.
+* **Interactive charts:** hover/tap any bar or point on the Progress charts for a date + value tooltip; labels no longer stretch, and PRs remember which unit they were set in.
+* **Quality:** ESLint now passes clean (0 errors), removed an unused dependency, disabled-button styling, reduced-motion support, and keyboard focus rings.
+
+## ✨ Enhancements (v1.2.0)
 
 A full redesign + major feature expansion:
 
