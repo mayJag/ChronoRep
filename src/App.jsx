@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
+import { App as CapacitorApp } from '@capacitor/app';
+import { Capacitor } from '@capacitor/core';
 import Navigation from './components/Navigation';
 import Dashboard from './pages/Dashboard';
 import Programs from './pages/Programs';
@@ -20,6 +22,25 @@ import Exercises from './pages/Exercises';
 export default function App() {
   const location = useLocation();
   const isWorkoutActive = location.pathname === '/workout';
+
+  // Hardware back button (Android): go back within the app's own navigation
+  // history instead of falling through to the OS default, which exits straight
+  // to the home screen when there's no listener registered at all.
+  useEffect(() => {
+    if (!Capacitor.isNativePlatform()) return;
+
+    const listenerPromise = CapacitorApp.addListener('backButton', ({ canGoBack }) => {
+      if (canGoBack) {
+        window.history.back();
+      } else {
+        CapacitorApp.exitApp();
+      }
+    });
+
+    return () => {
+      listenerPromise.then((listener) => listener.remove());
+    };
+  }, []);
 
   return (
     <>
