@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Play, Pause, RotateCcw, X, Plus, Minus } from 'lucide-react';
+import { Play, Pause, RotateCcw, X, Plus, Minus, Minimize2 } from 'lucide-react';
 import { useSettings } from '../store/SettingsContext';
 import styles from './RestTimer.module.css';
 
@@ -8,25 +8,32 @@ export default function RestTimer({ initialDuration = 90, onComplete, onSkip, is
   const [totalTime, setTotalTime] = useState(initialDuration);
   const [timeLeft, setTimeLeft] = useState(initialDuration);
   const [isRunning, setIsRunning] = useState(true);
+  const [isMinimized, setIsMinimized] = useState(false);
   const [isCustomMode, setIsCustomMode] = useState(false);
   const [customMinutes, setCustomMinutes] = useState(1);
   const [customSeconds, setCustomSeconds] = useState(30);
 
   const timerRef = useRef(null);
+  const firedRef = useRef(false); // end signals must fire once per countdown
   const circumference = 2 * Math.PI * 90; // radius = 90
 
   useEffect(() => {
     setTotalTime(initialDuration);
     setTimeLeft(initialDuration);
     setIsRunning(true);
+    firedRef.current = false;
   }, [initialDuration, isVisible]);
 
   useEffect(() => {
+    // Never tick or beep while hidden — the reset above restarts the countdown
+    // when the parent hides the timer, which used to fire a phantom beep later.
+    if (!isVisible) return;
     if (isRunning && timeLeft > 0) {
       timerRef.current = setInterval(() => {
         setTimeLeft((prev) => prev - 1);
       }, 1000);
-    } else if (timeLeft === 0) {
+    } else if (timeLeft === 0 && !firedRef.current) {
+      firedRef.current = true;
       triggerEndSignals();
       if (onComplete) onComplete();
       setIsRunning(false);
@@ -35,7 +42,8 @@ export default function RestTimer({ initialDuration = 90, onComplete, onSkip, is
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
     };
-  }, [isRunning, timeLeft]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isRunning, timeLeft, isVisible]);
 
   const triggerEndSignals = () => {
     // 1. Audio oscillator beep (respects the Sound Effects setting)
@@ -76,13 +84,10 @@ export default function RestTimer({ initialDuration = 90, onComplete, onSkip, is
   const strokeDashoffset = circumference - (timeLeft / totalTime) * circumference;
 
   const adjustTime = (amount) => {
-    setTimeLeft((prev) => {
-      const next = prev + amount;
-      if (next < 0) return 0;
-      // Also adjust totalTime if we extend it past original
-      if (next > totalTime) setTotalTime(next);
-      return next;
-    });
+    const next = Math.max(0, timeLeft + amount);
+    // Also adjust totalTime if we extend it past original
+    if (next > totalTime) setTotalTime(next);
+    setTimeLeft(next);
   };
 
   const handlePreset = (seconds) => {
@@ -103,10 +108,47 @@ export default function RestTimer({ initialDuration = 90, onComplete, onSkip, is
     }
   };
 
+  // Minimized: a floating countdown pill so the user can keep logging while resting.
+  if (isMinimized) {
+    return (
+      <button
+        className={styles.miniPill}
+        onClick={() => setIsMinimized(false)}
+        aria-label="Expand rest timer"
+      >
+        <svg width="28" height="28" viewBox="0 0 28 28" className={styles.miniRing}>
+          <circle cx="14" cy="14" r="11" className={styles.miniRingBg} />
+          <circle
+            cx="14" cy="14" r="11"
+            className={styles.miniRingProgress}
+            strokeDasharray={2 * Math.PI * 11}
+            strokeDashoffset={(2 * Math.PI * 11) * (1 - timeLeft / totalTime)}
+          />
+        </svg>
+        <span className={styles.miniTime}>{formatTime(timeLeft)}</span>
+        <span
+          className={styles.miniSkip}
+          role="button"
+          aria-label="Skip rest"
+          onClick={(e) => { e.stopPropagation(); onSkip(); }}
+        >
+          <X size={14} />
+        </span>
+      </button>
+    );
+  }
+
   return (
     <div className={styles.overlay}>
       <div className={styles.modal}>
-        <button className={styles.closeBtn} onClick={onSkip}>
+        <button
+          className={`${styles.closeBtn} ${styles.minimizeBtn}`}
+          onClick={() => setIsMinimized(true)}
+          aria-label="Minimize rest timer"
+        >
+          <Minimize2 size={18} />
+        </button>
+        <button className={styles.closeBtn} onClick={onSkip} aria-label="Skip rest">
           <X size={20} />
         </button>
 

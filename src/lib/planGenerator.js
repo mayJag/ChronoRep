@@ -104,7 +104,7 @@ function buildBlocks(split, days, armsDay) {
 }
 
 // Recommend the best split for the chosen goals / frequency / experience.
-export function recommendSplit(objectives = [], days = 4, experience = 'intermediate') {
+export function recommendSplit(objectives = [], days = 4) {
   const hasJump = objectives.includes('jump');
   let split, reason;
   if (days <= 3) {

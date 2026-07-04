@@ -46,6 +46,70 @@
   color: var(--text-primary);
 }
 
+.minimizeBtn {
+  right: calc(var(--sp-4) + 38px);
+}
+
+/* --- Minimized floating pill --- */
+.miniPill {
+  position: fixed;
+  right: var(--sp-4);
+  bottom: calc(88px + var(--safe-area-bottom));
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-2) var(--sp-3);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-lg), var(--shadow-glow-accent);
+  color: var(--text-primary);
+  animation: scaleIn var(--duration-normal) var(--ease-spring);
+}
+
+.miniRing {
+  transform: rotate(-90deg);
+  flex-shrink: 0;
+}
+
+.miniRingBg {
+  fill: none;
+  stroke: var(--bg-card);
+  stroke-width: 3;
+}
+
+.miniRingProgress {
+  fill: none;
+  stroke: var(--accent-primary);
+  stroke-width: 3;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1s linear;
+}
+
+.miniTime {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-semibold);
+  font-variant-numeric: tabular-nums;
+}
+
+.miniSkip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-full);
+  color: var(--text-secondary);
+  background: var(--bg-card);
+  transition: all var(--duration-fast);
+}
+
+.miniSkip:hover {
+  color: var(--text-primary);
+  background: var(--bg-card-hover);
+}
+
 .timerRing {
   position: relative;
   display: flex;

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Flame, Dumbbell, TrendingUp, ChevronRight, Play, Calendar, Clock, Award, Zap, CheckCircle2, Star } from 'lucide-react';
 import { getAllWorkoutLogs, getSetting, getAllPersonalRecords } from '../store/db';
-import { computeXP, levelFromXP } from '../lib/fitness';
+import { computeXP, levelFromXP, computeStreak, weeklyStats, localDateStr } from '../lib/fitness';
 import { useSettings } from '../store/SettingsContext';
 import styles from './Dashboard.module.css';
 
@@ -24,7 +24,7 @@ const MOTIVATIONAL_QUOTES = [
 
 export default function Dashboard() {
   const navigate = useNavigate();
-  const { weightUnit } = useSettings();
+  const { weightUnit, userName } = useSettings();
   const [quote, setQuote] = useState('');
   const [stats, setStats] = useState({ weeklyCount: 0, streak: 0, weeklyVolume: 0 });
   const [todayWorkout, setTodayWorkout] = useState(null);
@@ -32,6 +32,7 @@ export default function Dashboard() {
   const [recentLogs, setRecentLogs] = useState([]);
   const [weeklyProgress, setWeeklyProgress] = useState({ completed: 0, target: 0, pct: 0 });
   const [trainedToday, setTrainedToday] = useState(false);
+  const [weekDays, setWeekDays] = useState([]); // [{label, trained, isToday}]
   const [level, setLevel] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -54,68 +55,38 @@ export default function Dashboard() {
         setLevel(levelFromXP(computeXP(logs, prs.length)));
       } catch (e) { /* non-fatal */ }
 
-      // Calculate stats (weekly workouts, volume, streak)
+      // Calendar-week (Mon-based) workouts + volume, and streak
       const now = new Date();
-      const oneWeekAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
-      
-      let weeklyCount = 0;
-      let weeklyVolume = 0;
-      
-      logs.forEach(log => {
-        const logDate = new Date(log.date);
-        if (logDate >= oneWeekAgo) {
-          weeklyCount++;
-          weeklyVolume += log.totalVolume || 0;
-        }
-      });
+      const week = weeklyStats(logs, now);
+      setStats({ weeklyCount: week.count, streak: computeStreak(logs), weeklyVolume: week.volume });
 
-      // Simple streak calculation
-      let streak = 0;
-      const sortedDates = logs
-        .map(l => l.date)
-        .filter((value, index, self) => self.indexOf(value) === index) // unique dates
-        .sort((a, b) => new Date(b) - new Date(a)); // newest first
-
-      if (sortedDates.length > 0) {
-        const todayStr = now.toISOString().split('T')[0];
-        const yesterday = new Date(now.getTime() - 24 * 60 * 60 * 1000);
-        const yesterdayStr = yesterday.toISOString().split('T')[0];
-
-        if (sortedDates[0] === todayStr || sortedDates[0] === yesterdayStr) {
-          streak = 1;
-          for (let i = 0; i < sortedDates.length - 1; i++) {
-            const current = new Date(sortedDates[i]);
-            const next = new Date(sortedDates[i + 1]);
-            const diffTime = Math.abs(current - next);
-            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-            
-            if (diffDays === 1) {
-              streak++;
-            } else {
-              break;
-            }
-          }
-        }
-      }
-
-      setStats({ weeklyCount, streak, weeklyVolume });
-
-      // Did we already train today?
-      const todayStr = now.toISOString().split('T')[0];
+      // Did we already train today? (local calendar day)
+      const todayStr = localDateStr(now);
       setTrainedToday(logs.some(l => l.date === todayStr));
+
+      // Mon–Sun strip of this week's trained days
+      const dayLabels = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
+      const strip = dayLabels.map((label, i) => {
+        const d = new Date(week.weekStart);
+        d.setDate(d.getDate() + i);
+        const key = localDateStr(d);
+        return { label, trained: week.trainedDates.has(key), isToday: key === todayStr };
+      });
+      setWeekDays(strip);
 
       // Load active plan
       const plan = await getSetting('activePlan');
       if (plan) {
         setActivePlan(plan);
-        determineTodayWorkout(plan, logs);
+        determineTodayWorkout(plan);
 
-        // Real weekly progress: scheduled workout days vs sessions done this week
+        // Real weekly progress: scheduled workout days vs distinct days trained
+        // this calendar week (so two sessions in one day don't count twice).
         const target = Object.values(plan.weeklySchedule || {}).filter(
           d => d && d.type !== 'rest' && (d.exercises?.length > 0)
         ).length;
-        const pct = target > 0 ? Math.min(100, Math.round((weeklyCount / target) * 100)) : 0;
-        setWeeklyProgress({ completed: weeklyCount, target, pct });
+        const pct = target > 0 ? Math.min(100, Math.round((week.daysTrained / target) * 100)) : 0;
+        setWeeklyProgress({ completed: week.daysTrained, target, pct });
       }
     } catch (e) {
       console.error("Dashboard load failed:", e);
@@ -124,7 +95,7 @@ export default function Dashboard() {
     }
   };
 
-  const determineTodayWorkout = (plan, logs) => {
+  const determineTodayWorkout = (plan) => {
     // Determine which workout is scheduled for today
     const daysOfWeek = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
     const todayName = daysOfWeek[new Date().getDay()];
@@ -173,7 +144,9 @@ export default function Dashboard() {
       <header className={styles.header}>
         <div>
           <span className={styles.dateLabel}>{formatDate()}</span>
-          <h1 className={styles.greeting}>{getGreeting()}</h1>
+          <h1 className={styles.greeting}>
+            {getGreeting()}{userName ? `, ${userName.split(' ')[0]}` : ''}
+          </h1>
         </div>
         <div className={styles.avatar}>
           <Flame size={20} className={styles.flameIcon} />
@@ -235,6 +208,20 @@ export default function Dashboard() {
           <span className="stat-card__label">Volume</span>
         </div>
       </div>
+
+      {/* This week's training strip */}
+      {weekDays.length > 0 && (
+        <div className={`${styles.weekStrip} card section`}>
+          {weekDays.map((d, i) => (
+            <div key={i} className={styles.weekDay}>
+              <span className={`${styles.weekDot} ${d.trained ? styles.weekDotOn : ''} ${d.isToday ? styles.weekDotToday : ''}`}>
+                {d.trained ? <CheckCircle2 size={14} /> : null}
+              </span>
+              <span className={`${styles.weekLbl} ${d.isToday ? styles.weekLblToday : ''}`}>{d.label}</span>
+            </div>
+          ))}
+        </div>
+      )}
 
       {/* Today's Workout */}
       <section className="section">
