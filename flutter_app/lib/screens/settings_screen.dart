@@ -134,7 +134,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
           const SizedBox(height: 24),
           Center(
-            child: Text('ChronoRep v1.6.0',
+            child: Text('ChronoRep v1.6.1',
                 style: TextStyle(
                     fontSize: 12,
                     letterSpacing: 1,
