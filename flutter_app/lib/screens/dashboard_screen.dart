@@ -5,6 +5,7 @@ import '../widgets/glass_card.dart';
 import '../data/store.dart';
 import '../data/models.dart';
 import '../data/fitness.dart';
+import 'quick_workout_screen.dart';
 
 const _quotes = [
   "The only bad workout is the one that didn't happen.",
@@ -243,12 +244,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
             _PrimaryButton(
               label: 'Start Workout',
               icon: Icons.play_arrow_rounded,
-              onTap: () => ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(
-                  content: Text('Active Workout screen — being ported next.'),
-                  backgroundColor: AppColors.bgElevated,
-                ),
-              ),
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (_) => const QuickWorkoutScreen())),
             ),
           ],
         ),

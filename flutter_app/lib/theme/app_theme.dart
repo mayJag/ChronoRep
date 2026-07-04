@@ -1,39 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-/// ChronoRep design system — "Graphite + Electric Blue".
-/// Ported from the original web app's CSS custom properties so the Flutter
-/// rewrite keeps the same athletic, data-forward visual language.
+/// ChronoRep design system — "Mono & Crimson".
+/// A restrained, high-contrast monochrome base with a single bold crimson
+/// accent — an athletic, professional identity (Nike Training / Strava energy)
+/// rather than the neon-on-black look of the first pass.
 class AppColors {
-  // Backgrounds
-  static const bgPrimary = Color(0xFF090A0C); // hsl(240 8% 4%)
-  static const bgSecondary = Color(0xFF12131A); // hsl(228 11% 8%)
-  static const bgCard = Color(0xFF191A21); // hsl(225 10% 11%)
-  static const bgCardHover = Color(0xFF20222B); // hsl(225 10% 14%)
-  static const bgElevated = Color(0xFF262932); // hsl(225 9% 16%)
-  static const bgInput = Color(0xFF14151C); // hsl(228 12% 9%)
+  // Backgrounds — neutral near-black, no blue tint
+  static const bgPrimary = Color(0xFF0A0A0B);
+  static const bgSecondary = Color(0xFF121214);
+  static const bgCard = Color(0xFF161618);
+  static const bgCardHover = Color(0xFF1D1D20);
+  static const bgElevated = Color(0xFF242427);
+  static const bgInput = Color(0xFF111113);
 
-  // Borders
-  static const borderSubtle = Color(0x2957606E);
-  static const borderDefault = Color(0x42646E7E);
-  static const borderAccent = Color(0x732388FA);
+  // Borders — neutral greys
+  static const borderSubtle = Color(0x1FFFFFFF); // ~12% white
+  static const borderDefault = Color(0x33FFFFFF); // ~20% white
+  static const borderAccent = Color(0x66E23744);
 
-  // Accents
-  static const accent = Color(0xFF2388FA); // electric blue — hsl(212 96% 56%)
-  static const accentDim = Color(0xFF2467B0);
-  static const accentSecondary = Color(0xFF31B8F6); // cyan — hsl(199 92% 58%)
-  static const accentGlow = Color(0x292388FA);
+  // Accents — crimson primary, coral-red secondary
+  static const accent = Color(0xFFE23744); // crimson
+  static const accentDim = Color(0xFFA81F2A);
+  static const accentSecondary = Color(0xFFFF5A66); // coral-red
+  static const accentGlow = Color(0x24E23744);
 
-  static const success = Color(0xFF2BBA7F); // hsl(152 62% 45%)
-  static const warning = Color(0xFFF5A623); // hsl(38 92% 55%)
-  static const danger = Color(0xFFE05656); // hsl(0 70% 58%)
+  static const success = Color(0xFF3DBB6B); // measured green
+  static const warning = Color(0xFFE0A83B); // muted amber
+  static const danger = Color(0xFFE23744); // crimson doubles as danger
 
-  // Text
-  static const textPrimary = Color(0xFFF2F3F5); // hsl(220 14% 96%)
-  static const textSecondary = Color(0xFF8F94A0); // hsl(222 9% 60%)
-  static const textTertiary = Color(0xFF5C606B); // hsl(223 9% 40%)
+  // Text — neutral, high contrast
+  static const textPrimary = Color(0xFFF4F4F5);
+  static const textSecondary = Color(0xFF9A9AA1);
+  static const textTertiary = Color(0xFF5C5C62);
 
-  // Signature gradient (accent -> cyan)
+  // Signature gradient (crimson -> coral)
   static const brandGradient = LinearGradient(
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
