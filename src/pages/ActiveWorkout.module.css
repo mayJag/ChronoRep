@@ -402,3 +402,39 @@
   letter-spacing: 0.05em;
   color: var(--accent-primary);
 }
+
+/* --- Tap-to-fill previous performance --- */
+.prevFillBtn {
+  font-size: var(--fs-xs);
+  color: var(--text-secondary);
+  padding: var(--sp-1) var(--sp-2);
+  border-radius: var(--radius-sm);
+  border: 1px dashed var(--border-subtle);
+  transition: all var(--duration-fast);
+  white-space: nowrap;
+}
+
+.prevFillBtn:hover:not(:disabled) {
+  color: var(--accent-primary);
+  border-color: var(--border-accent);
+  background: var(--accent-primary-glow);
+}
+
+.prevFillBtn:disabled {
+  cursor: default;
+  opacity: 0.5;
+  border-color: transparent;
+}
+
+.cardHeaderActions {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.notesInput {
+  resize: vertical;
+  min-height: 56px;
+  margin-bottom: var(--sp-4);
+  font-family: inherit;
+}

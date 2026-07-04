@@ -42,6 +42,24 @@ export function computeStreak(logs = []) {
   return streak;
 }
 
+// --- Current calendar week (Monday-based) stats ---
+export function weeklyStats(logs = [], now = new Date()) {
+  const dow = now.getDay(); // 0 = Sun
+  const monday = new Date(now.getFullYear(), now.getMonth(), now.getDate() - (dow === 0 ? 6 : dow - 1));
+  let count = 0;
+  let volume = 0;
+  const trainedDates = new Set();
+  for (const log of logs) {
+    const d = new Date(log.date + 'T00:00:00');
+    if (d >= monday) {
+      count++;
+      volume += Number(log.totalVolume) || 0;
+      trainedDates.add(log.date);
+    }
+  }
+  return { count, volume, daysTrained: trainedDates.size, weekStart: monday };
+}
+
 // --- Aggregate stats from all logs ---
 export function summarizeLogs(logs = []) {
   let totalVolume = 0;

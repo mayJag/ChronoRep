@@ -8,6 +8,7 @@ const DEFAULTS = {
   defaultRestTimer: 90,
   soundEnabled: true,
   vibrationEnabled: true,
+  userName: '',
 };
 
 /**
@@ -26,7 +27,8 @@ export function SettingsProvider({ children }) {
         const defaultRestTimer = (await getSetting('defaultRestTimer')) || DEFAULTS.defaultRestTimer;
         const soundEnabled = (await getSetting('soundEnabled')) !== false;
         const vibrationEnabled = (await getSetting('vibrationEnabled')) !== false;
-        setSettings({ weightUnit, defaultRestTimer, soundEnabled, vibrationEnabled });
+        const userName = (await getSetting('userName')) || DEFAULTS.userName;
+        setSettings({ weightUnit, defaultRestTimer, soundEnabled, vibrationEnabled, userName });
       } catch (e) {
         console.error('Failed to load settings:', e);
       } finally {

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Calendar, ChevronLeft, ChevronRight, Clock, Dumbbell, Trash2, Award, ChevronDown, ChevronUp, Scale, Flame, Pencil, X, Check, Save } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Clock, Dumbbell, Trash2, Award, ChevronDown, ChevronUp, Scale, Pencil, X, Check, Save, Search, StickyNote } from 'lucide-react';
 import { getAllWorkoutLogs, deleteWorkoutLog, getAllPersonalRecords, saveWorkoutLog } from '../store/db';
 import { volumeFromSets } from '../lib/fitness';
 import { useSettings } from '../store/SettingsContext';
@@ -8,7 +7,6 @@ import { useToast } from '../components/Toast';
 import styles from './History.module.css';
 
 export default function History() {
-  const navigate = useNavigate();
   const { weightUnit } = useSettings();
   const { confirm } = useToast();
   const [logs, setLogs] = useState([]);
@@ -19,6 +17,7 @@ export default function History() {
   const [expandedLogs, setExpandedLogs] = useState({}); // id -> boolean
   const [monthlyStats, setMonthlyStats] = useState({ total: 0, avgDuration: 0, topDay: 'N/A' });
   const [editingLog, setEditingLog] = useState(null); // deep-copied log being edited
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     loadHistoryData();
@@ -199,10 +198,14 @@ export default function History() {
     "July", "August", "September", "October", "November", "December"
   ];
 
-  // Filter logs based on selected date
-  const filteredLogs = selectedDate 
-    ? logs.filter(log => log.date === selectedDate) 
-    : logs;
+  // Filter logs based on selected date + search (matches workout or exercise name)
+  const query = searchQuery.trim().toLowerCase();
+  const filteredLogs = logs.filter(log => {
+    if (selectedDate && log.date !== selectedDate) return false;
+    if (!query) return true;
+    if (log.name?.toLowerCase().includes(query)) return true;
+    return (log.exercises || []).some(ex => ex.name?.toLowerCase().includes(query));
+  });
 
   return (
     <div className={`${styles.historyPage} page stagger`}>
@@ -244,7 +247,7 @@ export default function History() {
                   <div className={styles.prInfo}>
                     <span className={styles.prName}>{pr.exerciseName}</span>
                     <span className={styles.prValue}>
-                      {pr.weight} {weightUnit} × {pr.reps}
+                      {pr.weight} {pr.weightUnit || weightUnit} × {pr.reps}
                     </span>
                   </div>
                 </div>
@@ -283,6 +286,23 @@ export default function History() {
           {renderCalendar()}
         </div>
       </section>
+
+      {/* Search */}
+      <div className={styles.searchBox}>
+        <Search size={16} className={styles.searchIcon} />
+        <input
+          type="search"
+          className="input"
+          placeholder="Search by workout or exercise…"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
+        {searchQuery && (
+          <button className={styles.searchClear} onClick={() => setSearchQuery('')} aria-label="Clear search">
+            <X size={14} />
+          </button>
+        )}
+      </div>
 
       {/* Workout Logs List */}
       <section className="section">
@@ -365,6 +385,11 @@ export default function History() {
                   {isExpanded && (
                     <div className={styles.expandedDetails}>
                       <div className="divider" />
+                      {log.notes && (
+                        <p className={styles.logNotes}>
+                          <StickyNote size={13} /> {log.notes}
+                        </p>
+                      )}
                       <div className={styles.exerciseList}>
                         {log.exercises?.map((ex, exIdx) => (
                           <div key={exIdx} className={styles.exerciseItem}>
@@ -382,7 +407,8 @@ export default function History() {
                                 <div key={setIdx} className={styles.setRow}>
                                   <span className={styles.setNum}>Set {setIdx + 1}</span>
                                   <span className={styles.setVal}>
-                                    {set.weight} {log.weightUnit || weightUnit} × {set.reps} {set.completed ? '✓' : '(missed)'}
+                                    {set.weight} {log.weightUnit || weightUnit} × {set.reps}
+                                    {set.duration ? ` · ${set.duration}s` : ''} {set.completed ? '✓' : '(missed)'}
                                   </span>
                                 </div>
                               ))}
