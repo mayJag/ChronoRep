@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
 import 'dashboard_screen.dart';
 import 'plan_screen.dart';
+import 'progress_screen.dart';
+import 'history_screen.dart';
 import 'more_screen.dart';
-import 'placeholder_screen.dart';
 
 /// Root scaffold with a custom animated bottom nav bar.
 class HomeShell extends StatefulWidget {
@@ -27,16 +28,8 @@ class _HomeShellState extends State<HomeShell> {
   final _pages = const [
     DashboardScreen(),
     PlanScreen(),
-    PlaceholderScreen(
-      title: 'Progress',
-      icon: Icons.trending_up_rounded,
-      blurb: 'Volume trends, estimated 1RM strength curves, and lifetime totals.',
-    ),
-    PlaceholderScreen(
-      title: 'History',
-      icon: Icons.bar_chart_rounded,
-      blurb: 'Every logged session with sets, volume, duration and personal records.',
-    ),
+    ProgressScreen(),
+    HistoryScreen(),
     MoreScreen(),
   ];
 

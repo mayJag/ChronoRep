@@ -78,3 +78,85 @@ class WorkoutLog {
         'exercises': exercises.map((e) => e.toJson()).toList(),
       };
 }
+
+class BodyMetric {
+  final String date; // yyyy-mm-dd, one entry per day
+  final double weight;
+  final double? bodyFat;
+
+  BodyMetric({required this.date, required this.weight, this.bodyFat});
+
+  factory BodyMetric.fromJson(Map<String, dynamic> j) => BodyMetric(
+        date: j['date'] as String,
+        weight: (j['weight'] as num?)?.toDouble() ?? 0,
+        bodyFat: (j['bodyFat'] as num?)?.toDouble(),
+      );
+
+  Map<String, dynamic> toJson() =>
+      {'date': date, 'weight': weight, 'bodyFat': bodyFat};
+}
+
+enum GoalType { liftWeight, bodyweight }
+
+class UserGoal {
+  final String id;
+  final GoalType type;
+  final String label; // e.g. exercise name for liftWeight
+  final double target;
+  final double startValue;
+  final String? targetDate;
+
+  UserGoal({
+    required this.id,
+    required this.type,
+    required this.label,
+    required this.target,
+    required this.startValue,
+    this.targetDate,
+  });
+
+  factory UserGoal.fromJson(Map<String, dynamic> j) => UserGoal(
+        id: j['id'] as String,
+        type: GoalType.values.byName(j['type'] as String),
+        label: j['label'] as String,
+        target: (j['target'] as num).toDouble(),
+        startValue: (j['startValue'] as num?)?.toDouble() ?? 0,
+        targetDate: j['targetDate'] as String?,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'id': id,
+        'type': type.name,
+        'label': label,
+        'target': target,
+        'startValue': startValue,
+        'targetDate': targetDate,
+      };
+}
+
+class CustomExercise {
+  final String name;
+  final String muscleGroup;
+  final String category;
+  final String equipment;
+
+  CustomExercise(
+      {required this.name,
+      required this.muscleGroup,
+      required this.category,
+      required this.equipment});
+
+  factory CustomExercise.fromJson(Map<String, dynamic> j) => CustomExercise(
+        name: j['name'] as String,
+        muscleGroup: j['muscleGroup'] as String,
+        category: j['category'] as String,
+        equipment: j['equipment'] as String,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'name': name,
+        'muscleGroup': muscleGroup,
+        'category': category,
+        'equipment': equipment,
+      };
+}

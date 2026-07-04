@@ -4,6 +4,10 @@ import '../theme/app_theme.dart';
 import '../widgets/glass_card.dart';
 import 'settings_screen.dart';
 import 'calculators_screen.dart';
+import 'body_screen.dart';
+import 'achievements_screen.dart';
+import 'goals_screen.dart';
+import 'exercise_library_screen.dart';
 
 /// The "More" hub — a grid of secondary features. Built-out entries navigate;
 /// not-yet-ported ones show a short note.
@@ -17,10 +21,13 @@ class MoreScreen extends StatelessWidget {
           () => const CalculatorsScreen()),
       _MoreItem('Settings', Icons.settings_rounded, true,
           () => const SettingsScreen()),
-      _MoreItem('Body Metrics', Icons.monitor_weight_rounded, false, null),
-      _MoreItem('Achievements', Icons.emoji_events_rounded, false, null),
-      _MoreItem('Goals', Icons.flag_rounded, false, null),
-      _MoreItem('Exercise Library', Icons.menu_book_rounded, false, null),
+      _MoreItem('Body Metrics', Icons.monitor_weight_rounded, true,
+          () => const BodyScreen()),
+      _MoreItem('Achievements', Icons.emoji_events_rounded, true,
+          () => const AchievementsScreen()),
+      _MoreItem('Goals', Icons.flag_rounded, true, () => const GoalsScreen()),
+      _MoreItem('Exercise Library', Icons.menu_book_rounded, true,
+          () => const ExerciseLibraryScreen()),
     ];
 
     return SafeArea(
