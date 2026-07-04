@@ -88,7 +88,6 @@ export default function PlanBuilder() {
   });
   const [selectedCustomDayKey, setSelectedCustomDayKey] = useState('mon');
   const [customSearch, setCustomSearch] = useState('');
-  const customFilterCategory = 'all'; // reserved for a future category filter UI
 
   // Hydrate the Custom editor from a generated plan handed over by the Goals page.
   useEffect(() => {
@@ -436,11 +435,9 @@ export default function PlanBuilder() {
   };
 
   // Custom Exercises Filter
-  const filteredExercises = libraryExercises.filter(ex => {
-    const matchesSearch = ex.name.toLowerCase().includes(customSearch.toLowerCase());
-    const matchesCategory = customFilterCategory === 'all' || ex.category === customFilterCategory;
-    return matchesSearch && matchesCategory;
-  });
+  const filteredExercises = libraryExercises.filter(ex =>
+    ex.name.toLowerCase().includes(customSearch.toLowerCase())
+  );
 
   return (
     <div className={`${styles.planBuilder} page stagger`}>

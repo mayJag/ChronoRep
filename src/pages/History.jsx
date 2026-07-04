@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Clock, Dumbbell, Trash2, Award, ChevronDown, ChevronUp, Scale, Pencil, X, Check, Save, Search, StickyNote } from 'lucide-react';
 import { getAllWorkoutLogs, deleteWorkoutLog, getAllPersonalRecords, saveWorkoutLog } from '../store/db';
-import { volumeFromSets } from '../lib/fitness';
+import { volumeFromSets, localDateStr } from '../lib/fitness';
 import { useSettings } from '../store/SettingsContext';
 import { useToast } from '../components/Toast';
 import styles from './History.module.css';
@@ -161,7 +161,7 @@ export default function History() {
     const totalDays = getDaysInMonth(year, month);
     const startDayOfWeek = getFirstDayOfMonth(year, month);
 
-    const todayStr = new Date().toISOString().split('T')[0];
+    const todayStr = localDateStr();
     const days = [];
 
     // Empty cells before start day

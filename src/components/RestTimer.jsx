@@ -14,20 +14,26 @@ export default function RestTimer({ initialDuration = 90, onComplete, onSkip, is
   const [customSeconds, setCustomSeconds] = useState(30);
 
   const timerRef = useRef(null);
+  const firedRef = useRef(false); // end signals must fire once per countdown
   const circumference = 2 * Math.PI * 90; // radius = 90
 
   useEffect(() => {
     setTotalTime(initialDuration);
     setTimeLeft(initialDuration);
     setIsRunning(true);
+    firedRef.current = false;
   }, [initialDuration, isVisible]);
 
   useEffect(() => {
+    // Never tick or beep while hidden — the reset above restarts the countdown
+    // when the parent hides the timer, which used to fire a phantom beep later.
+    if (!isVisible) return;
     if (isRunning && timeLeft > 0) {
       timerRef.current = setInterval(() => {
         setTimeLeft((prev) => prev - 1);
       }, 1000);
-    } else if (timeLeft === 0) {
+    } else if (timeLeft === 0 && !firedRef.current) {
+      firedRef.current = true;
       triggerEndSignals();
       if (onComplete) onComplete();
       setIsRunning(false);
@@ -36,7 +42,8 @@ export default function RestTimer({ initialDuration = 90, onComplete, onSkip, is
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
     };
-  }, [isRunning, timeLeft]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isRunning, timeLeft, isVisible]);
 
   const triggerEndSignals = () => {
     // 1. Audio oscillator beep (respects the Sound Effects setting)
@@ -80,8 +87,6 @@ export default function RestTimer({ initialDuration = 90, onComplete, onSkip, is
     const next = Math.max(0, timeLeft + amount);
     // Also adjust totalTime if we extend it past original
     if (next > totalTime) setTotalTime(next);
-    // Adding time to a finished (paused-at-zero) timer restarts the countdown.
-    if (timeLeft === 0 && next > 0) setIsRunning(true);
     setTimeLeft(next);
   };
 

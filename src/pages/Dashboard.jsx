@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Flame, Dumbbell, TrendingUp, ChevronRight, Play, Calendar, Clock, Award, Zap, CheckCircle2, Star } from 'lucide-react';
 import { getAllWorkoutLogs, getSetting, getAllPersonalRecords } from '../store/db';
-import { computeXP, levelFromXP, computeStreak, weeklyStats } from '../lib/fitness';
+import { computeXP, levelFromXP, computeStreak, weeklyStats, localDateStr } from '../lib/fitness';
 import { useSettings } from '../store/SettingsContext';
 import styles from './Dashboard.module.css';
 
@@ -60,18 +60,17 @@ export default function Dashboard() {
       const week = weeklyStats(logs, now);
       setStats({ weeklyCount: week.count, streak: computeStreak(logs), weeklyVolume: week.volume });
 
-      // Did we already train today?
-      const todayStr = now.toISOString().split('T')[0];
+      // Did we already train today? (local calendar day)
+      const todayStr = localDateStr(now);
       setTrainedToday(logs.some(l => l.date === todayStr));
 
       // Mon–Sun strip of this week's trained days
-      const trainedSet = new Set(logs.map(l => l.date));
       const dayLabels = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
       const strip = dayLabels.map((label, i) => {
         const d = new Date(week.weekStart);
         d.setDate(d.getDate() + i);
-        const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
-        return { label, trained: trainedSet.has(key), isToday: key === todayStr };
+        const key = localDateStr(d);
+        return { label, trained: week.trainedDates.has(key), isToday: key === todayStr };
       });
       setWeekDays(strip);
 

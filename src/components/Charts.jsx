@@ -55,21 +55,21 @@ export function LineChart({ data = [], height = 160, stroke = 'var(--accent-prim
   const areaPts = `${x(0)},${H - padY} ${linePts} ${x(n - 1)},${H - padY}`;
   const last = data[data.length - 1];
 
+  // Hover state can outlive a shrinking data prop (e.g. the exercise <select>
+  // swaps in a shorter series while a touch-hover is stuck) — clamp it.
+  const hi = hover !== null && hover < n ? hover : null;
+
   const handleMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
     const px = ((e.clientX - rect.left) / rect.width) * W;
-    let best = 0;
-    let bestDist = Infinity;
-    for (let i = 0; i < n; i++) {
-      const d = Math.abs(x(i) - px);
-      if (d < bestDist) { bestDist = d; best = i; }
-    }
-    setHover(best);
+    // Points are evenly spaced, so the nearest index is the inverse of x(i).
+    const step = n === 1 ? 1 : (W - 2 * padX) / (n - 1);
+    setHover(Math.max(0, Math.min(n - 1, Math.round((px - padX) / step))));
   };
 
   return (
     <svg viewBox={`0 0 ${W} ${H}`} width="100%" style={{ height: 'auto', display: 'block', touchAction: 'pan-y' }} role="img"
-      onPointerMove={handleMove} onPointerLeave={() => setHover(null)}>
+      onPointerMove={handleMove} onPointerLeave={() => setHover(null)} onPointerCancel={() => setHover(null)}>
       {/* recessive gridlines */}
       {[0.25, 0.5, 0.75].map(t => (
         <line key={t} x1={padX} x2={W - padX} y1={padY + t * (H - 2 * padY)} y2={padY + t * (H - 2 * padY)}
@@ -78,21 +78,21 @@ export function LineChart({ data = [], height = 160, stroke = 'var(--accent-prim
       <polyline points={areaPts} fill={fill} stroke="none" />
       <polyline points={linePts} fill="none" stroke={stroke} strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" />
       {data.map((d, i) => (
-        <circle key={i} cx={x(i)} cy={y(d.value)} r={i === hover ? 5 : (i === n - 1 ? 3.5 : 2)}
-          fill={i === hover ? 'var(--bg-card)' : stroke}
-          stroke={stroke} strokeWidth={i === hover ? 2 : 0} />
+        <circle key={i} cx={x(i)} cy={y(d.value)} r={i === hi ? 5 : (i === n - 1 ? 3.5 : 2)}
+          fill={i === hi ? 'var(--bg-card)' : stroke}
+          stroke={stroke} strokeWidth={i === hi ? 2 : 0} />
       ))}
-      {hover === null && (
+      {hi === null && (
         <text x={W - padX} y={Math.max(12, y(last.value) - 8)} textAnchor="end" fontSize="11" fill="var(--text-secondary)">
           {Math.round(last.value).toLocaleString()}{unit}
         </text>
       )}
-      {hover !== null && (
+      {hi !== null && (
         <>
-          <line x1={x(hover)} x2={x(hover)} y1={padY} y2={H - padY} stroke="var(--border-default)" strokeWidth="1" strokeDasharray="3 3" />
+          <line x1={x(hi)} x2={x(hi)} y1={padY} y2={H - padY} stroke="var(--border-default)" strokeWidth="1" strokeDasharray="3 3" />
           <Tooltip
-            x={x(hover)} y={y(data[hover].value)} W={W}
-            lines={[formatShortDate(data[hover].date), `${Math.round(data[hover].value).toLocaleString()}${unit}`]}
+            x={x(hi)} y={y(data[hi].value)} W={W}
+            lines={[formatShortDate(data[hi].date), `${Math.round(data[hi].value).toLocaleString()}${unit}`]}
           />
         </>
       )}
@@ -113,14 +113,15 @@ export function BarChart({ data = [], height = 140, color = 'var(--accent-primar
   const gap = 4;
   const barW = (W / n) - gap;
   const max = Math.max(...data.map(d => d.value)) || 1;
+  const hi = hover !== null && hover < n ? hover : null; // clamp stale hover on data change
 
   return (
     <svg viewBox={`0 0 ${W} ${H}`} width="100%" style={{ height: 'auto', display: 'block', touchAction: 'pan-y' }} role="img"
-      onPointerLeave={() => setHover(null)}>
+      onPointerLeave={() => setHover(null)} onPointerCancel={() => setHover(null)}>
       {data.map((d, i) => {
         const h = (d.value / max) * (H - 2 * padY);
         const xPos = i * (barW + gap) + gap / 2;
-        const isActive = i === hover || (hover === null && i === n - 1);
+        const isActive = i === hi || (hi === null && i === n - 1);
         return (
           <g key={i}>
             <rect
@@ -143,14 +144,14 @@ export function BarChart({ data = [], height = 140, color = 'var(--accent-primar
           </g>
         );
       })}
-      {hover !== null && (
+      {hi !== null && (
         <Tooltip
-          x={hover * (barW + gap) + gap / 2 + barW / 2}
-          y={H - padY - (data[hover].value / max) * (H - 2 * padY)}
+          x={hi * (barW + gap) + gap / 2 + barW / 2}
+          y={H - padY - (data[hi].value / max) * (H - 2 * padY)}
           W={W}
           lines={[
-            ...(data[hover].date ? [formatShortDate(data[hover].date)] : []),
-            `${Math.round(data[hover].value).toLocaleString()}${unit}`,
+            ...(data[hi].date ? [formatShortDate(data[hi].date)] : []),
+            `${Math.round(data[hi].value).toLocaleString()}${unit}`,
           ]}
         />
       )}

@@ -5,7 +5,7 @@ import { saveWorkoutLog, getPersonalRecord, savePersonalRecord, getAllWorkoutLog
 import RestTimer from '../components/RestTimer';
 import { getExerciseVideoUrl } from '../data/exerciseVideos';
 import { useExerciseLibrary } from '../data/exercises';
-import { suggestProgression } from '../lib/fitness';
+import { suggestProgression, convertWeight, localDateStr } from '../lib/fitness';
 import { useSettings } from '../store/SettingsContext';
 import { useToast } from '../components/Toast';
 import styles from './ActiveWorkout.module.css';
@@ -55,6 +55,7 @@ export default function ActiveWorkout() {
   const timerRef = useRef(null);
   const startTimeRef = useRef(Date.now());
   const initRef = useRef(false);
+  const logsCacheRef = useRef(null); // avoids re-reading the whole log store per added exercise
 
   // Session metadata (kept in a ref so resume can override the incoming nav state)
   const [sessionMeta, setSessionMeta] = useState({
@@ -123,7 +124,13 @@ export default function ActiveWorkout() {
 
   // Auto-save the in-progress session so a reload/close can resume it.
   useEffect(() => {
-    if (!initRef.current || showSummary || exercises.length === 0) return;
+    if (!initRef.current || showSummary) return;
+    if (exercises.length === 0) {
+      // Removing the last exercise must also drop the snapshot, or the next
+      // open would "resume" exercises the user explicitly discarded.
+      clearResume();
+      return;
+    }
     try {
       localStorage.setItem(RESUME_KEY, JSON.stringify({
         name: sessionMeta.name,
@@ -138,7 +145,8 @@ export default function ActiveWorkout() {
   // Fetch previous performance + compute a smart next-target suggestion per exercise
   const loadPreviousPerformance = async (exercisesList) => {
     try {
-      const logs = await getAllWorkoutLogs();
+      if (!logsCacheRef.current) logsCacheRef.current = await getAllWorkoutLogs();
+      const logs = logsCacheRef.current;
       const prevMap = {};
       const suggMap = {};
 
@@ -149,7 +157,12 @@ export default function ActiveWorkout() {
         for (const log of logs) {
           const logEx = log.exercises?.find(le => le.name.toLowerCase() === ex.name.toLowerCase());
           if (logEx && logEx.sets?.length > 0) {
-            const completedSets = logEx.sets.filter(s => s.completed);
+            // Convert the log's stored unit into the user's current unit so a
+            // kg-era 100 doesn't get replayed as 100 lbs (or vice versa).
+            const logUnit = log.weightUnit || weightUnit;
+            const completedSets = logEx.sets
+              .filter(s => s.completed)
+              .map(s => ({ ...s, weight: convertWeight(s.weight, logUnit, weightUnit) }));
             if (completedSets.length > 0) {
               const bestSet = completedSets.reduce((best, curr) => (curr.weight > best.weight) ? curr : best, completedSets[0]);
               prevMap[ex.name] = { weight: bestSet.weight, reps: bestSet.reps };
@@ -164,7 +177,9 @@ export default function ActiveWorkout() {
         // If no past log, check personalRecords store
         if (!found) {
           const pr = await getPersonalRecord(ex.name);
-          prevMap[ex.name] = pr ? { weight: pr.weight, reps: pr.reps } : null;
+          prevMap[ex.name] = pr
+            ? { weight: convertWeight(pr.weight, pr.weightUnit || weightUnit, weightUnit), reps: pr.reps }
+            : null;
         }
       }
 
@@ -465,7 +480,7 @@ export default function ActiveWorkout() {
               weight: maxWeight,
               reps: maxReps,
               weightUnit,
-              date: new Date().toISOString().split('T')[0]
+              date: localDateStr()
             });
           }
         }
@@ -477,7 +492,7 @@ export default function ActiveWorkout() {
         name: sessionMeta.name,
         programName: sessionMeta.programId === 'beyond-the-rim' ? 'BTR' : (sessionMeta.programId === 'expert-powerbuilding' ? 'Expert' : 'Custom'),
         programId: sessionMeta.programId || 'custom',
-        date: new Date().toISOString().split('T')[0],
+        date: localDateStr(),
         duration: Math.round(summaryElapsed / 60) || 1, // in minutes
         notes: sessionNotes.trim(),
         exercises: exercises.map(ex => ({
