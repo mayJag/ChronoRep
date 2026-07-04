@@ -3,6 +3,8 @@ import 'package:flutter_animate/flutter_animate.dart';
 import '../theme/app_theme.dart';
 import '../widgets/glass_card.dart';
 import '../data/plan_generator.dart';
+import '../data/active_plan.dart';
+import '../data/store.dart';
 
 /// Goal-driven, science-based plan builder. The user picks a goal, frequency,
 /// experience and equipment; the generator guarantees the evidence-based
@@ -326,6 +328,16 @@ class _PlanResult extends StatelessWidget {
   final GeneratedPlan plan;
   const _PlanResult({required this.plan});
 
+  Future<void> _activate(BuildContext context) async {
+    await Store.setActivePlan(planFromGenerated(plan));
+    if (!context.mounted) return;
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      content: Text('${plan.name} activated — see it on your Dashboard.'),
+      backgroundColor: AppColors.bgElevated,
+    ));
+    Navigator.of(context).popUntil((r) => r.isFirst);
+  }
+
   @override
   Widget build(BuildContext context) {
     final freq = plan.weeklyFrequencyPerMuscle;
@@ -380,6 +392,37 @@ class _PlanResult extends StatelessWidget {
                 color: AppColors.textSecondary)),
         const SizedBox(height: 10),
         ...trainingDays.map((d) => _DayCard(day: d)),
+        const SizedBox(height: 8),
+        Builder(builder: (context) => Material(
+          color: Colors.transparent,
+          child: InkWell(
+            onTap: () => _activate(context),
+            borderRadius: BorderRadius.circular(AppRadius.md),
+            child: Ink(
+              decoration: BoxDecoration(
+                gradient: AppColors.brandGradient,
+                borderRadius: BorderRadius.circular(AppRadius.md),
+              ),
+              child: Container(
+                height: 52,
+                alignment: Alignment.center,
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.check_circle_outline_rounded,
+                        size: 20, color: Colors.white),
+                    SizedBox(width: 8),
+                    Text('Activate This Plan',
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w700,
+                            color: Colors.white)),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        )),
       ],
     );
   }

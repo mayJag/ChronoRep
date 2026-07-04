@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import '../theme/app_theme.dart';
 import '../widgets/glass_card.dart';
+import '../data/programs_repo.dart';
 import 'program_builder_screen.dart';
 import 'quick_workout_screen.dart';
+import 'program_detail_screen.dart';
 
 /// Plan tab: entry points to the science-based plan builder, the time-boxed
 /// quick workout, and featured evidence-based programs.
@@ -53,7 +55,7 @@ class PlanScreen extends StatelessWidget {
                   letterSpacing: 1.2,
                   color: AppColors.textSecondary)),
           const SizedBox(height: 12),
-          ..._featured.map((p) => _ProgramCard(program: p)),
+          ...kProgramCatalog.map((p) => _ProgramCard(program: p)),
         ]
             .animate(interval: 60.ms)
             .fadeIn(duration: 320.ms)
@@ -63,26 +65,8 @@ class PlanScreen extends StatelessWidget {
   }
 }
 
-class _FeaturedProgram {
-  final String name;
-  final String meta;
-  final String desc;
-  const _FeaturedProgram(this.name, this.meta, this.desc);
-}
-
-const _featured = [
-  _FeaturedProgram('Pure Bodybuilding', 'Hypertrophy · 5 days',
-      'Physique-focused split with each muscle trained twice weekly at high volume.'),
-  _FeaturedProgram('Powerbuilding 3.0', 'Strength + Size · 5 days',
-      'Heavy main lifts paired with hypertrophy accessories for strength and mass.'),
-  _FeaturedProgram('The Essentials', 'Minimalist · 3 days',
-      'Time-efficient full-body training built around the highest-return lifts.'),
-  _FeaturedProgram('Fundamentals Hypertrophy', 'Beginner · 3 days',
-      'A science-based on-ramp for newer lifters focused on technique and progression.'),
-];
-
 class _ProgramCard extends StatelessWidget {
-  final _FeaturedProgram program;
+  final ProgramAsset program;
   const _ProgramCard({required this.program});
 
   @override
@@ -90,12 +74,8 @@ class _ProgramCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom: 12),
       child: GlassCard(
-        onTap: () => ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text('${program.name} — full program import coming next.'),
-            backgroundColor: AppColors.bgElevated,
-          ),
-        ),
+        onTap: () => Navigator.of(context).push(MaterialPageRoute(
+            builder: (_) => ProgramDetailScreen(asset: program))),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -112,7 +92,7 @@ class _ProgramCard extends StatelessWidget {
                     color: AppColors.bgElevated,
                     borderRadius: BorderRadius.circular(AppRadius.full),
                   ),
-                  child: Text(program.meta,
+                  child: Text('${program.daysPerWeek}x · ${program.durationLabel}',
                       style: const TextStyle(
                           fontSize: 10.5,
                           fontWeight: FontWeight.w600,
@@ -121,7 +101,7 @@ class _ProgramCard extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 8),
-            Text(program.desc,
+            Text(program.description,
                 style: const TextStyle(
                     fontSize: 12.5, height: 1.4, color: AppColors.textSecondary)),
           ],

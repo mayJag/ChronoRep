@@ -3,6 +3,8 @@ import 'package:flutter_animate/flutter_animate.dart';
 import '../theme/app_theme.dart';
 import '../widgets/glass_card.dart';
 import '../data/plan_generator.dart';
+import '../data/active_plan.dart';
+import 'active_workout_screen.dart';
 
 /// "I've got X minutes" → a session sized to fit the available time.
 class QuickWorkoutScreen extends StatefulWidget {
@@ -189,6 +191,39 @@ class _QuickWorkoutScreenState extends State<QuickWorkoutScreen> {
               ],
             ),
             const SizedBox(height: 12),
+            Material(
+              color: Colors.transparent,
+              child: InkWell(
+                onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (_) => ActiveWorkoutScreen(
+                      session: activeSessionFromPlanDay(_session!)),
+                )),
+                borderRadius: BorderRadius.circular(AppRadius.md),
+                child: Ink(
+                  decoration: BoxDecoration(
+                    gradient: AppColors.brandGradient,
+                    borderRadius: BorderRadius.circular(AppRadius.md),
+                  ),
+                  child: Container(
+                    height: 48,
+                    alignment: Alignment.center,
+                    child: const Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.play_arrow_rounded, size: 20, color: Colors.white),
+                        SizedBox(width: 8),
+                        Text('Start Workout',
+                            style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w700,
+                                color: Colors.white)),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 16),
             ..._session!.exercises.map((e) => Padding(
                   padding: const EdgeInsets.only(bottom: 10),
                   child: GlassCard(

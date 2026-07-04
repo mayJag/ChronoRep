@@ -5,7 +5,9 @@ import '../widgets/glass_card.dart';
 import '../data/store.dart';
 import '../data/models.dart';
 import '../data/fitness.dart';
+import '../data/active_plan.dart';
 import 'quick_workout_screen.dart';
+import 'active_workout_screen.dart';
 
 const _quotes = [
   "The only bad workout is the one that didn't happen.",
@@ -29,6 +31,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
   late WeekStats _week;
   int _streak = 0;
   late Level _level;
+  ActivePlan? _activePlan;
   bool _loading = true;
 
   @override
@@ -45,6 +48,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
       _week = weeklyStats(logs, now);
       _streak = computeStreak(logs);
       _level = levelFromXP(computeXP(logs, 0));
+      _activePlan = Store.getActivePlan();
       _loading = false;
     });
   }
@@ -206,50 +210,108 @@ class _DashboardScreenState extends State<DashboardScreen> {
       // Today's session
       _sectionHeader("Today's Session"),
       const SizedBox(height: 10),
-      GlassCard(
-        accent: true,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text('Freestyle Session',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700)),
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                  decoration: BoxDecoration(
-                    color: AppColors.accentGlow,
-                    borderRadius: BorderRadius.circular(AppRadius.full),
+      if (_activePlan?.nextSession != null)
+        GlassCard(
+          accent: true,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    child: Text(_activePlan!.nextSession!.name,
+                        style: const TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.w700)),
                   ),
-                  child: const Text('READY',
-                      style: TextStyle(
-                          fontSize: 10,
-                          fontWeight: FontWeight.w700,
-                          letterSpacing: 0.5,
-                          color: AppColors.accent)),
-                ),
-              ],
-            ),
-            const SizedBox(height: 8),
-            Row(
-              children: const [
-                Icon(Icons.access_time_rounded, size: 14, color: AppColors.textSecondary),
-                SizedBox(width: 5),
-                Text('Log lifts, track rest, hit PRs',
-                    style: TextStyle(fontSize: 13, color: AppColors.textSecondary)),
-              ],
-            ),
-            const SizedBox(height: 16),
-            _PrimaryButton(
-              label: 'Start Workout',
-              icon: Icons.play_arrow_rounded,
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                  builder: (_) => const QuickWorkoutScreen())),
-            ),
-          ],
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                    decoration: BoxDecoration(
+                      color: AppColors.accentGlow,
+                      borderRadius: BorderRadius.circular(AppRadius.full),
+                    ),
+                    child: Text(
+                        '${_activePlan!.nextSession!.exercises.length} EX',
+                        style: const TextStyle(
+                            fontSize: 10,
+                            fontWeight: FontWeight.w700,
+                            letterSpacing: 0.5,
+                            color: AppColors.accent)),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 8),
+              Row(
+                children: [
+                  const Icon(Icons.list_alt_rounded,
+                      size: 14, color: AppColors.textSecondary),
+                  const SizedBox(width: 5),
+                  Expanded(
+                    child: Text('From: ${_activePlan!.name}',
+                        style: const TextStyle(
+                            fontSize: 13, color: AppColors.textSecondary),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 16),
+              _PrimaryButton(
+                label: 'Start Workout',
+                icon: Icons.play_arrow_rounded,
+                onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                    builder: (_) => ActiveWorkoutScreen(
+                        session: _activePlan!.nextSession!,
+                        fromActivePlan: true))),
+              ),
+            ],
+          ),
+        )
+      else
+        GlassCard(
+          accent: true,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text('Freestyle Session',
+                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700)),
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                    decoration: BoxDecoration(
+                      color: AppColors.accentGlow,
+                      borderRadius: BorderRadius.circular(AppRadius.full),
+                    ),
+                    child: const Text('READY',
+                        style: TextStyle(
+                            fontSize: 10,
+                            fontWeight: FontWeight.w700,
+                            letterSpacing: 0.5,
+                            color: AppColors.accent)),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 8),
+              Row(
+                children: const [
+                  Icon(Icons.access_time_rounded, size: 14, color: AppColors.textSecondary),
+                  SizedBox(width: 5),
+                  Text('No active plan — build one or go freestyle',
+                      style: TextStyle(fontSize: 13, color: AppColors.textSecondary)),
+                ],
+              ),
+              const SizedBox(height: 16),
+              _PrimaryButton(
+                label: 'Start Workout',
+                icon: Icons.play_arrow_rounded,
+                onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                    builder: (_) => const QuickWorkoutScreen())),
+              ),
+            ],
+          ),
         ),
-      ),
 
       const SizedBox(height: 22),
 
