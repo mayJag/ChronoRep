@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
 import 'dashboard_screen.dart';
 import 'plan_screen.dart';
+import 'more_screen.dart';
 import 'placeholder_screen.dart';
 
 /// Root scaffold with a custom animated bottom nav bar.
@@ -36,11 +37,7 @@ class _HomeShellState extends State<HomeShell> {
       icon: Icons.bar_chart_rounded,
       blurb: 'Every logged session with sets, volume, duration and personal records.',
     ),
-    PlaceholderScreen(
-      title: 'More',
-      icon: Icons.grid_view_rounded,
-      blurb: 'Body metrics, achievements, goals, calculators, library and settings.',
-    ),
+    MoreScreen(),
   ];
 
   @override
