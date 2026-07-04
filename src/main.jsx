@@ -18,8 +18,9 @@ createRoot(document.getElementById('root')).render(
   </StrictMode>,
 )
 
-// PWA: offline app shell + installability (web builds only — Capacitor ships its own bundle)
-if ('serviceWorker' in navigator && import.meta.env.PROD && !window.location.protocol.startsWith('capacitor')) {
+// PWA: offline app shell + installability (web builds only — Capacitor ships its
+// own bundle; window.Capacitor covers Android's https://localhost scheme too)
+if ('serviceWorker' in navigator && import.meta.env.PROD && !window.Capacitor) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register(`${import.meta.env.BASE_URL}sw.js`).catch((e) => {
       console.warn('Service worker registration failed:', e);

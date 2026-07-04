@@ -11,7 +11,7 @@ Built using **React**, **Vite**, **Capacitor**, and **IndexedDB**.
 Bug fixes + big usability pass:
 
 * **Installable PWA:** web manifest + offline service worker — install ChronoRep to your home screen straight from the browser; the app shell works fully offline.
-* **Rest timer you can minimize:** collapse the rest overlay into a floating countdown pill so you can keep logging sets, adding exercises or writing notes while resting. Adding time to a finished timer now restarts it too.
+* **Rest timer you can minimize:** collapse the rest overlay into a floating countdown pill so you can keep logging sets, adding exercises or writing notes while resting. Also fixed a double end-beep and a phantom beep that could fire after the timer was dismissed.
 * **Tap-to-fill previous performance:** each set's PREV cell is now a button — one tap copies last session's best weight × reps into the inputs. Exercises added mid-session now also pull their history & progression suggestion (previously they showed nothing).
 * **Finish flow fixed:** a "Back to Workout" button lets you return from the finish summary (previously a one-way door), the saved duration is frozen at the moment you tap Finish, and you can attach **session notes** that show up in History.
 * **TUT set timers actually saved:** per-set stopwatch durations were tracked during the session but silently dropped on save — they're now stored and shown in History.

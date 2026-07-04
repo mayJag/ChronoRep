@@ -3,6 +3,22 @@
    No React, no DB — just data in, data out (easy to reason about).
    ============================================================ */
 
+// --- Local calendar-date string (YYYY-MM-DD) ---
+// "Today" must follow the device's local calendar day; toISOString() shifts
+// evening/morning workouts into the wrong day for anyone outside UTC.
+export function localDateStr(d = new Date()) {
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+}
+
+// --- Weight unit conversion (rounded to the nearest 0.5) ---
+export function convertWeight(value, from, to) {
+  const v = Number(value) || 0;
+  if (!from || !to || from === to) return v;
+  const kg = from === 'lbs' ? v / 2.20462 : v;
+  const out = to === 'lbs' ? kg * 2.20462 : kg;
+  return Math.round(out * 2) / 2;
+}
+
 // --- Estimated 1RM (Epley formula) ---
 export function estimate1RM(weight, reps) {
   const w = Number(weight) || 0;
@@ -30,8 +46,8 @@ export function volumeFromSets(sets = []) {
 export function computeStreak(logs = []) {
   const dates = [...new Set(logs.map(l => l.date))].sort((a, b) => new Date(b) - new Date(a));
   if (dates.length === 0) return 0;
-  const todayStr = new Date().toISOString().split('T')[0];
-  const yStr = new Date(Date.now() - 864e5).toISOString().split('T')[0];
+  const todayStr = localDateStr();
+  const yStr = localDateStr(new Date(Date.now() - 864e5));
   if (dates[0] !== todayStr && dates[0] !== yStr) return 0;
   let streak = 1;
   for (let i = 0; i < dates.length - 1; i++) {
@@ -57,7 +73,7 @@ export function weeklyStats(logs = [], now = new Date()) {
       trainedDates.add(log.date);
     }
   }
-  return { count, volume, daysTrained: trainedDates.size, weekStart: monday };
+  return { count, volume, daysTrained: trainedDates.size, trainedDates, weekStart: monday };
 }
 
 // --- Aggregate stats from all logs ---
