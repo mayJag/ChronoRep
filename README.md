@@ -6,7 +6,7 @@ Built using **React**, **Vite**, **Capacitor**, and **IndexedDB**.
 
 ---
 
-## ✨ Recent Enhancements (v1.3.0)
+## ✨ Recent Enhancements (v1.5.0)
 
 Bug fixes + big usability pass:
 
