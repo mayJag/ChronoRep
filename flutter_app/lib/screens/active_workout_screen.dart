@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import '../theme/app_theme.dart';
 import '../widgets/glass_card.dart';
+import '../widgets/confirm_dialog.dart';
 import '../data/active_plan.dart';
 import '../data/store.dart';
 import '../data/models.dart';
@@ -195,23 +196,46 @@ class _ActiveWorkoutScreenState extends State<ActiveWorkoutScreen> {
     return '$m:$s';
   }
 
+  /// Only interrupt with a confirm if there's logged progress to lose.
+  Future<bool> _maybeQuit() async {
+    if (_completedSets == 0) return true;
+    return ConfirmDialog.danger(
+      context,
+      icon: Icons.logout_rounded,
+      title: 'Quit workout?',
+      message: "Your logged sets won't be saved. This can't be undone.",
+      confirmLabel: 'Quit',
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (didPop, _) async {
+        if (didPop) return;
+        final navigator = Navigator.of(context);
+        if (await _maybeQuit()) navigator.pop();
+      },
+      child: Scaffold(
       backgroundColor: AppColors.bgPrimary,
       appBar: AppBar(
         backgroundColor: AppColors.bgPrimary,
         elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.close_rounded),
+          onPressed: () async {
+            final navigator = Navigator.of(context);
+            if (await _maybeQuit()) navigator.pop();
+          },
+        ),
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(widget.session.name,
-                style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w800)),
+                style: AppFonts.display(16, weight: FontWeight.w700)),
             Text(_fmt(_elapsed),
-                style: const TextStyle(
-                    fontSize: 12,
-                    color: AppColors.textSecondary,
-                    fontFeatures: [FontFeature.tabularFigures()])),
+                style: AppFonts.mono(12, color: AppColors.textSecondary)),
           ],
         ),
         actions: [
@@ -282,6 +306,7 @@ class _ActiveWorkoutScreenState extends State<ActiveWorkoutScreen> {
           ),
         ],
       ),
+    ),
     );
   }
 }
@@ -358,8 +383,9 @@ class _ExerciseCard extends StatelessWidget {
                     SizedBox(
                       width: 28,
                       child: Text('${i + 1}',
-                          style: const TextStyle(
-                              fontSize: 13, fontWeight: FontWeight.w600)),
+                          style: AppFonts.mono(13,
+                              weight: FontWeight.w700,
+                              color: AppColors.textSecondary)),
                     ),
                     Expanded(child: _numField(s.weightCtrl, s.done)),
                     const SizedBox(width: 8),
@@ -403,7 +429,7 @@ class _ExerciseCard extends StatelessWidget {
         enabled: !done,
         textAlign: TextAlign.center,
         keyboardType: const TextInputType.numberWithOptions(decimal: true),
-        style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+        style: AppFonts.mono(14, weight: FontWeight.w700),
         decoration: InputDecoration(
           isDense: true,
           contentPadding: const EdgeInsets.symmetric(vertical: 10),
@@ -454,8 +480,7 @@ class _RestBanner extends StatelessWidget {
                   valueColor: const AlwaysStoppedAnimation(AppColors.accent),
                 ),
                 Text('$remaining',
-                    style: const TextStyle(
-                        fontSize: 13, fontWeight: FontWeight.w800)),
+                    style: AppFonts.mono(13, weight: FontWeight.w800)),
               ],
             ),
           ),
@@ -578,8 +603,7 @@ class _FinishSummaryScreen extends StatelessWidget {
   Widget _stat(String value, String label) => Expanded(
         child: Column(
           children: [
-            Text(value,
-                style: const TextStyle(fontSize: 26, fontWeight: FontWeight.w800)),
+            Text(value, style: AppFonts.mono(26, weight: FontWeight.w700)),
             const SizedBox(height: 4),
             Text(label,
                 style: const TextStyle(

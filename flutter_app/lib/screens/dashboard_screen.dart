@@ -100,10 +100,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
               const SizedBox(height: 4),
               Text(
                 name.isEmpty ? _greeting : '$_greeting, ${name.split(' ').first}',
-                style: const TextStyle(
-                    fontSize: 26,
-                    fontWeight: FontWeight.w800,
-                    letterSpacing: -0.6),
+                style: AppFonts.display(26,
+                    weight: FontWeight.w700, letterSpacing: -0.6),
               ),
             ],
           ),
@@ -160,9 +158,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                           style: const TextStyle(
                               fontSize: 14, fontWeight: FontWeight.w700)),
                       Text('Lv ${_level.level}',
-                          style: const TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.w600,
+                          style: AppFonts.mono(12,
+                              weight: FontWeight.w700,
                               color: AppColors.textSecondary)),
                     ],
                   ),
@@ -379,8 +376,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
     );
   }
 
-  Widget _sectionHeader(String title) => Text(title,
-      style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700));
+  Widget _sectionHeader(String title) =>
+      Text(title, style: AppFonts.display(16, weight: FontWeight.w700));
 }
 
 class _StatCard extends StatelessWidget {
@@ -405,10 +402,8 @@ class _StatCard extends StatelessWidget {
             const SizedBox(height: 8),
             FittedBox(
               child: Text(value,
-                  style: const TextStyle(
-                      fontSize: 19,
-                      fontWeight: FontWeight.w800,
-                      color: AppColors.textPrimary)),
+                  style: AppFonts.mono(19,
+                      weight: FontWeight.w700, color: AppColors.textPrimary)),
             ),
             const SizedBox(height: 3),
             Text(label.toUpperCase(),

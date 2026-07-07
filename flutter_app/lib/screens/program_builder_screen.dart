@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import '../theme/app_theme.dart';
 import '../widgets/glass_card.dart';
+import '../widgets/confirm_dialog.dart';
 import '../data/plan_generator.dart';
 import '../data/active_plan.dart';
 import '../data/store.dart';
@@ -329,6 +330,18 @@ class _PlanResult extends StatelessWidget {
   const _PlanResult({required this.plan});
 
   Future<void> _activate(BuildContext context) async {
+    if (Store.getActivePlan() != null) {
+      final ok = await ConfirmDialog.neutral(
+        context,
+        icon: Icons.swap_horiz_rounded,
+        title: 'Replace your active plan?',
+        message:
+            'Activating ${plan.name} will replace the plan currently on your Dashboard.',
+        confirmLabel: 'Activate',
+      );
+      if (!ok) return;
+      if (!context.mounted) return;
+    }
     await Store.setActivePlan(planFromGenerated(plan));
     if (!context.mounted) return;
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(

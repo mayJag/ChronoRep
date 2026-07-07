@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import '../theme/app_theme.dart';
 import '../widgets/glass_card.dart';
+import '../widgets/confirm_dialog.dart';
 import '../data/store.dart';
 import '../data/models.dart';
 
@@ -52,9 +53,9 @@ class _GoalsScreenState extends State<GoalsScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text('Goals',
-                    style: TextStyle(
-                        fontSize: 28, fontWeight: FontWeight.w800, letterSpacing: -0.6)),
+                Text('Goals',
+                    style: AppFonts.display(28,
+                        weight: FontWeight.w700, letterSpacing: -0.6)),
                 Material(
                   color: Colors.transparent,
                   child: InkWell(
@@ -102,6 +103,15 @@ class _GoalsScreenState extends State<GoalsScreen> {
                     goal: g,
                     current: _currentFor(g),
                     onDelete: () async {
+                      final ok = await ConfirmDialog.danger(
+                        context,
+                        icon: Icons.delete_outline_rounded,
+                        title: 'Delete this goal?',
+                        message:
+                            "“${g.label}” and its progress will be removed. This can't be undone.",
+                        confirmLabel: 'Delete',
+                      );
+                      if (!ok) return;
                       await Store.deleteGoal(g.id);
                       setState(() {});
                     },

@@ -1,3 +1,4 @@
+import 'dart:ui' show ImageFilter;
 import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
 import 'dashboard_screen.dart';
@@ -81,16 +82,21 @@ class _AnimatedNavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        color: AppColors.bgSecondary,
-        border: Border(top: BorderSide(color: AppColors.borderSubtle)),
-      ),
-      child: SafeArea(
-        top: false,
-        child: SizedBox(
-          height: 64,
-          child: Row(
+    // Dark, translucent, blurred bar — the app background shows through the
+    // gaps between icons rather than a solid rectangle.
+    return ClipRect(
+      child: BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: 18, sigmaY: 18),
+        child: Container(
+          decoration: BoxDecoration(
+            color: AppColors.bgSecondary.withValues(alpha: 0.82),
+            border: const Border(top: BorderSide(color: AppColors.borderSubtle)),
+          ),
+          child: SafeArea(
+            top: false,
+            child: SizedBox(
+              height: 64,
+              child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: List.generate(items.length, (i) {
               final active = i == index;
@@ -130,7 +136,7 @@ class _AnimatedNavBar extends StatelessWidget {
                           size: 22,
                           color: active
                               ? AppColors.accent
-                              : AppColors.textTertiary,
+                              : AppColors.textSecondary,
                         ),
                       ),
                       const SizedBox(height: 3),
@@ -142,7 +148,7 @@ class _AnimatedNavBar extends StatelessWidget {
                               active ? FontWeight.w600 : FontWeight.w500,
                           color: active
                               ? AppColors.textPrimary
-                              : AppColors.textTertiary,
+                              : AppColors.textSecondary,
                         ),
                         child: Text(items[i].label),
                       ),
@@ -151,6 +157,8 @@ class _AnimatedNavBar extends StatelessWidget {
                 ),
               );
             }),
+              ),
+            ),
           ),
         ),
       ),

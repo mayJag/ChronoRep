@@ -36,9 +36,9 @@ class MoreScreen extends StatelessWidget {
         padding: const EdgeInsets.fromLTRB(16, 14, 16, 24),
         physics: const BouncingScrollPhysics(),
         children: [
-          const Text('More',
-              style: TextStyle(
-                  fontSize: 28, fontWeight: FontWeight.w800, letterSpacing: -0.6)),
+          Text('More',
+              style: AppFonts.display(28,
+                  weight: FontWeight.w700, letterSpacing: -0.6)),
           const SizedBox(height: 16),
           GridView.count(
             crossAxisCount: 2,

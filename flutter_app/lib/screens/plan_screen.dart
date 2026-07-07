@@ -20,9 +20,9 @@ class PlanScreen extends StatelessWidget {
         padding: const EdgeInsets.fromLTRB(16, 14, 16, 24),
         physics: const BouncingScrollPhysics(),
         children: [
-          const Text('Plan',
-              style: TextStyle(
-                  fontSize: 28, fontWeight: FontWeight.w800, letterSpacing: -0.6)),
+          Text('Plan',
+              style: AppFonts.display(28,
+                  weight: FontWeight.w700, letterSpacing: -0.6)),
           const SizedBox(height: 4),
           const Text('Train by the science, not by guesswork.',
               style: TextStyle(fontSize: 13.5, color: AppColors.textSecondary)),

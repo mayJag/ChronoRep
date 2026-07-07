@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import '../theme/app_theme.dart';
 import '../widgets/glass_card.dart';
+import '../widgets/confirm_dialog.dart';
 import '../data/store.dart';
 import '../data/models.dart';
 
@@ -35,9 +36,9 @@ class _HistoryScreenState extends State<HistoryScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text('History',
-                    style: TextStyle(
-                        fontSize: 28, fontWeight: FontWeight.w800, letterSpacing: -0.6)),
+                Text('History',
+                    style: AppFonts.display(28,
+                        weight: FontWeight.w700, letterSpacing: -0.6)),
                 const SizedBox(height: 12),
                 TextField(
                   onChanged: (v) => setState(() => _query = v),
@@ -95,12 +96,15 @@ class _HistoryScreenState extends State<HistoryScreen> {
                       return Padding(
                         padding: const EdgeInsets.only(bottom: 10),
                         child: GlassCard(
-                          onTap: () => showModalBottomSheet(
-                            context: context,
-                            backgroundColor: Colors.transparent,
-                            isScrollControlled: true,
-                            builder: (_) => _LogDetailSheet(log: l),
-                          ),
+                          onTap: () async {
+                            await showModalBottomSheet(
+                              context: context,
+                              backgroundColor: Colors.transparent,
+                              isScrollControlled: true,
+                              builder: (_) => _LogDetailSheet(log: l),
+                            );
+                            if (mounted) setState(() {});
+                          },
                           child: Row(
                             children: [
                               Container(
@@ -188,6 +192,7 @@ class _LogDetailSheet extends StatelessWidget {
               style: const TextStyle(fontSize: 13, color: AppColors.textSecondary)),
           const SizedBox(height: 18),
           Flexible(
+            fit: FlexFit.loose,
             child: ListView.builder(
               shrinkWrap: true,
               physics: const BouncingScrollPhysics(),
@@ -226,6 +231,44 @@ class _LogDetailSheet extends StatelessWidget {
                   ),
                 );
               },
+            ),
+          ),
+          const SizedBox(height: 12),
+          Material(
+            color: AppColors.dangerGlow,
+            borderRadius: BorderRadius.circular(AppRadius.md),
+            child: InkWell(
+              onTap: () async {
+                final ok = await ConfirmDialog.danger(
+                  context,
+                  icon: Icons.delete_outline_rounded,
+                  title: 'Delete this session?',
+                  message:
+                      "“${log.name}” will be permanently removed from your history. This can't be undone.",
+                  confirmLabel: 'Delete',
+                );
+                if (!ok) return;
+                await Store.deleteLog(log.id);
+                if (context.mounted) Navigator.of(context).pop();
+              },
+              borderRadius: BorderRadius.circular(AppRadius.md),
+              child: Container(
+                height: 48,
+                alignment: Alignment.center,
+                child: const Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(Icons.delete_outline_rounded,
+                        size: 18, color: AppColors.danger),
+                    SizedBox(width: 8),
+                    Text('Delete Session',
+                        style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w700,
+                            color: AppColors.danger)),
+                  ],
+                ),
+              ),
             ),
           ),
         ],

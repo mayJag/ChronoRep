@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import '../theme/app_theme.dart';
 import '../widgets/glass_card.dart';
+import '../widgets/confirm_dialog.dart';
 import '../data/programs_repo.dart';
 import '../data/active_plan.dart';
 import '../data/store.dart';
@@ -39,6 +40,17 @@ class _ProgramDetailScreenState extends State<ProgramDetailScreen> {
   }
 
   Future<void> _activate() async {
+    if (Store.getActivePlan() != null) {
+      final ok = await ConfirmDialog.neutral(
+        context,
+        icon: Icons.swap_horiz_rounded,
+        title: 'Replace your active plan?',
+        message:
+            'Activating ${widget.asset.name} will replace the plan currently on your Dashboard.',
+        confirmLabel: 'Activate',
+      );
+      if (!ok) return;
+    }
     setState(() => _activating = true);
     await Store.setActivePlan(_plan!);
     if (!mounted) return;

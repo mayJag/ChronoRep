@@ -59,6 +59,25 @@ class Store {
         _kLogs, jsonEncode(logs.map((l) => l.toJson()).toList()));
   }
 
+  /// Wipe all logged sessions but keep profile, plan, goals, and body metrics.
+  static Future<void> clearHistory() async => _prefs?.remove(_kLogs);
+
+  /// Reset the app to a first-launch state — removes every stored key
+  /// (logs, plan, goals, body metrics, custom exercises, and preferences).
+  static Future<void> resetAll() async {
+    for (final k in const [
+      _kLogs,
+      _kUserName,
+      _kWeightUnit,
+      _kActivePlan,
+      _kBodyMetrics,
+      _kGoals,
+      _kCustomExercises,
+    ]) {
+      await _prefs?.remove(k);
+    }
+  }
+
   /// Best (weight, reps) ever logged for an exercise, and the date it happened
   /// — used for "previous performance" tap-to-fill and progressive-overload
   /// suggestions.
