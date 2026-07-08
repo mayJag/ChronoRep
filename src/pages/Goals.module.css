@@ -112,3 +112,19 @@
 .armsText { display: flex; flex-direction: column; }
 .armsText strong { font-size: var(--fs-sm); color: var(--text-primary); }
 .armsText span { font-size: var(--fs-xs); color: var(--text-secondary); }
+
+.volumeBlock { margin-bottom: var(--sp-4); }
+.volumeTitle { font-size: var(--fs-sm); font-weight: var(--fw-semibold); color: var(--text-primary); margin-bottom: var(--sp-3); }
+.volumeRow { display: grid; grid-template-columns: 64px 1fr auto; align-items: center; gap: var(--sp-3); margin-bottom: var(--sp-2); }
+.volumeLabel { font-size: var(--fs-xs); color: var(--text-secondary); text-transform: capitalize; }
+.volumeBarTrack { height: 6px; border-radius: 3px; background: var(--bg-elevated); overflow: hidden; }
+.volumeBarFill { height: 100%; border-radius: 3px; transition: width var(--duration-fast); }
+.volumeSets { font-size: var(--fs-xs); font-weight: var(--fw-semibold); white-space: nowrap; }
+.volumeRange { font-weight: var(--fw-regular); color: var(--text-tertiary); }
+
+.volume_low { color: var(--text-tertiary); }
+.volume_low.volumeBarFill { background: var(--text-tertiary); }
+.volume_in-range { color: var(--accent-success, var(--accent-primary)); }
+.volume_in-range.volumeBarFill { background: var(--accent-success, var(--accent-primary)); }
+.volume_high { color: var(--accent-danger, #e5534b); }
+.volume_high.volumeBarFill { background: var(--accent-danger, #e5534b); }

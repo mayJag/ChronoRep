@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { X, Check, Plus, Clock, Trophy, Dumbbell, ChevronDown, ChevronUp, Play, Pause, TrendingUp } from 'lucide-react';
+import { X, Check, Plus, Clock, Trophy, Dumbbell, ChevronDown, ChevronUp, Play, Pause, TrendingUp, Repeat } from 'lucide-react';
 import { saveWorkoutLog, getPersonalRecord, savePersonalRecord, getAllWorkoutLogs } from '../store/db';
 import RestTimer from '../components/RestTimer';
 import { getExerciseVideoUrl } from '../data/exerciseVideos';
 import { useExerciseLibrary } from '../data/exercises';
+import { getSubstitutes } from '../lib/substitutions';
 import { suggestProgression, convertWeight, localDateStr } from '../lib/fitness';
 import { useSettings } from '../store/SettingsContext';
 import { useToast } from '../components/Toast';
@@ -301,6 +302,24 @@ export default function ActiveWorkout() {
     }));
   };
 
+  const [swapExIdx, setSwapExIdx] = useState(null);
+  const [swapOptions, setSwapOptions] = useState([]);
+
+  const handleOpenSwap = (exIdx) => {
+    const ex = exercises[exIdx];
+    if (!ex) return;
+    setSwapOptions(getSubstitutes(ex, libraryExercises, { limit: 8 }));
+    setSwapExIdx(exIdx);
+  };
+
+  const handleSwapExercise = (newEx) => {
+    setExercises(prev => prev.map((ex, i) => (i === swapExIdx
+      ? { ...ex, name: newEx.name, muscleGroup: newEx.muscleGroup, equipment: newEx.equipment, category: newEx.category, youtubeUrl: undefined }
+      : ex)));
+    setSwapExIdx(null);
+    toast(`Swapped to ${newEx.name}.`, 'success');
+  };
+
   const handleRemoveExercise = async (exIdx) => {
     const ex = exercises[exIdx];
     if (!ex) return;
@@ -594,6 +613,14 @@ export default function ActiveWorkout() {
                   </button>
                   <button
                     className="btn btn--ghost btn--icon"
+                    title="Swap exercise"
+                    aria-label={`Swap ${ex.name}`}
+                    onClick={() => handleOpenSwap(exIdx)}
+                  >
+                    <Repeat size={16} />
+                  </button>
+                  <button
+                    className="btn btn--ghost btn--icon"
                     title="Remove exercise"
                     aria-label={`Remove ${ex.name}`}
                     onClick={() => handleRemoveExercise(exIdx)}
@@ -818,6 +845,40 @@ export default function ActiveWorkout() {
             >
               Back to Workout
             </button>
+          </div>
+        </div>
+      )}
+
+      {/* Swap Exercise Modal */}
+      {swapExIdx !== null && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <div className="modal-handle" />
+            <div className={styles.modalHeader}>
+              <h3 className={styles.modalTitle}>Swap {exercises[swapExIdx]?.name}</h3>
+              <button className="btn btn--ghost btn--icon" onClick={() => setSwapExIdx(null)}>
+                <X size={20} />
+              </button>
+            </div>
+            <div className={styles.modalBody}>
+              {swapOptions.length === 0 ? (
+                <p className={styles.notesBox}>
+                  No close matches found for this exercise. Remove it and add a replacement from the library instead.
+                </p>
+              ) : (
+                <div className={styles.searchSelectionList}>
+                  {swapOptions.map((opt) => (
+                    <div key={opt.name} className={styles.selectionItem} onClick={() => handleSwapExercise(opt)}>
+                      <div className={styles.selMeta}>
+                        <span className={styles.selExName}>{opt.name}</span>
+                        <span className={styles.selExSub}>{opt.muscleGroup} • {opt.equipment}</span>
+                      </div>
+                      <Repeat size={16} />
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
         </div>
       )}

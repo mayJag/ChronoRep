@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Calendar, Plus, Trash2, Dumbbell, Clock, Play, Save, Check, ShieldAlert, Sparkles, AlertCircle, Pencil, Bookmark } from 'lucide-react';
+import { Calendar, Plus, Trash2, Dumbbell, Clock, Play, Save, Check, ShieldAlert, Sparkles, AlertCircle, Pencil, Bookmark, Repeat, X } from 'lucide-react';
+import { getSubstitutes } from '../lib/substitutions';
 import { btrProgram } from '../data/btrProgram';
 import { expertPowerbuilding } from '../data/expertPowerbuilding';
 import { expert_fundamentals } from '../data/fundamentalsProgram';
@@ -88,6 +89,13 @@ export default function PlanBuilder() {
   });
   const [selectedCustomDayKey, setSelectedCustomDayKey] = useState('mon');
   const [customSearch, setCustomSearch] = useState('');
+  const [swapTarget, setSwapTarget] = useState(null); // { dayKey, idx, options }
+
+  const handleOpenSwapInCustomDay = (dayKey, idx) => {
+    const ex = customDays[dayKey].exercises[idx];
+    if (!ex) return;
+    setSwapTarget({ dayKey, idx, exName: ex.name, options: getSubstitutes(ex, libraryExercises, { limit: 8 }) });
+  };
 
   // Hydrate the Custom editor from a generated plan handed over by the Goals page.
   useEffect(() => {
@@ -296,6 +304,17 @@ export default function PlanBuilder() {
         }
       };
     });
+  };
+
+  const handleSwapExerciseInCustomDay = (dayKey, idx, newEx) => {
+    setCustomDays(prev => {
+      const day = prev[dayKey];
+      const exercises = day.exercises.map((ex, i) => (i === idx
+        ? { ...ex, name: newEx.name, muscleGroup: newEx.muscleGroup, equipment: newEx.equipment }
+        : ex));
+      return { ...prev, [dayKey]: { ...day, exercises } };
+    });
+    setSwapTarget(null);
   };
 
   const handleRemoveExerciseFromCustomDay = (dayKey, idx) => {
@@ -719,12 +738,21 @@ export default function PlanBuilder() {
                     <div key={exIdx} className={styles.configItem}>
                       <div className={styles.configHeader}>
                         <span className={styles.configExName}>{ex.name}</span>
-                        <button
-                          className="btn btn--ghost text-danger"
-                          onClick={() => handleRemoveExerciseFromCustomDay(selectedCustomDayKey, exIdx)}
-                        >
-                          <Trash2 size={14} />
-                        </button>
+                        <div style={{ display: 'flex', gap: 'var(--sp-1)' }}>
+                          <button
+                            className="btn btn--ghost"
+                            title="Swap exercise"
+                            onClick={() => handleOpenSwapInCustomDay(selectedCustomDayKey, exIdx)}
+                          >
+                            <Repeat size={14} />
+                          </button>
+                          <button
+                            className="btn btn--ghost text-danger"
+                            onClick={() => handleRemoveExerciseFromCustomDay(selectedCustomDayKey, exIdx)}
+                          >
+                            <Trash2 size={14} />
+                          </button>
+                        </div>
                       </div>
 
                       <div className={styles.configInputs}>
@@ -936,6 +964,38 @@ export default function PlanBuilder() {
               <p>Create one above, or save a generated Quick Workout to reuse it later.</p>
             </div>
           )}
+        </div>
+      )}
+
+      {/* Swap Exercise Modal (Custom Plan editor) */}
+      {swapTarget && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <div className="modal-handle" />
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: 'var(--sp-4)' }}>
+              <h3 style={{ fontSize: 'var(--fs-md)', fontWeight: 'var(--fw-bold)' }}>Swap {swapTarget.exName}</h3>
+              <button className="btn btn--ghost btn--icon" onClick={() => setSwapTarget(null)}>
+                <X size={20} />
+              </button>
+            </div>
+            <div style={{ padding: '0 var(--sp-4) var(--sp-4)' }}>
+              {swapTarget.options.length === 0 ? (
+                <p className="page-subtitle">No close matches found — search and add a replacement below instead.</p>
+              ) : (
+                <div className={styles.scrollSelector}>
+                  {swapTarget.options.map((opt) => (
+                    <button
+                      key={opt.name}
+                      className={styles.exSelectItem}
+                      onClick={() => handleSwapExerciseInCustomDay(swapTarget.dayKey, swapTarget.idx, opt)}
+                    >
+                      <Repeat size={14} /> {opt.name}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
         </div>
       )}
     </div>
