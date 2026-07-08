@@ -37,10 +37,12 @@ class _ExerciseLibraryScreenState extends State<ExerciseLibraryScreen> {
   void initState() {
     super.initState();
     ExerciseLibrary.loadDataset().then((d) {
-      if (mounted) setState(() {
-        _dataset = d;
-        _loading = false;
-      });
+      if (mounted) {
+        setState(() {
+          _dataset = d;
+          _loading = false;
+        });
+      }
     }).catchError((_) {
       if (mounted) setState(() => _loading = false);
     });
