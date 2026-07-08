@@ -299,6 +299,16 @@ function enforceRecovery(weeklySchedule, capForMuscle) {
 }
 
 export function generatePlan(goals, library) {
+  // Auto-generated plans draw from the curated staples (BASE_EXERCISES) plus
+  // any user-added custom exercises — NOT the full imported dataset. The 1,300+
+  // dataset exercises (tagged with `source: 'exercises-dataset'`) power the
+  // Exercise Library browser, the substitution engine, and manual custom-plan
+  // building; letting the auto-generator pull from them would fill plans with
+  // obscure variations instead of proven movements. Fall back to the full
+  // library only if no curated pool is available.
+  const curated = (library || []).filter(ex => ex.source !== 'exercises-dataset');
+  const pool = curated.length >= 8 ? curated : (library || []);
+
   // Accept either objectives:[] (new) or objective:'' (legacy)
   const objectives = (goals.objectives && goals.objectives.length)
     ? goals.objectives
@@ -342,7 +352,7 @@ export function generatePlan(goals, library) {
       sets: Math.max(2, base.sets + exp.setDelta),
     };
     const wantPlyo = (dayObjective === 'jump' || includesJump) && block.groups.includes('legs');
-    const exercises = pickExercises(library, block, params, goals.equipment, wantPlyo, globalCounts);
+    const exercises = pickExercises(pool, block, params, goals.equipment, wantPlyo, globalCounts);
     weeklySchedule[slot] = {
       name: hybrid ? `${block.name} · ${base.short}` : block.name,
       type: 'main',

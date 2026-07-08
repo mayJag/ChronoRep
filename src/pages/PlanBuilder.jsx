@@ -387,17 +387,22 @@ export default function PlanBuilder() {
 
   // --- Quick Workout Generator ---
   const handleGenerateQuickWorkout = () => {
+    // Auto-generated quick workouts draw from the curated staples (+ user
+    // custom exercises), not the full imported dataset — otherwise a random
+    // shuffle would surface obscure variations instead of proven movements.
+    // (The dataset still powers the library browser and per-exercise swap.)
+    const curatedPool = libraryExercises.filter(ex => ex.source !== 'exercises-dataset');
     // Filter master exercises based on target focus
     let pool;
     if (quickFocus === 'upper') {
-      pool = libraryExercises.filter(ex => ['chest', 'back', 'shoulders', 'arms'].includes(ex.muscleGroup));
+      pool = curatedPool.filter(ex => ['chest', 'back', 'shoulders', 'arms'].includes(ex.muscleGroup));
     } else if (quickFocus === 'lower') {
-      pool = libraryExercises.filter(ex => ex.muscleGroup === 'legs');
+      pool = curatedPool.filter(ex => ex.muscleGroup === 'legs');
     } else if (quickFocus === 'plyo') {
-      pool = libraryExercises.filter(ex => ex.category === 'plyometric' || ex.category === 'mobility');
+      pool = curatedPool.filter(ex => ex.category === 'plyometric' || ex.category === 'mobility');
     } else {
       // Full Body
-      pool = [...libraryExercises];
+      pool = [...curatedPool];
     }
 
     // Determine target count based on duration (roughly 7-8 mins per exercise)
