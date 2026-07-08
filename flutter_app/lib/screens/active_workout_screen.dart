@@ -9,6 +9,8 @@ import '../data/active_plan.dart';
 import '../data/store.dart';
 import '../data/models.dart';
 import '../data/fitness.dart';
+import '../data/exercise_library.dart';
+import '../data/substitutions.dart';
 
 /// The core logging screen: per-exercise set rows (weight × reps), a rest
 /// timer between sets, previous-performance tap-to-fill, and a
@@ -30,7 +32,7 @@ class _SetState {
 }
 
 class _ExState {
-  final ActiveExercise ex;
+  ActiveExercise ex; // mutable so an exercise can be swapped mid-session
   final List<_SetState> sets;
   String? suggestion;
   _ExState(this.ex, this.sets);
@@ -47,6 +49,10 @@ class _ActiveWorkoutScreenState extends State<ActiveWorkoutScreen> {
   int _restTotal = 0;
   bool _resting = false;
 
+  // Exercise pool for the swap feature (curated + custom immediately, then the
+  // full imported dataset streams in once its asset loads).
+  List<LibraryExercise> _library = const [];
+
   @override
   void initState() {
     super.initState();
@@ -56,8 +62,39 @@ class _ActiveWorkoutScreenState extends State<ActiveWorkoutScreen> {
       _applySuggestion(st);
       return st;
     }).toList();
+    _library = ExerciseLibrary.combined(Store.getCustomExercises(), const []);
+    ExerciseLibrary.loadDataset().then((d) {
+      if (mounted) {
+        setState(() => _library =
+            ExerciseLibrary.combined(Store.getCustomExercises(), d));
+      }
+    }).catchError((_) {});
     _elapsedTimer = Timer.periodic(const Duration(seconds: 1), (_) {
       if (mounted) setState(() => _elapsed = DateTime.now().difference(_start));
+    });
+  }
+
+  /// Open a picker of ranked substitute exercises and swap the chosen one in,
+  /// keeping the same set/rep/rest scheme.
+  Future<void> _swap(_ExState st) async {
+    final ref = LibraryExercise(
+      name: st.ex.name,
+      muscleGroup: st.ex.muscleGroup,
+      category: st.ex.category,
+      equipment: '',
+    );
+    final options = getSubstitutes(ref, _library, limit: 8);
+    final picked = await showModalBottomSheet<LibraryExercise>(
+      context: context,
+      backgroundColor: Colors.transparent,
+      isScrollControlled: true,
+      builder: (_) => _SwapSheet(original: st.ex.name, options: options),
+    );
+    if (picked == null || !mounted) return;
+    setState(() {
+      st.ex = ActiveExercise(picked.name, picked.muscleGroup, st.ex.sets,
+          st.ex.reps, st.ex.restSec, picked.category);
+      _applySuggestion(st);
     });
   }
 
@@ -262,6 +299,7 @@ class _ActiveWorkoutScreenState extends State<ActiveWorkoutScreen> {
               state: _exercises[i],
               unit: Store.weightUnit,
               onToggle: (s) => _toggleDone(s, _exercises[i].ex.restSec),
+              onSwap: () => _swap(_exercises[i]),
             ),
           ),
           if (_resting)
@@ -315,8 +353,12 @@ class _ExerciseCard extends StatelessWidget {
   final _ExState state;
   final String unit;
   final ValueChanged<_SetState> onToggle;
+  final VoidCallback onSwap;
   const _ExerciseCard(
-      {required this.state, required this.unit, required this.onToggle});
+      {required this.state,
+      required this.unit,
+      required this.onToggle,
+      required this.onSwap});
 
   @override
   Widget build(BuildContext context) {
@@ -347,6 +389,15 @@ class _ExerciseCard extends StatelessWidget {
                 Text('${state.ex.reps} reps · ${state.ex.restSec}s rest',
                     style: const TextStyle(
                         fontSize: 11.5, color: AppColors.textSecondary)),
+                GestureDetector(
+                  onTap: onSwap,
+                  behavior: HitTestBehavior.opaque,
+                  child: const Padding(
+                    padding: EdgeInsets.only(left: 10),
+                    child: Icon(Icons.swap_horiz_rounded,
+                        size: 18, color: AppColors.textTertiary),
+                  ),
+                ),
               ],
             ),
             if (state.suggestion != null) ...[
@@ -447,6 +498,96 @@ class _ExerciseCard extends StatelessWidget {
       fontWeight: FontWeight.w700,
       letterSpacing: 0.6,
       color: AppColors.textTertiary);
+}
+
+/// Bottom sheet listing ranked substitute exercises; returns the chosen one.
+class _SwapSheet extends StatelessWidget {
+  final String original;
+  final List<LibraryExercise> options;
+  const _SwapSheet({required this.original, required this.options});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: const BoxDecoration(
+        color: AppColors.bgSecondary,
+        borderRadius: BorderRadius.vertical(top: Radius.circular(AppRadius.xl)),
+      ),
+      padding: EdgeInsets.fromLTRB(
+          20, 12, 20, MediaQuery.of(context).viewInsets.bottom + 20),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Center(
+            child: Container(
+              width: 40,
+              height: 4,
+              margin: const EdgeInsets.only(bottom: 16),
+              decoration: BoxDecoration(
+                color: AppColors.borderDefault,
+                borderRadius: BorderRadius.circular(2),
+              ),
+            ),
+          ),
+          Text('Swap $original',
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w800)),
+          const SizedBox(height: 14),
+          if (options.isEmpty)
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: 16),
+              child: Text(
+                'No close matches found for this exercise.',
+                style: TextStyle(fontSize: 13, color: AppColors.textTertiary),
+              ),
+            )
+          else
+            Flexible(
+              child: ListView.builder(
+                shrinkWrap: true,
+                physics: const BouncingScrollPhysics(),
+                itemCount: options.length,
+                itemBuilder: (context, i) {
+                  final o = options[i];
+                  return Padding(
+                    padding: const EdgeInsets.only(bottom: 8),
+                    child: GestureDetector(
+                      onTap: () => Navigator.pop(context, o),
+                      child: GlassCard(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 14, vertical: 12),
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(o.name,
+                                      style: const TextStyle(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w600)),
+                                  const SizedBox(height: 2),
+                                  Text('${o.muscleGroup} · ${o.equipment}',
+                                      style: const TextStyle(
+                                          fontSize: 11.5,
+                                          color: AppColors.textSecondary)),
+                                ],
+                              ),
+                            ),
+                            const Icon(Icons.swap_horiz_rounded,
+                                size: 18, color: AppColors.accent),
+                          ],
+                        ),
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
+        ],
+      ),
+    );
+  }
 }
 
 class _RestBanner extends StatelessWidget {
