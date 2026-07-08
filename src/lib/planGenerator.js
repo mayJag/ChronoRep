@@ -9,6 +9,8 @@
    ─ Fat Loss / Conditioning:   5–9 exercises, 2–4 sets × 12–20 reps, short rest
    ─ General Fitness:            4–7 exercises, 2–4 sets × 8–12 reps                        */
 
+import { weeklyCapFor, summarizeWeeklyVolume } from './muscleStandards.js';
+
 // Exercise count is keyed by experience level so beginners never end up
 // under-trained and advanced lifters get enough volume.
 const OBJECTIVE_PARAMS = {
@@ -49,15 +51,12 @@ const OBJECTIVE_LABELS = {
   fatloss: 'Fat Loss', general: 'General Fitness', minimalist: 'The Essentials',
 };
 
-// Experience tuning: sets-per-exercise adjustment and weekly per-muscle cap.
-// Weekly caps aligned with ACSM/NSCA recommendations:
-//   Beginner  10–14 sets/muscle/week → cap 16 (allows headroom)
-//   Intermediate 14–20 → cap 22
-//   Advanced  18–25+ → cap 30
+// Experience tuning: sets-per-exercise adjustment. Weekly per-muscle caps
+// come from muscleStandards.js (per-muscle-group ranges, not one flat number).
 const EXPERIENCE = {
-  beginner:     { setDelta: -1, muscleWeeklyCap: 16 },
-  intermediate: { setDelta: 0,  muscleWeeklyCap: 22 },
-  advanced:     { setDelta: 0,  muscleWeeklyCap: 30 },
+  beginner:     { setDelta: -1 },
+  intermediate: { setDelta: 0 },
+  advanced:     { setDelta: 0 },
 };
 
 // Which weekday keys are training days for N days/week (spread for recovery).
@@ -124,7 +123,7 @@ export function recommendSplit(objectives = [], days = 4) {
   return { split, reason };
 }
 
-function equipmentAllowed(equip, ex) {
+export function equipmentAllowed(equip, ex) {
   if (equip === 'bodyweight') return ex.equipment === 'bodyweight';
   if (equip === 'dumbbell') return ['dumbbell', 'bodyweight'].includes(ex.equipment);
   return true; // full gym
@@ -246,7 +245,7 @@ function pickExercises(library, block, params, equip, wantPlyo, globalCounts) {
 //      and never drop a day below a hard floor of 4 exercises.
 // Protected categories: compound and plyometric exercises are never reduced
 // or removed — they are the primary training stimulus.
-function enforceRecovery(weeklySchedule, cap) {
+function enforceRecovery(weeklySchedule, capForMuscle) {
   const setsFor = (mg) => Object.values(weeklySchedule).reduce((sum, day) =>
     sum + (day.exercises || []).filter(e => e.muscleGroup === mg).reduce((s, e) => s + (Number(e.sets) || 0), 0), 0);
 
@@ -255,6 +254,7 @@ function enforceRecovery(weeklySchedule, cap) {
   const PROTECTED = ['compound', 'plyometric']; // never trim these
 
   for (const mg of muscles) {
+    const cap = capForMuscle(mg);
     // ── Pass 1: reduce sets on non-protected exercises for this muscle ──
     let guard = 0;
     while (setsFor(mg) > cap && guard++ < 40) {
@@ -351,8 +351,11 @@ export function generatePlan(goals, library) {
     };
   });
 
-  // Recovery guardrail: cap weekly sets per muscle by experience level.
-  enforceRecovery(weeklySchedule, exp.muscleWeeklyCap);
+  // Recovery guardrail: cap weekly sets per muscle by experience level,
+  // using per-muscle-group standards (NSCA/ACSM ranges) rather than one
+  // flat number across every muscle.
+  const caps = weeklyCapFor(experience);
+  enforceRecovery(weeklySchedule, (mg) => caps[mg] ?? 99);
   // refresh durations after any trimming
   for (const day of Object.values(weeklySchedule)) {
     if (day.type !== 'rest') day.estimatedDuration = Math.max(20, day.exercises.length * 9);
@@ -372,5 +375,6 @@ export function generatePlan(goals, library) {
     progressPct: 0,
     createdAt: Date.now(),
     weeklySchedule,
+    volumeSummary: summarizeWeeklyVolume(weeklySchedule, experience),
   };
 }

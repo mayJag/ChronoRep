@@ -1,16 +1,23 @@
-import React, { useState } from 'react';
-import { Plus, Trash2, Dumbbell, Search } from 'lucide-react';
+import React, { useState, useMemo } from 'react';
+import { Plus, Trash2, Dumbbell, Search, ChevronDown, ChevronUp, Play } from 'lucide-react';
 import { saveCustomExercise, deleteCustomExercise } from '../store/db';
 import {
-  useExerciseLibrary, BASE_EXERCISES, EX_CATEGORIES, EX_MUSCLES, EX_EQUIPMENT,
+  useExerciseLibrary, EX_CATEGORIES, EX_MUSCLES, EX_EQUIPMENT,
 } from '../data/exercises';
+import { getExerciseVideoUrl } from '../data/exerciseVideos';
 import { useToast } from '../components/Toast';
 import styles from './Exercises.module.css';
+
+const PAGE_SIZE = 40;
 
 export default function Exercises() {
   const { exercises, customExercises, reload } = useExerciseLibrary();
   const { toast, confirm } = useToast();
   const [query, setQuery] = useState('');
+  const [muscleFilter, setMuscleFilter] = useState('all');
+  const [equipmentFilter, setEquipmentFilter] = useState('all');
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
+  const [expanded, setExpanded] = useState(null);
   const [form, setForm] = useState({ name: '', muscleGroup: 'chest', category: 'compound', equipment: 'barbell' });
 
   const handleAdd = async () => {
@@ -32,13 +39,22 @@ export default function Exercises() {
     await reload();
   };
 
-  const filtered = exercises.filter(e => e.name.toLowerCase().includes(query.toLowerCase()));
+  const filtered = useMemo(() => exercises.filter(e => {
+    if (query && !e.name.toLowerCase().includes(query.toLowerCase())) return false;
+    if (muscleFilter !== 'all' && e.muscleGroup !== muscleFilter) return false;
+    if (equipmentFilter !== 'all' && e.equipment !== equipmentFilter) return false;
+    return true;
+  }), [exercises, query, muscleFilter, equipmentFilter]);
+
+  const visible = filtered.slice(0, visibleCount);
+
+  const toggleExpand = (name) => setExpanded(prev => (prev === name ? null : name));
 
   return (
     <div className="page stagger">
       <header>
         <h1 className="page-title">Exercise Library</h1>
-        <p className="page-subtitle">{BASE_EXERCISES.length} built-in · {customExercises.length} custom</p>
+        <p className="page-subtitle">{exercises.length} exercises · {customExercises.length} custom</p>
       </header>
 
       <section className="section card">
@@ -63,22 +79,74 @@ export default function Exercises() {
         <div className={styles.searchBox}>
           <Search size={16} className={styles.searchIcon} />
           <input className="input" style={{ paddingLeft: 36 }} placeholder="Search library…"
-            value={query} onChange={(e) => setQuery(e.target.value)} />
+            value={query} onChange={(e) => { setQuery(e.target.value); setVisibleCount(PAGE_SIZE); }} />
         </div>
+
+        <div className={styles.filterRow}>
+          <select className="select" value={muscleFilter} onChange={(e) => { setMuscleFilter(e.target.value); setVisibleCount(PAGE_SIZE); }}>
+            <option value="all">All muscles</option>
+            {EX_MUSCLES.map(m => <option key={m} value={m}>{m.replace('_', ' ')}</option>)}
+          </select>
+          <select className="select" value={equipmentFilter} onChange={(e) => { setEquipmentFilter(e.target.value); setVisibleCount(PAGE_SIZE); }}>
+            <option value="all">All equipment</option>
+            {EX_EQUIPMENT.map(eq => <option key={eq} value={eq}>{eq}</option>)}
+          </select>
+        </div>
+
+        <p className={styles.resultCount}>{filtered.length} exercise{filtered.length === 1 ? '' : 's'}</p>
+
         <div className={styles.list}>
-          {filtered.map(ex => (
-            <div key={ex.name} className={`${styles.item} card`}>
-              <Dumbbell size={16} className={styles.itemIcon} />
-              <div className={styles.itemInfo}>
-                <span className={styles.itemName}>{ex.name} {ex.custom && <span className="badge badge--accent">custom</span>}</span>
-                <span className={styles.itemSub}>{ex.muscleGroup} · {ex.category} · {ex.equipment}</span>
+          {visible.map(ex => {
+            const isOpen = expanded === ex.name;
+            const videoUrl = getExerciseVideoUrl(ex.name);
+            return (
+              <div key={ex.name} className={`${styles.item} card`}>
+                <div className={styles.itemRow} onClick={() => toggleExpand(ex.name)}>
+                  <Dumbbell size={16} className={styles.itemIcon} />
+                  <div className={styles.itemInfo}>
+                    <span className={styles.itemName}>{ex.name} {ex.custom && <span className="badge badge--accent">custom</span>}</span>
+                    <span className={styles.itemSub}>
+                      {ex.muscleGroup} · {ex.category} · {ex.equipment}
+                      {ex.target && <> · targets {ex.target}</>}
+                    </span>
+                  </div>
+                  {ex.custom && (
+                    <button className="btn btn--ghost btn--icon text-danger" onClick={(e) => { e.stopPropagation(); handleDelete(ex.name); }}>
+                      <Trash2 size={14} />
+                    </button>
+                  )}
+                  {isOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                </div>
+
+                {isOpen && (
+                  <div className={styles.detail}>
+                    {ex.secondaryMuscles?.length > 0 && (
+                      <p className={styles.detailMeta}><strong>Also works:</strong> {ex.secondaryMuscles.join(', ')}</p>
+                    )}
+                    {ex.instructions?.length > 0 ? (
+                      <ol className={styles.detailSteps}>
+                        {ex.instructions.map((step, i) => <li key={i}>{step}</li>)}
+                      </ol>
+                    ) : (
+                      <p className={styles.detailMeta}>No step-by-step instructions available for this exercise yet.</p>
+                    )}
+                    {videoUrl && (
+                      <a href={videoUrl} target="_blank" rel="noopener noreferrer" className={`badge badge--amber ${styles.detailVideo}`}>
+                        <Play size={10} fill="currentColor" /> Tutorial
+                      </a>
+                    )}
+                  </div>
+                )}
               </div>
-              {ex.custom && (
-                <button className="btn btn--ghost btn--icon text-danger" onClick={() => handleDelete(ex.name)}><Trash2 size={14} /></button>
-              )}
-            </div>
-          ))}
+            );
+          })}
         </div>
+
+        {visibleCount < filtered.length && (
+          <button className="btn btn--secondary btn--full section" onClick={() => setVisibleCount(c => c + PAGE_SIZE)}>
+            Load more ({filtered.length - visibleCount} remaining)
+          </button>
+        )}
       </section>
     </div>
   );

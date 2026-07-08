@@ -199,6 +199,29 @@ export default function Goals() {
               </div>
             ))}
           </div>
+          {preview.volumeSummary?.length > 0 && (
+            <div className={styles.volumeBlock}>
+              <h3 className={styles.volumeTitle}>Weekly volume per muscle</h3>
+              {preview.volumeSummary.map(v => (
+                <div key={v.muscleGroup} className={styles.volumeRow}>
+                  <span className={styles.volumeLabel}>{v.label}</span>
+                  <div className={styles.volumeBarTrack}>
+                    <div
+                      className={`${styles.volumeBarFill} ${styles['volume_' + v.status]}`}
+                      style={{ width: `${Math.min(100, (v.sets / (v.max * 1.15)) * 100)}%` }}
+                    />
+                  </div>
+                  <span className={`${styles.volumeSets} ${styles['volume_' + v.status]}`}>
+                    {v.sets} sets <span className={styles.volumeRange}>({v.min}-{v.max})</span>
+                  </span>
+                </div>
+              ))}
+              <p className={styles.hint} style={{ marginTop: 'var(--sp-2)', marginBottom: 0 }}>
+                Ranges follow NSCA/ACSM weekly-sets-per-muscle guidance for your experience level.
+              </p>
+            </div>
+          )}
+
           <p className={styles.recoveryNote}>
             Volume is tuned for your experience level and capped per muscle group each week to protect recovery.
           </p>
