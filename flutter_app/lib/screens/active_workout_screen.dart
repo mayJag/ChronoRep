@@ -88,7 +88,8 @@ class _ActiveWorkoutScreenState extends State<ActiveWorkoutScreen> {
       context: context,
       backgroundColor: Colors.transparent,
       isScrollControlled: true,
-      builder: (_) => _SwapSheet(original: st.ex.name, options: options),
+      builder: (_) =>
+          _SwapSheet(original: st.ex.name, options: options, library: _library),
     );
     if (picked == null || !mounted) return;
     setState(() {
@@ -500,14 +501,49 @@ class _ExerciseCard extends StatelessWidget {
       color: AppColors.textTertiary);
 }
 
-/// Bottom sheet listing ranked substitute exercises; returns the chosen one.
-class _SwapSheet extends StatelessWidget {
+/// Bottom sheet listing ranked substitute exercises, with a search box that
+/// falls through to the full library when the suggestions don't have it.
+class _SwapSheet extends StatefulWidget {
   final String original;
   final List<LibraryExercise> options;
-  const _SwapSheet({required this.original, required this.options});
+  final List<LibraryExercise> library;
+  const _SwapSheet(
+      {required this.original, required this.options, required this.library});
+
+  @override
+  State<_SwapSheet> createState() => _SwapSheetState();
+}
+
+class _SwapSheetState extends State<_SwapSheet> {
+  final _searchCtrl = TextEditingController();
+  String _query = '';
+
+  @override
+  void dispose() {
+    _searchCtrl.dispose();
+    super.dispose();
+  }
+
+  List<LibraryExercise> get _results {
+    if (_query.isEmpty) return widget.options;
+    final q = _query.toLowerCase();
+    final matches = widget.library
+        .where((e) =>
+            e.name.toLowerCase() != widget.original.toLowerCase() &&
+            e.name.toLowerCase().contains(q))
+        .toList()
+      ..sort((a, b) {
+        final aStarts = a.name.toLowerCase().startsWith(q);
+        final bStarts = b.name.toLowerCase().startsWith(q);
+        if (aStarts != bStarts) return aStarts ? -1 : 1;
+        return a.name.compareTo(b.name);
+      });
+    return matches.take(30).toList();
+  }
 
   @override
   Widget build(BuildContext context) {
+    final options = _results;
     return Container(
       decoration: const BoxDecoration(
         color: AppColors.bgSecondary,
@@ -530,15 +566,39 @@ class _SwapSheet extends StatelessWidget {
               ),
             ),
           ),
-          Text('Swap $original',
+          Text('Swap ${widget.original}',
               style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w800)),
           const SizedBox(height: 14),
+          TextField(
+            controller: _searchCtrl,
+            onChanged: (v) => setState(() => _query = v.trim()),
+            style: const TextStyle(fontSize: 14),
+            decoration: InputDecoration(
+              hintText: 'Search all exercises…',
+              hintStyle: const TextStyle(
+                  color: AppColors.textTertiary, fontSize: 13),
+              prefixIcon: const Icon(Icons.search_rounded,
+                  size: 18, color: AppColors.textTertiary),
+              isDense: true,
+              contentPadding: const EdgeInsets.symmetric(vertical: 12),
+              filled: true,
+              fillColor: AppColors.bgInput,
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(AppRadius.sm),
+                borderSide: BorderSide.none,
+              ),
+            ),
+          ),
+          const SizedBox(height: 12),
           if (options.isEmpty)
-            const Padding(
-              padding: EdgeInsets.symmetric(vertical: 16),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 16),
               child: Text(
-                'No close matches found for this exercise.',
-                style: TextStyle(fontSize: 13, color: AppColors.textTertiary),
+                _query.isEmpty
+                    ? 'No close matches found for this exercise.'
+                    : 'No exercises match "$_query".',
+                style: const TextStyle(
+                    fontSize: 13, color: AppColors.textTertiary),
               ),
             )
           else
